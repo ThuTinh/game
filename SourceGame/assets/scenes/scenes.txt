@@ -1,0 +1,8 @@
+#start scence
+1
+#total scene
+3
+#sence list
+assets/scenes/intro.txt
+assets/scenes/level1.txt
+assets/scenes/level2.txt
