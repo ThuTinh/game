@@ -1,0 +1,17 @@
+Sprite axeMan
+R	G	B
+255	0	128	0
+Animation Count
+1
+
+
+Name
+axeMan
+Frame Count
+2
+
+FrameX		FrameY		FrameWidth		FrameHeight		AnchorX		AnchorY
+0			0			24				32				0			0
+24			0			24				32				0			0
+
+

@@ -1,0 +1,35 @@
+Sprite a
+R	G	B
+255	0	128	0
+Animation Count
+3
+
+
+Name
+LeoLie
+Frame Count
+1
+
+FrameX		FrameY		FrameWidth		FrameHeight		AnchorX		AnchorY
+0			0			24				16				0			0
+
+
+Name
+LeoJumb
+Frame Count
+1
+
+FrameX		FrameY		FrameWidth		FrameHeight		AnchorX		AnchorY
+24			0			32				16				0			0
+
+
+Name
+LeoRun
+Frame Count
+2
+
+FrameX		FrameY		FrameWidth		FrameHeight		AnchorX		AnchorY
+56			0			32				16				0			0
+88			0			32				16				0			0
+
+

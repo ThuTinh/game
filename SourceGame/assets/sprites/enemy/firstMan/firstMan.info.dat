@@ -1,0 +1,19 @@
+Sprite firstMan
+R	G	B
+255	0	128	0
+Animation Count
+1
+
+
+Name
+firstMan
+Frame Count
+4
+
+FrameX		FrameY		FrameWidth		FrameHeight		AnchorX		AnchorY
+0			0			16				32				0			0
+16			0			16				32				0			0
+32			0			16				32				0			0
+48			0			16				32				0			0
+
+

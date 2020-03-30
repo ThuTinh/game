@@ -1,14 +1,11 @@
 #pragma once
-#include "PhysicsObject.h"
+#include "Enemy.h"
 /* lớp Zoombie để hiện thực lớp BaseObject */
-class Zoombie :
-	public PhysicsObject
+class Zoombie : public Enemy
 {
-	int dcx;
+
 public:
-	void onCollision(MovableRect* other, float collisionTime, int nx, int ny) override;
-	void onUpdate(float dt) override;
-	Zoombie();
-	~Zoombie();
+	Zoombie() {};
+	~Zoombie() {};
 };
 

@@ -164,7 +164,8 @@ void Player::onUpdate(float dt)
 				/* set animation chạy */
 				setAnimation(PLAYER_ACTION_RUN);
 				setVx(-vx);
-				setDirection(TEXTURE_DIRECTION_LEFT);
+				
+				setDirection(TEXTURE_DIRECTION_RIGHT);
 			}
 			/* nếu giữ key phải */
 			else if (keyRightDown)
@@ -172,7 +173,8 @@ void Player::onUpdate(float dt)
 				/* set animation chạy */
 				setAnimation(PLAYER_ACTION_RUN);
 				setVx(vx);
-				setDirection(TEXTURE_DIRECTION_RIGHT);
+				setDirection(TEXTURE_DIRECTION_LEFT);
+				
 			}
 			else
 			{
@@ -185,6 +187,7 @@ void Player::onUpdate(float dt)
 			if (keyJumpPress)
 			{
 				setVy(GLOBALS_D("player_vy_jump"));
+				setAnimation(PLAYER_ACTION_JUMP);
 			}
 		}
 		else /* nếu nhân vật không đứng trên sàn (đang lơ lững trên không) */

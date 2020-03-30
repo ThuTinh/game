@@ -34,11 +34,23 @@
     <Filter Include="debug">
       <UniqueIdentifier>{af0cc1ab-9212-4e46-abda-6afab4f6f7a0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Objects\Misc">
+      <UniqueIdentifier>{8bbeff66-ebc4-4933-b00e-f1747374e790}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Objects\Enemy">
+      <UniqueIdentifier>{23c4542b-80fa-4263-8078-fa932f408454}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Objects\Gate">
+      <UniqueIdentifier>{8970a1ae-4a0d-4a44-b338-63e1b685a14d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Objects\Player">
+      <UniqueIdentifier>{9ee290c6-8569-4388-806a-f77b5bb69871}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Objects\Base">
+      <UniqueIdentifier>{c689bed5-2726-4f8b-b139-b518a7921c3f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Zoombie.h">
-      <Filter>Objects</Filter>
-    </ClInclude>
     <ClInclude Include="Sprite.h">
       <Filter>AnimationAndSprite</Filter>
     </ClInclude>
@@ -84,23 +96,8 @@
     <ClInclude Include="GameUtils.h">
       <Filter>Utils</Filter>
     </ClInclude>
-    <ClInclude Include="BaseObject.h">
-      <Filter>Objects</Filter>
-    </ClInclude>
     <ClInclude Include="FrameAnimation.h">
       <Filter>AnimationAndSprite</Filter>
-    </ClInclude>
-    <ClInclude Include="Rect.h">
-      <Filter>Objects</Filter>
-    </ClInclude>
-    <ClInclude Include="PhysicsObject.h">
-      <Filter>Objects</Filter>
-    </ClInclude>
-    <ClInclude Include="Player.h">
-      <Filter>Objects</Filter>
-    </ClInclude>
-    <ClInclude Include="MovableRect.h">
-      <Filter>Objects</Filter>
     </ClInclude>
     <ClInclude Include="CollisionType.h">
       <Filter>Collision</Filter>
@@ -123,11 +120,38 @@
     <ClInclude Include="debug.h">
       <Filter>debug</Filter>
     </ClInclude>
+    <ClInclude Include="Leopart.h">
+      <Filter>Objects\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy.h">
+      <Filter>Objects\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Zoombie.h">
+      <Filter>Objects\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="fire.h">
+      <Filter>Objects\Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="Gate1.h">
+      <Filter>Objects\Gate</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>Objects\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseObject.h">
+      <Filter>Objects\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="MovableRect.h">
+      <Filter>Objects\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="PhysicsObject.h">
+      <Filter>Objects\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="Rect.h">
+      <Filter>Objects\Base</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Zoombie.cpp">
-      <Filter>Objects</Filter>
-    </ClCompile>
     <ClCompile Include="Sprite.cpp">
       <Filter>AnimationAndSprite</Filter>
     </ClCompile>
@@ -142,18 +166,6 @@
     </ClCompile>
     <ClCompile Include="GameUtils.cpp">
       <Filter>Utils</Filter>
-    </ClCompile>
-    <ClCompile Include="PhysicsObject.cpp">
-      <Filter>Objects</Filter>
-    </ClCompile>
-    <ClCompile Include="MovableRect.cpp">
-      <Filter>Objects</Filter>
-    </ClCompile>
-    <ClCompile Include="Player.cpp">
-      <Filter>Objects</Filter>
-    </ClCompile>
-    <ClCompile Include="Rect.cpp">
-      <Filter>Objects</Filter>
     </ClCompile>
     <ClCompile Include="Tilemap.cpp">
       <Filter>WorldAndCamera</Filter>
@@ -182,9 +194,6 @@
     <ClCompile Include="Animation.cpp">
       <Filter>AnimationAndSprite</Filter>
     </ClCompile>
-    <ClCompile Include="BaseObject.cpp">
-      <Filter>Objects</Filter>
-    </ClCompile>
     <ClCompile Include="Camera.cpp">
       <Filter>WorldAndCamera</Filter>
     </ClCompile>
@@ -199,6 +208,36 @@
     </ClCompile>
     <ClCompile Include="debug.cpp">
       <Filter>debug</Filter>
+    </ClCompile>
+    <ClCompile Include="Leopart.cpp">
+      <Filter>Objects\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="Enemy.cpp">
+      <Filter>Objects\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="Zoombie.cpp">
+      <Filter>Objects\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="fire.cpp">
+      <Filter>Objects\Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="Gate1.cpp">
+      <Filter>Objects\Gate</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>Objects\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseObject.cpp">
+      <Filter>Objects\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="MovableRect.cpp">
+      <Filter>Objects\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="PhysicsObject.cpp">
+      <Filter>Objects\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="Rect.cpp">
+      <Filter>Objects\Base</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -22,10 +22,13 @@ SpriteManager::SpriteManager()
 
 	/* thêm sprite ở đây */
 
-	/* đăng ký sprite cho con zoombie */
-	sprites[SPRITE_INFO_ZOOMBIE]->InitFromFile("test/zoombie/image.png", "test/zoombie/zoombie.info.dat");
+	
+	sprites[SPRITE_INFO_FRIE]->InitFromFile("assets/sprites/misc/lua/fire.png", "assets/sprites/misc/lua/fire.info.dat");
+	sprites[SPRITE_INFO_FOOTFRIE]->InitFromFile("assets/sprites/misc/lua/footFire.png", "assets/sprites/misc/lua/footFire.info.dat");
+	sprites[SPRITE_INFOR_ZOOMBIE]->InitFromFile("assets/sprites/enemy/zoombi/image.png","assets/sprites/enemy/zoombi/zoombi.info.dat");
+	sprites[SPRITE_INFO_LEOPART]->InitFromFile("assets/sprites/enemy/leopart/image.png", "assets/sprites/enemy/leopart/leopart.info.dat");
 	/* đăng ký sprite cho simon */
-	sprites[SPRITE_INFO_SIMON]->InitFromFile("assets/sprites/simon/image.png", "assets/sprites/simon/simon.info.dat");
+	sprites[SPRITE_INFO_SIMON]->InitFromFile("assets/sprites/simon/simon/simon.png", "assets/sprites/simon/simon/simon.info.dat");
 	sprites[SPRITE_INFO_SIMON]->image->direction = TEXTURE_DIRECTION_RIGHT;
 
 }

@@ -1,2 +1,14 @@
-﻿  SceneManager.cpp
+﻿  Scene.cpp
+H:\HK8\game\G\SourceGame\Scene.cpp(37,23): warning C4018:  '<': signed/unsigned mismatch
+H:\HK8\game\G\SourceGame\Scene.cpp(87,23): warning C4018:  '<': signed/unsigned mismatch
+H:\HK8\game\G\SourceGame\Scene.cpp(103,23): warning C4018:  '<': signed/unsigned mismatch
+H:\HK8\game\G\SourceGame\Scene.cpp(193,23): warning C4018:  '<': signed/unsigned mismatch
+H:\HK8\game\G\SourceGame\Scene.cpp(205,23): warning C4018:  '<': signed/unsigned mismatch
+H:\HK8\game\G\SourceGame\Scene.cpp(215,26): warning C4018:  '<': signed/unsigned mismatch
+H:\HK8\game\G\SourceGame\Scene.cpp(217,27): warning C4018:  '<': signed/unsigned mismatch
+H:\HK8\game\G\SourceGame\Scene.cpp(245,67): warning C4244:  'argument': conversion from 'int' to 'float', possible loss of data
+H:\HK8\game\G\SourceGame\Scene.cpp(245,39): warning C4244:  'argument': conversion from 'int' to 'float', possible loss of data
+H:\HK8\game\G\SourceGame\Scene.cpp(246,67): warning C4244:  'argument': conversion from 'int' to 'float', possible loss of data
+H:\HK8\game\G\SourceGame\Scene.cpp(246,39): warning C4244:  'argument': conversion from 'int' to 'float', possible loss of data
+H:\HK8\game\G\SourceGame\Scene.cpp(252,23): warning C4018:  '<': signed/unsigned mismatch
   SourceGame.vcxproj -> H:\HK8\game\G\Debug\SourceGame.exe

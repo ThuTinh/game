@@ -1,0 +1,17 @@
+Sprite deathEffect
+R	G	B
+255	0	128	0
+Animation Count
+1
+
+
+Name
+deathEffect
+Frame Count
+2
+
+FrameX		FrameY		FrameWidth		FrameHeight		AnchorX		AnchorY
+0			0			8				16				0			0
+8			0			8				16				0			0
+
+

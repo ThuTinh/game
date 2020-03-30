@@ -13,14 +13,14 @@ Rect::~Rect()
 
 void Rect::moveX(float dx)
 {
-	x = x + dx;
+	setX(x + dx);
 	//x = (int)(x + dx + 0.5);
 	//OutputDebugString(std::to_string(dx + 0.5).c_str());
 }
 
 void Rect::moveY(float dy)
 {
-	y = y + dy;
+	setY(y + dy);
 	//y = (int)(y + dy + 0.5);
 }
 

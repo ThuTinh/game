@@ -22,6 +22,7 @@ public:
 
 	/* phương thức xử lý va chạm là phương thức ảo sẽ được mỗi đối tượng override để hiện thực */
 	virtual void onCollision(MovableRect* other, float collisionTime, int nx, int ny);
+	virtual void onAABB(MovableRect* other);
 
 	/* phương thức xử lý va chạm chặn di chuyển khi phát hiện va chạm */
 	void preventMovementWhenCollision(float collisionTime, int nx, int ny);

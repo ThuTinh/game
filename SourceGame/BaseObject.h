@@ -31,6 +31,7 @@ class BaseObject :
 
 
 public:
+	int id;
 
 
 

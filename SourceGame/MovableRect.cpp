@@ -4,6 +4,10 @@ void MovableRect::onCollision(MovableRect * other, float collisionTime, int nx, 
 {
 }
 
+void MovableRect::onAABB(MovableRect* other)
+{
+}
+
 COLLISION_TYPE MovableRect::getCollisionType()
 {
 	return this->collisionType;

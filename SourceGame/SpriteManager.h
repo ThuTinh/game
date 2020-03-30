@@ -10,17 +10,17 @@
 /* ta tạo 1 sprite info để lưu thông tin của các sprite */
 enum SPRITE_INFO
 {
-	SPRITE_INFO_STAIR = -2,
-
 	/* đối tượng không có hình ảnh ta sẽ đặt số âm */
+	SPRITE_INFO_GATE1 = -3,
+	SPRITE_INFO_STAIR = -2,
 	SPRITE_INFO_GROUND = -1,
 
 	/* đối tượng có hình ảnh ta sẽ đặt số dương */
 	SPRITE_INFO_SIMON = 0,
-
-	SPRITE_INFO_ZOOMBIE = 1, /* 1.png sẽ tương ứng với sprite này */
-
-	// thêm các sprite_info khác ở đây
+	SPRITE_INFO_FOOTFRIE = 1,
+	SPRITE_INFO_FRIE = 2, 
+	SPRITE_INFO_LEOPART = 3,
+	SPRITE_INFOR_ZOOMBIE = 4,
 
 	SPRITE_COUNT
 };

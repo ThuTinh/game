@@ -58,7 +58,7 @@ const char * GameConfiguration::GetConfigurationString(const char * key)
 		globalsConfigurationString = new map<const char*, const char*>();
 
 		/* Tiêu đề của cửa sổ */
-		globalsConfigurationString->insert(pair<const char*,const char*>("window_title", "Dat ten game cua ban tai day"));
+		globalsConfigurationString->insert(pair<const char*,const char*>("window_title", "load chos"));
 		globalsConfigurationString->insert(pair<const char*, const  char*>("window_class", "win_game"));
 
 		/* TODO tạo thêm các giá trị cấu hình string game tại đây

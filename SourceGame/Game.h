@@ -23,6 +23,7 @@ public:
 	void GameUpdate(float dt);
 	/* Các câu lệnh vẽ của game */
 	void GameRender();
+	SceneManager* getSceneManager();
 	Game();
 	~Game();
 };

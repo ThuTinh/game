@@ -19,13 +19,17 @@ void KEY::update()
 	isDownDown = GetAsyncKeyState(VK_DOWN);
 	isLeftDown = GetAsyncKeyState(VK_LEFT);
 	isRightDown = GetAsyncKeyState(VK_RIGHT); 
+	isJumpPress = GetAsyncKeyState(VK_SPACE);
+	/*if (isRightDown) {
+		isLeftDown = false;
+	}*/
 
 	/* lần trước đó có phải là nhấn key jump hay không */
-	isPreviousJumpDown = isJumpDown;  
+	//isPreviousJumpDown = isJumpDown;  
 	/* giả sử nhấn key x là player sẽ nhảy */
-	isJumpDown = GetAsyncKeyState(getKeyChar('x'));
+	//isJumpDown = GetAsyncKeyState(getKeyChar('x'));
 	/* nếu lần trước chưa nhấn key jump mà lần này nhấn key jump thì isJumpPress sẽ là true */
-	isJumpPress = (isPreviousJumpDown==false && isJumpDown==true); 
+	//isJumpPress = (isPreviousJumpDown==false && isJumpDown==true); 
 
 	/* chuyển space */
 	isSpace1Down = GetAsyncKeyState(getKeyChar('q'));

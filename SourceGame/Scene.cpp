@@ -4,7 +4,10 @@
 #include"Zoombie.h"
 #include"KEY.h"
 #include"Stair.h"
-
+#include "fire.h"
+#include "Gate1.h"
+#include "Zoombie.h"
+#include "Leopart.h"
 #include"Collision.h"
 
 void Scene::Init(const char * tilesheetPath,
@@ -39,17 +42,27 @@ void Scene::Init(const char * tilesheetPath,
 		fs >> id;
 		switch (id)
 		{
-
-		case SPRITE_INFO_ZOOMBIE:
-			obj = new Zoombie();
+		case SPRITE_INFO_FRIE:
+		case SPRITE_INFO_FOOTFRIE:
+			obj = new Fire();
 			break;
 		case SPRITE_INFO_STAIR:
 			obj = new Stair();
+			break;
+		case SPRITE_INFO_GATE1:
+			obj = new Gate1();
+			break;
+		case SPRITE_INFOR_ZOOMBIE:
+			obj = new Zoombie();
+			break;
+		case SPRITE_INFO_LEOPART:
+			obj = new Leopart();
 			break;
 		default:
 			obj = new BaseObject();
 			break;
 		}
+		obj->id = id;
 		/* đọc thông số của đối tượng */
 		obj->onInitFromFile(fs, worldHeight);
 		if (id >= 0)
@@ -147,41 +160,45 @@ void Scene::update(float dt)
 {
 	KEY* key = KEY::getInstance();
 	/* cập nhật key */
-	key->update();
 
 	/* chuyển space khi nhấn phím */
-	if (key->isSpace1Down)
-	{
-		setCurrentSpace(0);
-		resetLocationInSpace();
-	}
-	if (key->isSpace2Down)
-	{
-		setCurrentSpace(1);
-		resetLocationInSpace();
-	}
-	if (key->isSpace3Down)
-	{
-		setCurrentSpace(2);
-		resetLocationInSpace();
-	}
-	if (key->isSpace4Down)
-	{
-		setCurrentSpace(3);
-		resetLocationInSpace();
-	}
-	if (key->isSpace5Down)
-	{
-		setCurrentSpace(4);
-		resetLocationInSpace();
-	}
+	//if (key->isSpace1Down)
+	//{
+	//	setCurrentSpace(0);
+	//	resetLocationInSpace();
+	//}
+	//if (key->isSpace2Down)
+	//{
+	//	setCurrentSpace(1);
+	//	resetLocationInSpace();
+	//}
+	//if (key->isSpace3Down)
+	//{
+	//	setCurrentSpace(2);
+	//	resetLocationInSpace();
+	//}
+	//if (key->isSpace4Down)
+	//{
+	//	setCurrentSpace(3);
+	//	resetLocationInSpace();
+	//}
+	//if (key->isSpace5Down)
+	//{
+	//	setCurrentSpace(4);
+	//	resetLocationInSpace();
+	//}
 
 
 	/* cập nhật đối tượng */
 	for (size_t i = 0; i < allObjects.Count; i++)
 	{
-		allObjects[i]->update(dt);
-		Collision::CheckCollision(Player::getInstance(), allObjects[i]);
+		auto item = allObjects[i];
+		if (item->id == 2)
+		{
+			int a = 5;
+		}
+		item->update(dt);
+		Collision::CheckCollision(Player::getInstance(), item);
 	}
 
 	/* xét va chạm cho các loại đối tượng với nhau */

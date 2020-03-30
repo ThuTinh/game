@@ -1,5 +1,5 @@
 #include "Game.h"
-
+#include"KEY.h"
 
 /* singleton pattern */
 Game * Game::instance = 0;
@@ -29,6 +29,10 @@ void Game::GameInit()
 /* Các câu lệnh cập nhật game */
 void Game::GameUpdate(float dt)
 {
+	KEY* key = KEY::getInstance();
+	/* cập nhật key */
+	key->update();
+
 	/* cập nhật đối tượng trong world */
 	//world->update(dt);
 
@@ -40,6 +44,11 @@ void Game::GameRender()
 	/* vẽ đối tượng trong world */
 	/*world->render();*/
 	sceneManager->getCurrentScene()->render();
+}
+
+SceneManager* Game::getSceneManager()
+{
+	return sceneManager;
 }
 
 Game::Game()
