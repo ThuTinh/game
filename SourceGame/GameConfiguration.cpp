@@ -25,7 +25,7 @@ double GameConfiguration::GetConfiguration(const char * key)
 		globalsConfigurationDouble->insert(pair<const char*, double>("fps", 70));
 
 		/* thời gian đổi frame mặc định của animation là 100 milis, cứ sau 100 milis thì animation sẽ đổi 1 frame */
-		globalsConfigurationDouble->insert(pair<const char*, double>("object_animation_time_default", 120));
+		globalsConfigurationDouble->insert(pair<const char*, double>("object_animation_time_default",70));
 
 		/* trọng lực mặc định của đối tượng 80 (px/s^2) */
 		globalsConfigurationDouble->insert(pair<const char*, double>("object_default_ay", -550));
@@ -35,7 +35,7 @@ double GameConfiguration::GetConfiguration(const char * key)
 		globalsConfigurationDouble->insert(pair<const char*, double>("player_vx", 80)); /* 60 pixel/s */
 		globalsConfigurationDouble->insert(pair<const char*, double>("player_vy_jump", 180)); /* 60 pixel/s */
 		/* vx của player khi lên stair */
-		globalsConfigurationDouble->insert(pair<const char*, double>("player_stair_dx", 1)); /* 1 pixel/ frame */
+		globalsConfigurationDouble->insert(pair<const char*, double>("player_stair_dx", 1));//1 pixel/ frame */
 		/* vy của player khi lên stair */
 		globalsConfigurationDouble->insert(pair<const char*, double>("player_stair_dy", 1)); /* 1 pixel/ frame */
 

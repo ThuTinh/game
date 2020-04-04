@@ -49,6 +49,12 @@
     <Filter Include="Objects\Base">
       <UniqueIdentifier>{c689bed5-2726-4f8b-b139-b518a7921c3f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Objects\Weapon">
+      <UniqueIdentifier>{95e4309d-c5a6-48d2-be1a-1917cfa308e5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Grid">
+      <UniqueIdentifier>{6da79e65-343d-4548-8d25-e9d30bb6bb24}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Sprite.h">
@@ -150,6 +156,21 @@
     <ClInclude Include="Rect.h">
       <Filter>Objects\Base</Filter>
     </ClInclude>
+    <ClInclude Include="Weapon.h">
+      <Filter>Objects\Weapon</Filter>
+    </ClInclude>
+    <ClInclude Include="Light.h">
+      <Filter>Objects\Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="DelayTime.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Cell.h">
+      <Filter>Grid</Filter>
+    </ClInclude>
+    <ClInclude Include="Grid.h">
+      <Filter>Grid</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Sprite.cpp">
@@ -238,6 +259,21 @@
     </ClCompile>
     <ClCompile Include="Rect.cpp">
       <Filter>Objects\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="Weapon.cpp">
+      <Filter>Objects\Weapon</Filter>
+    </ClCompile>
+    <ClCompile Include="Light.cpp">
+      <Filter>Objects\Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="DelayTime.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Cell.cpp">
+      <Filter>Grid</Filter>
+    </ClCompile>
+    <ClCompile Include="Grid.cpp">
+      <Filter>Grid</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

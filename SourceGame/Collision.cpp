@@ -129,11 +129,13 @@ void Collision::CheckCollision(MovableRect * M, MovableRect * S)
 	{
 		return;
 	}
+
 	if (AABBCheck(M, S))
 	{
 		M->onAABB(S);
 		S->onAABB(M);
 	}
+
 	/* KIỂM TRA VÀ XỬ LÝ VA CHẠM */
 	/* tìm broadphasebox của M */
 	MovableRect* broadPhaseBox = GetSweptBroadPhaseBox(M);

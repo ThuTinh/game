@@ -63,6 +63,7 @@ void Sprite::render(int x, int y, int animationIndex, int frameIndex)
 
 Sprite::Sprite()
 {
+	
 }
 
 

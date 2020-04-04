@@ -4,13 +4,15 @@
 #include"BaseObject.h"
 #include"CollisionTypeCollide.h"
 #include"Space.h"
+//#include "Grid.h"
 class Scene
 {
 	/* dùng tilemap để vẽ map */
 	Tilemap tilemap;
+	//Grid grid;
 
-	/* tất cả object có trong world */
 	List<BaseObject*> allObjects;
+	List<BaseObject*> objectInCamera;
 
 	/* danh sách collisionTypeCollide */
 	List<CollisionTypeCollide*> collisionTypeCollides;
@@ -26,6 +28,8 @@ class Scene
 
 
 public:
+	/* tất cả object có trong world */
+
 	void Init(const char* tilesheetPath,
 		const char* matrixPath, 
 		const char* objectsPath,

@@ -9,6 +9,11 @@
 #include "Zoombie.h"
 #include "Leopart.h"
 #include"Collision.h"
+#include "Weapon.h"
+#include "Light.h"
+#include<Windows.h>
+#include <string>
+
 
 void Scene::Init(const char * tilesheetPath,
 	const char * matrixPath, 
@@ -43,8 +48,10 @@ void Scene::Init(const char * tilesheetPath,
 		switch (id)
 		{
 		case SPRITE_INFO_FRIE:
-		case SPRITE_INFO_FOOTFRIE:
 			obj = new Fire();
+			break;
+		case SPRITE_INFO_LIGHT:
+			obj = new Light();
 			break;
 		case SPRITE_INFO_STAIR:
 			obj = new Stair();
@@ -78,7 +85,6 @@ void Scene::Init(const char * tilesheetPath,
 
 	}
 
-	
 
 	/* đọc collisiontype collide */
 	int numberOfCollisionTypeCollides=0;
@@ -131,9 +137,10 @@ void Scene::Init(const char * tilesheetPath,
 
 void Scene::Init(string folderPath)
 {
+
 	/* tìm đường dẫn tilesheet và matrix object */
 	string folderPathString = (string)folderPath;
-
+	
 	string tilesheetString = folderPathString;
 	tilesheetString.append("/tilesheet.png");
 
@@ -154,10 +161,18 @@ void Scene::Init(string folderPath)
 		objectPathString.c_str(), 
 		collisionTypeCollidePath.c_str(),
 		spacePath.c_str());
+
+	//string gridPath = folderPathString;
+	//gridPath.append("/grid.dat");
+	//grid.Init(gridPath);
+
+
+
 }
 
 void Scene::update(float dt)
 {
+	
 	KEY* key = KEY::getInstance();
 	/* cập nhật key */
 
@@ -189,17 +204,34 @@ void Scene::update(float dt)
 	//}
 
 
+	
+	//OutputDebugStringA(( "ahihihihi" + std::to_string(objs->Count)).c_str());
+	
+	/*grid.checkCellColitionCamera(Camera::getInstance());
+	List<int> temp = grid.getInxInCamera();*/
+	//if (objectInCamera.Count > 0) {
+	//	objectInCamera.Clear();
+	//}
+	/*for (int j = 0; j < temp.Count; j++) {
+		int k = temp[j];
+		BaseObject* obj = allObjects[k];
+		objectInCamera._Add(obj);
+	}
+	for (size_t i = 0; i < objectInCamera.Count; i++)
+	{
+		auto item = objectInCamera.at(i);
+		item->update(dt);
+		Collision::CheckCollision(Player::getInstance(), item);
+	}*/
 	/* cập nhật đối tượng */
+
 	for (size_t i = 0; i < allObjects.Count; i++)
 	{
 		auto item = allObjects[i];
-		if (item->id == 2)
-		{
-			int a = 5;
-		}
 		item->update(dt);
 		Collision::CheckCollision(Player::getInstance(), item);
 	}
+
 
 	/* xét va chạm cho các loại đối tượng với nhau */
 	for (size_t i = 0; i < collisionTypeCollides.size(); i++)
@@ -249,16 +281,20 @@ void Scene::resetLocationInSpace()
 void Scene::render()
 {
 	tilemap.render(Camera::getInstance());
+
+
 	for (size_t i = 0; i < allObjects.Count; i++)
 	{
 		/* vẽ đối tượng */
 		allObjects[i]->render(Camera::getInstance());
 	}
-	Player::getInstance()->render(Camera::getInstance());
+	Player::getInstance()->render(Camera::getInstance());;
+	Weapon::getInstance()->render();
 }
 
 Scene::Scene()
 {
+	
 }
 Scene::~Scene()
 {

@@ -17,12 +17,15 @@ class Tilemap
 	/* số lượng cột trong tilesheet */
 	int tilesheetColumns;
 
+
+
 	/* tilesheet */
 	GameTexture* tilesheet;
 
 	/* ma trận tile */
 	int** matrix;
 public:
+
 
 	/* vẽ tilemap bằng camera */
 	void render(Camera* camera);
@@ -36,6 +39,10 @@ public:
 	void Init(const char* tilesheetPath, const char* matrixPath);
 	/* folderPath : đường dẫn thư mục chứa ma trận và tilesheet */
 	void Init(const char* folderPath);
+	int getTileWidth();
+	int getTileHeight();
+	int getTileRows();
+	int getTileColumns();
 
 	Tilemap();
 	~Tilemap();

@@ -2,6 +2,7 @@
 #include "PhysicsObject.h"
 #include"SpriteManager.h"
 #include"KEY.h"
+#include"DelayTime.h"
 
 enum PLAYER_ACTION
 {
@@ -28,6 +29,7 @@ enum PLAYER_STATE
 {
 	PLAYER_STATE_NORMAL,
 	PLAYER_STATE_ON_STAIR,
+	PLAYER_STATE_ATTACK,
 	PLAYER_STATE_DIE
 };
 
@@ -48,6 +50,9 @@ class Player :
 	PLAYER_STATE playerState;
 
 	int stairDirection;
+	bool isAttack;
+
+
 
 	/* 2 thuộc tính này có khi player đang đi lên cầu thang chủ yếu nói về player đi tới đâu rồi dừng lại */
 	int playerStairDestx, playerStairDesty;
@@ -58,6 +63,8 @@ class Player :
 	bool isLastRunStair;
 
 public:
+
+	DelayTime attachDelay;
 
 	PLAYER_STATE getPlayerState();
 	void setPlayerState(PLAYER_STATE playerState);
@@ -81,6 +88,8 @@ public:
 	void setStairDirection(int stairDirection);
 	void setPlayerStairState(PLAYER_STAIR_STATE playerStairState);
 	PLAYER_STAIR_STATE getPlayerStairState();
+	bool getIsAttack();
+	void setIsAttack(bool attack);
 
 	Player();
 	~Player();
