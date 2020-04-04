@@ -4,12 +4,12 @@
 #include"BaseObject.h"
 #include"CollisionTypeCollide.h"
 #include"Space.h"
-//#include "Grid.h"
+#include "Grid.h"
 class Scene
 {
 	/* dùng tilemap để vẽ map */
 	Tilemap tilemap;
-	//Grid grid;
+	Grid grid;
 
 	List<BaseObject*> allObjects;
 	List<BaseObject*> objectInCamera;

@@ -162,9 +162,9 @@ void Scene::Init(string folderPath)
 		collisionTypeCollidePath.c_str(),
 		spacePath.c_str());
 
-	//string gridPath = folderPathString;
-	//gridPath.append("/grid.dat");
-	//grid.Init(gridPath);
+	string gridPath = folderPathString;
+	gridPath.append("/grid.dat");
+	grid.Init(gridPath);
 
 
 
@@ -203,34 +203,35 @@ void Scene::update(float dt)
 	//	resetLocationInSpace();
 	//}
 
-
+	grid.checkCellColitionCamera(Camera::getInstance());
+	List<int> temp = grid.getInxInCamera();
+	if (objectInCamera.Count > 0) {
+		objectInCamera.Clear();
+	}
 	
-	//OutputDebugStringA(( "ahihihihi" + std::to_string(objs->Count)).c_str());
-	
-	/*grid.checkCellColitionCamera(Camera::getInstance());
-	List<int> temp = grid.getInxInCamera();*/
-	//if (objectInCamera.Count > 0) {
-	//	objectInCamera.Clear();
-	//}
-	/*for (int j = 0; j < temp.Count; j++) {
+	for (int j = 0; j < temp.Count; j++) {
 		int k = temp[j];
 		BaseObject* obj = allObjects[k];
 		objectInCamera._Add(obj);
 	}
+
+	//cap nhap doi tuong co trong khu vuc cua camera
 	for (size_t i = 0; i < objectInCamera.Count; i++)
 	{
+		OutputDebugStringA(("camara : " + std::to_string(objectInCamera.Count)+ "\n").c_str());
 		auto item = objectInCamera.at(i);
 		item->update(dt);
 		Collision::CheckCollision(Player::getInstance(), item);
-	}*/
-	/* cập nhật đối tượng */
-
-	for (size_t i = 0; i < allObjects.Count; i++)
-	{
-		auto item = allObjects[i];
-		item->update(dt);
-		Collision::CheckCollision(Player::getInstance(), item);
 	}
+
+	/* cập nhật đối tượng  trong truong hop chua sd grid*/
+
+	//for (size_t i = 0; i < allObjects.Count; i++)
+	//{
+	//	auto item = allObjects[i];
+	//	item->update(dt);
+	//	Collision::CheckCollision(Player::getInstance(), item);
+	//}
 
 
 	/* xét va chạm cho các loại đối tượng với nhau */
@@ -282,12 +283,19 @@ void Scene::render()
 {
 	tilemap.render(Camera::getInstance());
 
-
-	for (size_t i = 0; i < allObjects.Count; i++)
+	// vẽ đối tượng xuất  hiện trong camera
+	for (size_t i = 0; i < objectInCamera.Count; i++)
 	{
 		/* vẽ đối tượng */
-		allObjects[i]->render(Camera::getInstance());
+		objectInCamera[i]->render(Camera::getInstance());
 	}
+
+			// ve tat ca doi duong
+	//for (size_t i = 0; i < allObjects.Count; i++)
+	//{
+	//	/* vẽ đối tượng */
+	//	allObjects[i]->render(Camera::getInstance());
+	//}
 	Player::getInstance()->render(Camera::getInstance());;
 	Weapon::getInstance()->render();
 }

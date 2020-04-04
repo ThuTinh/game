@@ -23,7 +23,7 @@ void Grid::checkCellColitionCamera(Camera*camera)
 			for (int j = 0; j < temp.Count; j++) {
 				inxInCamara._Add(temp[j]);
 			}
-			temp.Clear();
+			
 		}
   }
 }
@@ -33,14 +33,17 @@ void Grid::Init(string gridPath)
 	ifstream fs(gridPath);
 
 	int count;
+	int mapHeight;
 	fs >> count;
+	ignoreLineIfstream(fs, 1);
+	fs >> mapHeight;
 	ignoreLineIfstream(fs, 1);
 	int x, y, with, countObj;
 	for (int i = 0; i < count; i++) {
 		Cell  *cell = new Cell();
 		fs >> x >> y >> with >> with>> countObj;
 		cell->setX(x);
-		cell->setY(y);
+		cell->setY(mapHeight - y);
 		cell->setHeight(with);
 		cell->setWidth(with);
 		if (countObj > 0) {
