@@ -1,4 +1,31 @@
-﻿  Scene.cpp
+﻿  Camera.cpp
+H:\HK8\game\G\SourceGame\Camera.cpp(62,13): warning C4244:  'argument': conversion from 'int' to 'float', possible loss of data
+  Game.cpp
+H:\HK8\game\G\SourceGame\Camera.cpp(76,21): warning C4244:  'argument': conversion from 'int' to 'float', possible loss of data
+H:\HK8\game\G\SourceGame\Game.cpp(27,3): warning C4244:  'argument': conversion from 'double' to 'float', possible loss of data
+  GameConfiguration.cpp
+  Gate1.cpp
+  KEY.cpp
+  PhysicsObject.cpp
+H:\HK8\game\G\SourceGame\Game.cpp(26,3): warning C4244:  'argument': conversion from 'double' to 'float', possible loss of data
+  Player.cpp
+H:\HK8\game\G\SourceGame\PhysicsObject.cpp(7,8): warning C4244:  'argument': conversion from 'double' to 'float', possible loss of data
+H:\HK8\game\G\SourceGame\Player.cpp(9,28): warning C4244:  '=': conversion from 'float' to 'int', possible loss of data
+H:\HK8\game\G\SourceGame\Player.cpp(75,25): warning C4244:  '=': conversion from 'float' to 'int', possible loss of data
+H:\HK8\game\G\SourceGame\Player.cpp(76,25): warning C4244:  '=': conversion from 'float' to 'int', possible loss of data
+H:\HK8\game\G\SourceGame\Player.cpp(156,12): warning C4244:  'initializing': conversion from 'double' to 'float', possible loss of data
+H:\HK8\game\G\SourceGame\Player.cpp(189,11): warning C4244:  'argument': conversion from 'double' to 'float', possible loss of data
+H:\HK8\game\G\SourceGame\Player.cpp(214,10): warning C4244:  'argument': conversion from 'int' to 'float', possible loss of data
+H:\HK8\game\G\SourceGame\Player.cpp(215,10): warning C4244:  'argument': conversion from 'int' to 'float', possible loss of data
+H:\HK8\game\G\SourceGame\Player.cpp(227,25): warning C4244:  'argument': conversion from 'double' to 'float', possible loss of data
+H:\HK8\game\G\SourceGame\Player.cpp(229,10): warning C4244:  'argument': conversion from 'double' to 'float', possible loss of data
+H:\HK8\game\G\SourceGame\Player.cpp(232,25): warning C4244:  'argument': conversion from 'double' to 'float', possible loss of data
+H:\HK8\game\G\SourceGame\Player.cpp(234,10): warning C4244:  'argument': conversion from 'double' to 'float', possible loss of data
+H:\HK8\game\G\SourceGame\Player.cpp(250,11): warning C4244:  'argument': conversion from 'int' to 'float', possible loss of data
+H:\HK8\game\G\SourceGame\Player.cpp(251,11): warning C4244:  'argument': conversion from 'int' to 'float', possible loss of data
+H:\HK8\game\G\SourceGame\Player.cpp(269,11): warning C4244:  'argument': conversion from 'int' to 'float', possible loss of data
+  Scene.cpp
+H:\HK8\game\G\SourceGame\Player.cpp(270,11): warning C4244:  'argument': conversion from 'int' to 'float', possible loss of data
 H:\HK8\game\G\SourceGame\Scene.cpp(37,23): warning C4018:  '<': signed/unsigned mismatch
 H:\HK8\game\G\SourceGame\Scene.cpp(87,23): warning C4018:  '<': signed/unsigned mismatch
 H:\HK8\game\G\SourceGame\Scene.cpp(103,23): warning C4018:  '<': signed/unsigned mismatch
@@ -10,5 +37,30 @@ H:\HK8\game\G\SourceGame\Scene.cpp(245,67): warning C4244:  'argument': conversi
 H:\HK8\game\G\SourceGame\Scene.cpp(245,39): warning C4244:  'argument': conversion from 'int' to 'float', possible loss of data
 H:\HK8\game\G\SourceGame\Scene.cpp(246,67): warning C4244:  'argument': conversion from 'int' to 'float', possible loss of data
 H:\HK8\game\G\SourceGame\Scene.cpp(246,39): warning C4244:  'argument': conversion from 'int' to 'float', possible loss of data
+  SceneManager.cpp
+  Sprite.cpp
 H:\HK8\game\G\SourceGame\Scene.cpp(252,23): warning C4018:  '<': signed/unsigned mismatch
+H:\HK8\game\G\SourceGame\Sprite.cpp(23,23): warning C4018:  '<': signed/unsigned mismatch
+  SpriteManager.cpp
+  Stair.cpp
+H:\HK8\game\G\SourceGame\Sprite.cpp(33,42): warning C4018:  '<': signed/unsigned mismatch
+  Tilemap.cpp
+H:\HK8\game\G\SourceGame\Stair.cpp(12,7): warning C4101:  'value': unreferenced local variable
+H:\HK8\game\G\SourceGame\Tilemap.cpp(14,31): warning C4244:  '=': conversion from 'float' to 'int', possible loss of data
+H:\HK8\game\G\SourceGame\Tilemap.cpp(17,33): warning C4244:  '=': conversion from 'float' to 'int', possible loss of data
+H:\HK8\game\G\SourceGame\Tilemap.cpp(20,43): warning C4244:  '=': conversion from 'float' to 'int', possible loss of data
+H:\HK8\game\G\SourceGame\Tilemap.cpp(23,49): warning C4244:  '=': conversion from 'float' to 'int', possible loss of data
+H:\HK8\game\G\SourceGame\Tilemap.cpp(47,43): warning C4018:  '<=': signed/unsigned mismatch
+H:\HK8\game\G\SourceGame\Tilemap.cpp(49,51): warning C4018:  '<=': signed/unsigned mismatch
+H:\HK8\game\G\SourceGame\Tilemap.cpp(60,45): warning C4244:  'argument': conversion from 'int' to 'float', possible loss of data
+H:\HK8\game\G\SourceGame\Tilemap.cpp(60,31): warning C4244:  'argument': conversion from 'int' to 'float', possible loss of data
+H:\HK8\game\G\SourceGame\Tilemap.cpp(78,35): warning C4244:  'argument': conversion from 'float' to 'int', possible loss of data
+H:\HK8\game\G\SourceGame\Tilemap.cpp(78,22): warning C4244:  'argument': conversion from 'float' to 'int', possible loss of data
+H:\HK8\game\G\SourceGame\Tilemap.cpp(103,37): warning C4018:  '<': signed/unsigned mismatch
+  WinMain.cpp
+H:\HK8\game\G\SourceGame\Tilemap.cpp(106,44): warning C4018:  '<': signed/unsigned mismatch
+H:\HK8\game\G\SourceGame\WinMain.cpp(19,12): warning C4244:  'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Generating Code...
+H:\HK8\game\G\SourceGame\WinMain.cpp(29,21): warning C4244:  'initializing': conversion from 'double' to 'DWORD', possible loss of data
+  LINK : H:\HK8\game\G\Debug\SourceGame.exe not found or not built by the last incremental link; performing full link
   SourceGame.vcxproj -> H:\HK8\game\G\Debug\SourceGame.exe
