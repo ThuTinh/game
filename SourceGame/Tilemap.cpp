@@ -2,6 +2,8 @@
 #include<fstream>
 using namespace std;
 
+
+
 void Tilemap::render(Camera * camera)
 {
 	/* height của world */
@@ -123,6 +125,22 @@ void Tilemap::Init(const char * folderPath)
 
 	/* khởi tạo bằng phương thức trên */
 	Init(tilesheetString.c_str(), matrixPathString.c_str());
+}
+int Tilemap::getTileWidth()
+{
+	return  tileWidth;
+}
+int Tilemap::getTileHeight()
+{
+	return tileHeight;
+}
+int Tilemap::getTileRows()
+{
+	return tileRows;
+}
+int Tilemap::getTileColumns()
+{
+	return tileColumns;
 }
 Tilemap::Tilemap()
 {

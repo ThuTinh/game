@@ -141,10 +141,12 @@
     <ClInclude Include="Animation.h" />
     <ClInclude Include="BaseObject.h" />
     <ClInclude Include="Camera.h" />
+    <ClInclude Include="Cell.h" />
     <ClInclude Include="Collision.h" />
     <ClInclude Include="CollisionType.h" />
     <ClInclude Include="CollisionTypeCollide.h" />
     <ClInclude Include="debug.h" />
+    <ClInclude Include="DelayTime.h" />
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="fire.h" />
     <ClInclude Include="FrameAnimation.h" />
@@ -155,8 +157,10 @@
     <ClInclude Include="GameTime.h" />
     <ClInclude Include="GameUtils.h" />
     <ClInclude Include="Gate1.h" />
+    <ClInclude Include="Grid.h" />
     <ClInclude Include="KEY.h" />
     <ClInclude Include="Leopart.h" />
+    <ClInclude Include="Light.h" />
     <ClInclude Include="List.h" />
     <ClInclude Include="MovableRect.h" />
     <ClInclude Include="PhysicsObject.h" />
@@ -168,6 +172,7 @@
     <ClInclude Include="SpriteManager.h" />
     <ClInclude Include="Stair.h" />
     <ClInclude Include="Tilemap.h" />
+    <ClInclude Include="Weapon.h" />
     <ClInclude Include="WindowGame.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="Zoombie.h" />
@@ -176,8 +181,10 @@
     <ClCompile Include="Animation.cpp" />
     <ClCompile Include="BaseObject.cpp" />
     <ClCompile Include="Camera.cpp" />
+    <ClCompile Include="Cell.cpp" />
     <ClCompile Include="Collision.cpp" />
     <ClCompile Include="debug.cpp" />
+    <ClCompile Include="DelayTime.cpp" />
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="fire.cpp" />
     <ClCompile Include="Game.cpp" />
@@ -187,8 +194,10 @@
     <ClCompile Include="GameTime.cpp" />
     <ClCompile Include="GameUtils.cpp" />
     <ClCompile Include="Gate1.cpp" />
+    <ClCompile Include="Grid.cpp" />
     <ClCompile Include="KEY.cpp" />
     <ClCompile Include="Leopart.cpp" />
+    <ClCompile Include="Light.cpp" />
     <ClCompile Include="MovableRect.cpp" />
     <ClCompile Include="PhysicsObject.cpp" />
     <ClCompile Include="Player.cpp" />
@@ -198,6 +207,7 @@
     <ClCompile Include="SpriteManager.cpp" />
     <ClCompile Include="Stair.cpp" />
     <ClCompile Include="Tilemap.cpp" />
+    <ClCompile Include="Weapon.cpp" />
     <ClCompile Include="WindowGame.cpp" />
     <ClCompile Include="WinMain.cpp" />
     <ClCompile Include="Scene.cpp" />

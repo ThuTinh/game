@@ -1,4 +1,5 @@
 #include "Player.h"
+#include "Weapon.h"
 
 
 
@@ -144,7 +145,8 @@ void Player::onUpdate(float dt)
 	keyRightDown = KEY::getInstance()->isRightDown;
 	keyUpDown = KEY::getInstance()->isUpDown;
 	keyDownDown = KEY::getInstance()->isDownDown;
-
+	isAttack = KEY::getInstance()->isAttackDown;
+	attachDelay.update();
 	/* kiểm tra key jump có được nhấn */
 	keyJumpPress = KEY::getInstance()->isJumpPress;
 
@@ -164,11 +166,11 @@ void Player::onUpdate(float dt)
 				/* set animation chạy */
 				setAnimation(PLAYER_ACTION_RUN);
 				setVx(-vx);
-				
 				setDirection(TEXTURE_DIRECTION_RIGHT);
 			}
+			else
 			/* nếu giữ key phải */
-			else if (keyRightDown)
+			 if (keyRightDown)
 			{
 				/* set animation chạy */
 				setAnimation(PLAYER_ACTION_RUN);
@@ -180,6 +182,7 @@ void Player::onUpdate(float dt)
 			{
 				/* set animation đứng yên */
 				setAnimation(PLAYER_ACTION_STAND);
+				
 				setVx(0);
 			}
 			/* nếu đứng trên sàn mà nhấn key jump thì sẽ cho nhân vật nhảy. còn nếu ở trên không mà nhấn key jump thì nó sẽ
@@ -188,6 +191,16 @@ void Player::onUpdate(float dt)
 			{
 				setVy(GLOBALS_D("player_vy_jump"));
 				setAnimation(PLAYER_ACTION_JUMP);
+				attachDelay.start();
+				if (attachDelay.isTerminated())
+				{
+					playerState = PLAYER_STATE_NORMAL;
+				}
+			
+			}
+			if (isAttack) {
+				playerState = PLAYER_STATE_ATTACK;
+				attachDelay.start();
 			}
 		}
 		else /* nếu nhân vật không đứng trên sàn (đang lơ lững trên không) */
@@ -197,6 +210,20 @@ void Player::onUpdate(float dt)
 
 		/* gọi lại phương thức xử lý onUpdate đã được định nghĩa ở lớp cha control click vào PhysicsObject::onUpdate để biết */
 		/* gọi lại xử lý của lớp cha */
+		PhysicsObject::onUpdate(dt);
+		
+
+		break;
+	}
+	case PLAYER_STATE_ATTACK:
+	{
+		setAnimation(PLAYER_ACTION_STAND_USE_SUB);
+		setVx(0);
+		setDx(0);
+		if (attachDelay.isTerminated())
+		{
+			playerState = PLAYER_STATE_NORMAL;
+		}
 		PhysicsObject::onUpdate(dt);
 		break;
 	}
@@ -315,11 +342,23 @@ PLAYER_STAIR_STATE Player::getPlayerStairState()
 	return playerStairState;
 }
 
+bool Player::getIsAttack()
+{
+	return this->isAttack;
+}
+
+void Player::setIsAttack(bool attack)
+{
+	this->isAttack = attack;
+}
+
 Player::Player()
 {
 	setSprite(SPR(SPRITE_INFO_SIMON));
 	/* set State hiện tại là normal */
 	playerState = PLAYER_STATE::PLAYER_STATE_NORMAL;
+	// 1000 ms = 1s
+	attachDelay.init(70);
 }
 
 

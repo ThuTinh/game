@@ -1,4 +1,6 @@
 #include "BaseObject.h"
+#include "Player.h"
+#include "Weapon.h"
 
 void BaseObject::setSprite(Sprite * sprite)
 {
@@ -70,9 +72,13 @@ void BaseObject::update(float dt)
 				setIsLastFrameAnimationDone(true);
 			}
 		}
-	}
 
-	onUpdate(dt);
+		if (getIsLastFrameAnimationDone() || frameIndex >= (sprite->animations.at(animationIndex)->frames.size() - 1)) {
+			onUpdate(dt);
+		}
+	}
+	
+	
 }
 
 void BaseObject::onUpdate(float dt)

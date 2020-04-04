@@ -11,6 +11,7 @@ public:
 		/* sẽ bằng true nếu bạn giữ key jump */
 		isJumpDown,
 		isPreviousJumpDown,
+		isAttackDown,
 		/* sẽ bằng true nếu bạn chỉ nhấn key jump lần đầu. nếu lần sau vẫn giữ key jump thì nó sẽ là false */
 		isJumpPress,
 		isSpace1Down,
@@ -21,6 +22,7 @@ public:
 
 	static KEY* instance;
 	static KEY* getInstance();
+
 
 	void update();
 	

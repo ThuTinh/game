@@ -21,6 +21,7 @@ void PhysicsObject::onUpdate(float dt)
 		/* x = x0 + vx*t = x0 + dx => dx = vx*t*/
 		setDx(getVx()*dt);
 		setDy(getVy()*dt);
+		
 	}
 
 	/* mặc định là false cho tới khi chạm sàn */
