@@ -1,4 +1,4 @@
-#include "Scene.h"
+#include "World.h"
 #include"Camera.h"
 #include"Player.h"
 #include"Zoombie.h"
@@ -11,11 +11,15 @@
 #include"Collision.h"
 #include "Weapon.h"
 #include "Light.h"
+#include"Archery.h"
+#include"Sword.h"
+#include "BigHeart.h"
+#include <typeinfo>
 #include<Windows.h>
 #include <string>
 
 
-void Scene::Init(const char * tilesheetPath,
+void World::Init(const char * tilesheetPath,
 	const char * matrixPath, 
 	const char * objectsPath,
 	const char* collisionTypeCollidePath, 
@@ -23,6 +27,8 @@ void Scene::Init(const char * tilesheetPath,
 {
 	/* khởi tạo vị trí player */
 	Player::getInstance()->set(52, 350, 16, 30);
+	Weapon::getInstance()->setWidth(25);
+	Weapon::getInstance()->setHeight(18);
 
 	/* khởi tạo tilemap */
 	tilemap.Init(tilesheetPath, matrixPath);
@@ -59,17 +65,28 @@ void Scene::Init(const char * tilesheetPath,
 		case SPRITE_INFO_GATE1:
 			obj = new Gate1();
 			break;
-		case SPRITE_INFOR_ZOOMBIE:
+		case SPRITE_INFO_ZOOMBIE:
 			obj = new Zoombie();
 			break;
 		case SPRITE_INFO_LEOPART:
 			obj = new Leopart();
 			break;
+		case SPRITE_INFO_ARCHERY:
+			obj = new Archery();
+			break;
+		case SPRITE_INFO_TYM:
+			obj = new BigHeart();
+			break;
+		case SPRITE_INFO_SWORD:
+			obj = new Sword();
+			break;
+
 		default:
 			obj = new BaseObject();
 			break;
 		}
 		obj->id = id;
+
 		/* đọc thông số của đối tượng */
 		obj->onInitFromFile(fs, worldHeight);
 		if (id >= 0)
@@ -83,7 +100,9 @@ void Scene::Init(const char * tilesheetPath,
 		/* thêm object vào từng loại đối tượng */
 		objectCategories.at(obj->getCollisionType())->_Add(obj);
 
+
 	}
+	objectCategories.at(Weapon::getInstance()->getCollisionType())->_Add(Weapon::getInstance());
 
 
 	/* đọc collisiontype collide */
@@ -97,45 +116,45 @@ void Scene::Init(const char * tilesheetPath,
 		CollisionTypeCollide* collisionTypeCollide = new CollisionTypeCollide();
 		collisionTypeCollide->COLLISION_TYPE_1 = (COLLISION_TYPE)collisionType1;
 		collisionTypeCollide->COLLISION_TYPE_2 = (COLLISION_TYPE)collisionType2;
-		collisionTypeCollides._Add(collisionTypeCollide);
+		collisionTypeCollides._Add(collisionTypeCollide); 
 	}
 
 	/* đọc space */
-	int numberOfSpaces = 0;
-	ifstream fsSpace(spacePath);
+	int numberOfScenes = 0;
+	ifstream fsScene(spacePath);
 	/* enter 1 dòng */
-	ignoreLineIfstream(fsSpace, 1);
-	fsSpace >> numberOfSpaces;
-	for (size_t i = 0; i < numberOfSpaces; i++)
+	ignoreLineIfstream(fsScene, 1);
+	fsScene >> numberOfScenes;
+	for (size_t i = 0; i < numberOfScenes; i++)
 	{
 		/* enter 4 dòng */
-		ignoreLineIfstream(fsSpace, 4);
-		Space* space = new Space();
-		fsSpace >> space->X >> space->Y >> space->Width >> space->Height;
+		ignoreLineIfstream(fsScene, 4);
+		Scene* tempScene = new Scene();
+		fsScene >> tempScene->X >> tempScene->Y >> tempScene->Width >> tempScene->Height;
 
 		/* enter 2 dòng */
-		ignoreLineIfstream(fsSpace, 2);
-		fsSpace >> space->CameraX >> space->CameraY;
+		ignoreLineIfstream(fsScene, 2);
+		fsScene >> tempScene->CameraX >> tempScene->CameraY;
 
 		/* enter 2 dòng */
-		ignoreLineIfstream(fsSpace, 2);
-		fsSpace >> space->PlayerX >> space->PlayerY;
+		ignoreLineIfstream(fsScene, 2);
+		fsScene >> tempScene->PlayerX >> tempScene->PlayerY;
 
 		/* do chiều y của trong file định nghĩa ngược với chiều logic nên cần đổi lại */
-		space->CameraY = worldHeight - space->CameraY;
-		space->PlayerY = worldHeight - space->PlayerY;
-		space->Y = worldHeight - space->Y;
+		tempScene->CameraY = worldHeight - tempScene->CameraY;
+		tempScene->PlayerY = worldHeight - tempScene->PlayerY;
+		tempScene->Y = worldHeight - tempScene->Y;
 		
 		/* thêm vào space */
-		spaces._Add(space);
+		scenes._Add(tempScene);
 	}
 
 	/* bắt đầu từ space 0 */
-	setCurrentSpace(0);
-	resetLocationInSpace();
+	setCurrentScene(1);
+	resetLocationInScene();
 }
 
-void Scene::Init(string folderPath)
+void World::Init(string folderPath)
 {
 
 	/* tìm đường dẫn tilesheet và matrix object */
@@ -170,7 +189,7 @@ void Scene::Init(string folderPath)
 
 }
 
-void Scene::update(float dt)
+void World::update(float dt)
 {
 	
 	KEY* key = KEY::getInstance();
@@ -205,15 +224,35 @@ void Scene::update(float dt)
 
 	grid.checkCellColitionCamera(Camera::getInstance());
 	List<int> temp = grid.getInxInCamera();
-	if (objectInCamera.Count > 0) {
-		objectInCamera.Clear();
+
+	for (int i = 0; i < objectInCamera.Count; i++)
+	{
+		auto obj = objectInCamera[i];
+		int index = allObjects._IndexOf(obj);
+		if (!temp._Contain(index))
+		{
+			if (!Collision::AABBCheck(Camera::getInstance(), obj))
+			{
+				objectInCamera._Remove(obj);
+				obj->restoreLocation();
+				i--;
+			}
+		}
 	}
 	
 	for (int j = 0; j < temp.Count; j++) {
 		int k = temp[j];
 		BaseObject* obj = allObjects[k];
-		objectInCamera._Add(obj);
+		if (obj->getAlive())
+		{
+			if (!objectInCamera._Contain(obj))
+			{
+				objectInCamera._Add(obj);
+			}
+		}
 	}
+
+
 
 	//cap nhap doi tuong co trong khu vuc cua camera
 	for (size_t i = 0; i < objectInCamera.Count; i++)
@@ -222,6 +261,7 @@ void Scene::update(float dt)
 		auto item = objectInCamera.at(i);
 		item->update(dt);
 		Collision::CheckCollision(Player::getInstance(), item);
+		
 	}
 
 	/* cập nhật đối tượng  trong truong hop chua sd grid*/
@@ -237,9 +277,9 @@ void Scene::update(float dt)
 	/* xét va chạm cho các loại đối tượng với nhau */
 	for (size_t i = 0; i < collisionTypeCollides.size(); i++)
 	{
+		
 		COLLISION_TYPE col1 = collisionTypeCollides.at(i)->COLLISION_TYPE_1;
 		COLLISION_TYPE col2 = collisionTypeCollides.at(i)->COLLISION_TYPE_2;
-
 		/* danh sách đối tượng thuộc collision type 1 */
 		List<BaseObject*>* collection1 = objectCategories.at(col1);
 		/* danh sách đối tượng thuộc collision type 2 */
@@ -259,35 +299,37 @@ void Scene::update(float dt)
 	Camera::getInstance()->update();
 }
 
-void Scene::setCurrentSpace(int spaceIndex)
+void World::setCurrentScene(int sceneIndex)
 {
-	this->currentSpace = spaces.at(spaceIndex);
-	Camera::getInstance()->setSpace(this->currentSpace);
+	this->currentScene = scenes.at(sceneIndex);
+	Camera::getInstance()->setScene(this->currentScene);
 }
 
-Space * Scene::getCurrentSpace()
+Scene * World::getCurrentScene()
 {
-	return currentSpace;
+	return currentScene;
 }
 
-void Scene::resetLocationInSpace()
+void World::resetLocationInScene()
 {
 	Camera* camera = Camera::getInstance();
 	Player* player = Player::getInstance();
 
-	camera->setLocation(getCurrentSpace()->CameraX, getCurrentSpace()->CameraY);
-	player->setLocation(getCurrentSpace()->PlayerX, getCurrentSpace()->PlayerY);
+	camera->setLocation(getCurrentScene()->CameraX, getCurrentScene()->CameraY);
+	player->setLocation(getCurrentScene()->PlayerX, getCurrentScene()->PlayerY);
 }
 
-void Scene::render()
+void World::render()
 {
 	tilemap.render(Camera::getInstance());
 
 	// vẽ đối tượng xuất  hiện trong camera
 	for (size_t i = 0; i < objectInCamera.Count; i++)
 	{
+		
+		//OutputDebugStringA(("Loai gi ne : " + std::to_string(objectInCamera[i].)+ "\n").c_str());
 		/* vẽ đối tượng */
-		objectInCamera[i]->render(Camera::getInstance());
+			objectInCamera[i]->render(Camera::getInstance());
 	}
 
 			// ve tat ca doi duong
@@ -300,10 +342,10 @@ void Scene::render()
 	Weapon::getInstance()->render();
 }
 
-Scene::Scene()
+World::World()
 {
 	
 }
-Scene::~Scene()
+World::~World()
 {
 }

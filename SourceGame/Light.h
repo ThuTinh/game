@@ -1,14 +1,21 @@
 ﻿#pragma once
-#include "PhysicsObject.h"
-/* lớp Zoombie để hiện thực lớp BaseObject */
+#include "Misc.h"
 class Light :
-	public PhysicsObject
+	public Misc
 {
 
 public:
-	void onCollision(MovableRect* other, float collisionTime, int nx, int ny) override;
-	void onUpdate(float dt) override;
+	
 	Light();
 	~Light();
 };
 
+Light::Light()
+{
+	setAnimation(0);
+	/*setDirection(TEXTURE_DIRECTION::TEXTURE_DIRECTION_LEFT);*/
+}
+
+Light::~Light()
+{
+}

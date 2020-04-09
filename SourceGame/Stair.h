@@ -11,6 +11,7 @@ public:
 	void setParam(const char* name, bool value);
 	/* override lại phương thức onUpdate của baseobject */
 	void onUpdate(float dt) override;
+	void update(float dt) override;
 	Stair();
 	~Stair();
 };

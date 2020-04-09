@@ -24,6 +24,8 @@ class Weapon : public PhysicsObject
 public:
 	void render();
 	static Weapon* getInstance();
+	void onCollision(MovableRect* other, float collisionTime, int nx, int ny) override;
+	void onUpdate(float dt) override;
 
 	Weapon();
 	~Weapon();

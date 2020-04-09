@@ -40,6 +40,14 @@ double GameConfiguration::GetConfiguration(const char * key)
 		globalsConfigurationDouble->insert(pair<const char*, double>("player_stair_dy", 1)); /* 1 pixel/ frame */
 
 
+		globalsConfigurationDouble->insert(pair<const char*, double>("leopart_run_dx", 50));  
+		globalsConfigurationDouble->insert(pair<const char*, double>("leopart_jump_vy", 180)); 
+		globalsConfigurationDouble->insert(pair<const char*, double>("leopart_run_vx", 80)); 
+		globalsConfigurationDouble->insert(pair<const char*, double>("zoombie_run_vx", 30));
+		globalsConfigurationDouble->insert(pair<const char*, double>("zoombie_run_dx", 200));
+		globalsConfigurationDouble->insert(pair<const char*, double>("zoombie_run_dx_to_turning", 300));
+
+		
 		/* TODO tạo thêm các giá trị cấu hình double game tại đây 
 		Ví dụ: globalsConfiguration->insert(pair<const char*, double>("gia_tri_key", 10)); 10 la gia tri cua gia_tri_key
 		*/

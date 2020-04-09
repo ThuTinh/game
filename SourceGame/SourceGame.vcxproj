@@ -139,6 +139,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Animation.h" />
+    <ClInclude Include="Archery.h" />
     <ClInclude Include="BaseObject.h" />
     <ClInclude Include="Camera.h" />
     <ClInclude Include="Cell.h" />
@@ -158,27 +159,32 @@
     <ClInclude Include="GameUtils.h" />
     <ClInclude Include="Gate1.h" />
     <ClInclude Include="Grid.h" />
+    <ClInclude Include="Item.h" />
     <ClInclude Include="KEY.h" />
     <ClInclude Include="Leopart.h" />
     <ClInclude Include="Light.h" />
     <ClInclude Include="List.h" />
+    <ClInclude Include="Misc.h" />
     <ClInclude Include="MovableRect.h" />
     <ClInclude Include="PhysicsObject.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Rect.h" />
-    <ClInclude Include="SceneManager.h" />
-    <ClInclude Include="Space.h" />
+    <ClInclude Include="LevelManager.h" />
+    <ClInclude Include="Scene.h" />
     <ClInclude Include="Sprite.h" />
     <ClInclude Include="SpriteManager.h" />
     <ClInclude Include="Stair.h" />
+    <ClInclude Include="Sword.h" />
     <ClInclude Include="Tilemap.h" />
+    <ClInclude Include="BigHeart.h" />
     <ClInclude Include="Weapon.h" />
     <ClInclude Include="WindowGame.h" />
-    <ClInclude Include="Scene.h" />
+    <ClInclude Include="World.h" />
     <ClInclude Include="Zoombie.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Animation.cpp" />
+    <ClCompile Include="Archery.cpp" />
     <ClCompile Include="BaseObject.cpp" />
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="Cell.cpp" />
@@ -195,22 +201,26 @@
     <ClCompile Include="GameUtils.cpp" />
     <ClCompile Include="Gate1.cpp" />
     <ClCompile Include="Grid.cpp" />
+    <ClCompile Include="Item.cpp" />
     <ClCompile Include="KEY.cpp" />
     <ClCompile Include="Leopart.cpp" />
     <ClCompile Include="Light.cpp" />
+    <ClCompile Include="Misc.cpp" />
     <ClCompile Include="MovableRect.cpp" />
     <ClCompile Include="PhysicsObject.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Rect.cpp" />
-    <ClCompile Include="SceneManager.cpp" />
+    <ClCompile Include="LevelManager.cpp" />
     <ClCompile Include="Sprite.cpp" />
     <ClCompile Include="SpriteManager.cpp" />
     <ClCompile Include="Stair.cpp" />
+    <ClCompile Include="Sword.cpp" />
     <ClCompile Include="Tilemap.cpp" />
+    <ClCompile Include="BigHeart.cpp" />
     <ClCompile Include="Weapon.cpp" />
     <ClCompile Include="WindowGame.cpp" />
     <ClCompile Include="WinMain.cpp" />
-    <ClCompile Include="Scene.cpp" />
+    <ClCompile Include="World.cpp" />
     <ClCompile Include="Zoombie.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

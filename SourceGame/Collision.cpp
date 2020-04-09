@@ -1,4 +1,6 @@
 #include "Collision.h"
+#include"Weapon.h"
+#include"Player.h"
 #include<iostream>
 #include<string>
 
@@ -129,9 +131,11 @@ void Collision::CheckCollision(MovableRect * M, MovableRect * S)
 	{
 		return;
 	}
+	
 
 	if (AABBCheck(M, S))
 	{
+		
 		M->onAABB(S);
 		S->onAABB(M);
 	}

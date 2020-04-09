@@ -55,6 +55,12 @@
     <Filter Include="Grid">
       <UniqueIdentifier>{6da79e65-343d-4548-8d25-e9d30bb6bb24}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Objects\Item">
+      <UniqueIdentifier>{14b27ef0-589e-400f-8ee4-8656ebcc13f5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Stair">
+      <UniqueIdentifier>{b37809c6-63fe-40e4-aa0c-69316d3f42d3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Sprite.h">
@@ -111,18 +117,6 @@
     <ClInclude Include="CollisionTypeCollide.h">
       <Filter>Collision</Filter>
     </ClInclude>
-    <ClInclude Include="Space.h">
-      <Filter>WorldAndCamera</Filter>
-    </ClInclude>
-    <ClInclude Include="Stair.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Scene.h">
-      <Filter>WorldAndCamera</Filter>
-    </ClInclude>
-    <ClInclude Include="SceneManager.h">
-      <Filter>WorldAndCamera</Filter>
-    </ClInclude>
     <ClInclude Include="debug.h">
       <Filter>debug</Filter>
     </ClInclude>
@@ -171,6 +165,33 @@
     <ClInclude Include="Grid.h">
       <Filter>Grid</Filter>
     </ClInclude>
+    <ClInclude Include="Misc.h">
+      <Filter>Objects\Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="Archery.h">
+      <Filter>Objects\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="Sword.h">
+      <Filter>Objects\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="BigHeart.h">
+      <Filter>Objects\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="Item.h">
+      <Filter>Objects\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="LevelManager.h">
+      <Filter>WorldAndCamera</Filter>
+    </ClInclude>
+    <ClInclude Include="World.h">
+      <Filter>WorldAndCamera</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene.h">
+      <Filter>WorldAndCamera</Filter>
+    </ClInclude>
+    <ClInclude Include="Stair.h">
+      <Filter>Stair</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Sprite.cpp">
@@ -216,15 +237,6 @@
       <Filter>AnimationAndSprite</Filter>
     </ClCompile>
     <ClCompile Include="Camera.cpp">
-      <Filter>WorldAndCamera</Filter>
-    </ClCompile>
-    <ClCompile Include="Stair.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Scene.cpp">
-      <Filter>WorldAndCamera</Filter>
-    </ClCompile>
-    <ClCompile Include="SceneManager.cpp">
       <Filter>WorldAndCamera</Filter>
     </ClCompile>
     <ClCompile Include="debug.cpp">
@@ -274,6 +286,30 @@
     </ClCompile>
     <ClCompile Include="Grid.cpp">
       <Filter>Grid</Filter>
+    </ClCompile>
+    <ClCompile Include="Misc.cpp">
+      <Filter>Objects\Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="Archery.cpp">
+      <Filter>Objects\Item</Filter>
+    </ClCompile>
+    <ClCompile Include="Sword.cpp">
+      <Filter>Objects\Item</Filter>
+    </ClCompile>
+    <ClCompile Include="BigHeart.cpp">
+      <Filter>Objects\Item</Filter>
+    </ClCompile>
+    <ClCompile Include="Item.cpp">
+      <Filter>Objects\Item</Filter>
+    </ClCompile>
+    <ClCompile Include="LevelManager.cpp">
+      <Filter>WorldAndCamera</Filter>
+    </ClCompile>
+    <ClCompile Include="World.cpp">
+      <Filter>WorldAndCamera</Filter>
+    </ClCompile>
+    <ClCompile Include="Stair.cpp">
+      <Filter>Stair</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

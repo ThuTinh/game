@@ -17,9 +17,9 @@ void Game::GameInit()
 	/*world = new Scene();
 	world->Init("assets/levels/level1");*/
 
-	//scenemanager
-	sceneManager = new SceneManager();
-	sceneManager->init();
+	//LevelManager
+	levelManager = new LevelManager();
+	levelManager->init();
 
 	Camera::getInstance()->setSize(
 		/* kích thước của camera bằng với kích thước của backbuffer */
@@ -36,19 +36,19 @@ void Game::GameUpdate(float dt)
 	/* cập nhật đối tượng trong world */
 	//world->update(dt);
 
-	sceneManager->getCurrentScene()->update(dt);
+	levelManager->getCurrentLevel()->update(dt);
 }
 /* Các câu lệnh vẽ của game */
 void Game::GameRender()
 {
 	/* vẽ đối tượng trong world */
 	/*world->render();*/
-	sceneManager->getCurrentScene()->render();
+	levelManager->getCurrentLevel()->render();
 }
 
-SceneManager* Game::getSceneManager()
+LevelManager* Game::getLevelManager()
 {
-	return sceneManager;
+	return levelManager;
 }
 
 Game::Game()

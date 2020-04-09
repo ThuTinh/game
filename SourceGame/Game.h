@@ -5,15 +5,15 @@
 #include"FrameAnimation.h"
 #include"Animation.h"
 #include"Sprite.h"
-#include"Scene.h"
-#include "SceneManager.h"
+#include"World.h"
+#include "LevelManager.h"
 class Game
 {
 	/* singleton pattern */
 	static Game* instance;
 
 	/*Scene* world;*/
-	SceneManager* sceneManager;
+	LevelManager* levelManager;
 
 public:
 	static Game* getInstance();
@@ -23,7 +23,7 @@ public:
 	void GameUpdate(float dt);
 	/* Các câu lệnh vẽ của game */
 	void GameRender();
-	SceneManager* getSceneManager();
+	LevelManager* getLevelManager();
 	Game();
 	~Game();
 };

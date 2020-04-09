@@ -1,12 +1,12 @@
 #pragma once
 #include"MovableRect.h"
-#include"Space.h"
+#include"Scene.h"
 /* camera là 1 hình chữ nhật có thể di chuyển nên sẽ kế thừa lại lớp MovableRect */
 class Camera : public MovableRect
 {
 	static Camera* instance;
 
-	Space* space;
+	Scene* scene;
 	
 public:
 	static Camera* getInstance();
@@ -17,8 +17,8 @@ public:
 	*/
 	void convertWorldToView(float xWorld, float yWorld, float& xView, float& yView);
 
-	void setSpace(Space* space);
-
+	void setScene(Scene* scene);
+	Scene* getScene();
 	/* cập nhật camera */
 	void update();
 
