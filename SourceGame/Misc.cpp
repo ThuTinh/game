@@ -8,10 +8,6 @@ Misc::Misc()
 
 void Misc::onCollision(MovableRect* other, float collisionTime, int nx, int ny)
 {
-	/*if (other->getCollisionType() == COLLISION_TYPE_WEAPON) {
-		setAlive(false);
-	}*/
-	/* ngăn chặn di chuyển */
 	preventMovementWhenCollision(collisionTime, nx, ny);
 	PhysicsObject::onCollision(other, collisionTime, nx, ny);
 }

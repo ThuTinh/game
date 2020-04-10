@@ -25,12 +25,6 @@
     <Filter Include="Utils">
       <UniqueIdentifier>{9180a3df-9877-455d-8aa5-6a6ab874b12c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="WorldAndCamera">
-      <UniqueIdentifier>{1ead551e-5ecd-4446-9a74-617ae1046c21}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="WindowAndDirectX">
-      <UniqueIdentifier>{7f795d73-bce5-4b14-93f4-885a59e63a94}</UniqueIdentifier>
-    </Filter>
     <Filter Include="debug">
       <UniqueIdentifier>{af0cc1ab-9212-4e46-abda-6afab4f6f7a0}</UniqueIdentifier>
     </Filter>
@@ -61,6 +55,15 @@
     <Filter Include="Stair">
       <UniqueIdentifier>{b37809c6-63fe-40e4-aa0c-69316d3f42d3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Camera">
+      <UniqueIdentifier>{27c0f73d-6eec-4509-82a2-7d007d32638b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="World">
+      <UniqueIdentifier>{1ead551e-5ecd-4446-9a74-617ae1046c21}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="WindownDirectX">
+      <UniqueIdentifier>{7f795d73-bce5-4b14-93f4-885a59e63a94}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Sprite.h">
@@ -76,22 +79,19 @@
       <Filter>Collision</Filter>
     </ClInclude>
     <ClInclude Include="Game.h">
-      <Filter>WindowAndDirectX</Filter>
+      <Filter>WindownDirectX</Filter>
     </ClInclude>
     <ClInclude Include="GameDirectX.h">
-      <Filter>WindowAndDirectX</Filter>
+      <Filter>WindownDirectX</Filter>
     </ClInclude>
     <ClInclude Include="GameTexture.h">
-      <Filter>WindowAndDirectX</Filter>
+      <Filter>WindownDirectX</Filter>
     </ClInclude>
     <ClInclude Include="WindowGame.h">
-      <Filter>WindowAndDirectX</Filter>
-    </ClInclude>
-    <ClInclude Include="Camera.h">
-      <Filter>WorldAndCamera</Filter>
+      <Filter>WindownDirectX</Filter>
     </ClInclude>
     <ClInclude Include="Tilemap.h">
-      <Filter>WorldAndCamera</Filter>
+      <Filter>World</Filter>
     </ClInclude>
     <ClInclude Include="GameConfiguration.h">
       <Filter>Utils</Filter>
@@ -181,16 +181,19 @@
       <Filter>Objects\Item</Filter>
     </ClInclude>
     <ClInclude Include="LevelManager.h">
-      <Filter>WorldAndCamera</Filter>
+      <Filter>World</Filter>
     </ClInclude>
     <ClInclude Include="World.h">
-      <Filter>WorldAndCamera</Filter>
+      <Filter>World</Filter>
     </ClInclude>
     <ClInclude Include="Scene.h">
-      <Filter>WorldAndCamera</Filter>
+      <Filter>World</Filter>
     </ClInclude>
     <ClInclude Include="Stair.h">
       <Filter>Stair</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>Camera</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -201,28 +204,28 @@
       <Filter>AnimationAndSprite</Filter>
     </ClCompile>
     <ClCompile Include="GameDirectX.cpp">
-      <Filter>WindowAndDirectX</Filter>
+      <Filter>WindownDirectX</Filter>
     </ClCompile>
     <ClCompile Include="GameTexture.cpp">
-      <Filter>WindowAndDirectX</Filter>
+      <Filter>WindownDirectX</Filter>
     </ClCompile>
     <ClCompile Include="GameUtils.cpp">
       <Filter>Utils</Filter>
     </ClCompile>
     <ClCompile Include="Tilemap.cpp">
-      <Filter>WorldAndCamera</Filter>
+      <Filter>World</Filter>
     </ClCompile>
     <ClCompile Include="WinMain.cpp">
-      <Filter>WindowAndDirectX</Filter>
+      <Filter>WindownDirectX</Filter>
     </ClCompile>
     <ClCompile Include="WindowGame.cpp">
-      <Filter>WindowAndDirectX</Filter>
+      <Filter>WindownDirectX</Filter>
     </ClCompile>
     <ClCompile Include="KEY.cpp">
       <Filter>Utils</Filter>
     </ClCompile>
     <ClCompile Include="Game.cpp">
-      <Filter>WindowAndDirectX</Filter>
+      <Filter>WindownDirectX</Filter>
     </ClCompile>
     <ClCompile Include="GameTime.cpp">
       <Filter>Utils</Filter>
@@ -235,9 +238,6 @@
     </ClCompile>
     <ClCompile Include="Animation.cpp">
       <Filter>AnimationAndSprite</Filter>
-    </ClCompile>
-    <ClCompile Include="Camera.cpp">
-      <Filter>WorldAndCamera</Filter>
     </ClCompile>
     <ClCompile Include="debug.cpp">
       <Filter>debug</Filter>
@@ -303,13 +303,16 @@
       <Filter>Objects\Item</Filter>
     </ClCompile>
     <ClCompile Include="LevelManager.cpp">
-      <Filter>WorldAndCamera</Filter>
+      <Filter>World</Filter>
     </ClCompile>
     <ClCompile Include="World.cpp">
-      <Filter>WorldAndCamera</Filter>
+      <Filter>World</Filter>
     </ClCompile>
     <ClCompile Include="Stair.cpp">
       <Filter>Stair</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera.cpp">
+      <Filter>Camera</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

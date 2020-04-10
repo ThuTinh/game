@@ -17,6 +17,10 @@ void Item::onAABB(MovableRect* other)
 	}
 	if (other == Player::getInstance() && itemState == ITEM_STATE_VISIBLE) {
 		Player::getInstance()->setAnimation(PLAYER_ACTION_COLORS);
+		Player::getInstance()->colorDelay.start();
+
+
+			
 		setState(ITEM_STATE_PLAYER_EATED);
 		this->onPlayerContact();
 	}

@@ -66,6 +66,7 @@ class Player :
 public:
 
 	DelayTime attachDelay;
+	DelayTime colorDelay;
 
 	PLAYER_STATE getPlayerState();
 	void setPlayerState(PLAYER_STATE playerState);

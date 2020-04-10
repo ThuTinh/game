@@ -49,7 +49,6 @@ void World::Init(const char * tilesheetPath,
 	{
 		BaseObject* obj;
 		int id;
-		/* đọc id đối tượng */
 		fs >> id;
 		switch (id)
 		{
@@ -80,7 +79,6 @@ void World::Init(const char * tilesheetPath,
 		case SPRITE_INFO_SWORD:
 			obj = new Sword();
 			break;
-
 		default:
 			obj = new BaseObject();
 			break;
@@ -127,16 +125,16 @@ void World::Init(const char * tilesheetPath,
 	fsScene >> numberOfScenes;
 	for (size_t i = 0; i < numberOfScenes; i++)
 	{
-		/* enter 4 dòng */
+
 		ignoreLineIfstream(fsScene, 4);
 		Scene* tempScene = new Scene();
 		fsScene >> tempScene->X >> tempScene->Y >> tempScene->Width >> tempScene->Height;
 
-		/* enter 2 dòng */
+
 		ignoreLineIfstream(fsScene, 2);
 		fsScene >> tempScene->CameraX >> tempScene->CameraY;
 
-		/* enter 2 dòng */
+
 		ignoreLineIfstream(fsScene, 2);
 		fsScene >> tempScene->PlayerX >> tempScene->PlayerY;
 
@@ -145,12 +143,12 @@ void World::Init(const char * tilesheetPath,
 		tempScene->PlayerY = worldHeight - tempScene->PlayerY;
 		tempScene->Y = worldHeight - tempScene->Y;
 		
-		/* thêm vào space */
+		/* thêm vào scene */
 		scenes._Add(tempScene);
 	}
 
 	/* bắt đầu từ space 0 */
-	setCurrentScene(1);
+	setCurrentScene(0);
 	resetLocationInScene();
 }
 

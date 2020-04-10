@@ -111,10 +111,10 @@ void Stair::onUpdate(float dt)
 				}
 
 				/* stop tất cả chuyển động */
-				player->setVx(0);
+				/*player->setVx(0);
 				player->setVy(0);
 				player->setDx(0);
-				player->setDy(0);
+				player->setDy(0);*/
 
 				/* bắt đầu lên stair */
 				player->setStartStair();

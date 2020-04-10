@@ -22,7 +22,7 @@ void Weapon::onCollision(MovableRect* other, float collisionTime, int nx, int ny
 
 void Weapon::onUpdate(float dt)
 {
-
+	
 }
 
  void Weapon::render()

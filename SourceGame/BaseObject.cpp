@@ -97,14 +97,8 @@ void BaseObject::update(float dt)
 			}
 		}	
 		onUpdate(dt);
-
-		/*if (getIsLastFrameAnimationDone() || frameIndex >= (sprite->animations.at(animationIndex)->frames.size() - 1)) {
-		}*/
 	}
 
-	
-	
-	
 }
 
 void BaseObject::onUpdate(float dt)
@@ -185,6 +179,11 @@ int BaseObject::getFrameAnimation()
 void BaseObject::setFrameAnimation(int frameAnimation)
 {
 	this->frameIndex = frameAnimation;
+}
+
+int BaseObject::getFrameIndex()
+{
+	return frameIndex;
 }
 
 TEXTURE_DIRECTION BaseObject::getDirection()

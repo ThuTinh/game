@@ -70,6 +70,7 @@ public:
 
 	int getFrameAnimation();
 	void setFrameAnimation(int frameAnimation);
+	int getFrameIndex();
 
 	TEXTURE_DIRECTION getDirection();
 	void setDirection(int direction);

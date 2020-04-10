@@ -8,7 +8,7 @@ Player * Player::instance = 0;
 void Player::goStairUp()
 {
 	playerStairDesty = getY() + 8;
-	if (stairDirection == -1)
+	if (stairDirection == 0)
 	{
 		/* stair phải */
 		playerStairDestx += 8;
@@ -29,7 +29,7 @@ void Player::goStairUp()
 void Player::goStairDown()
 {
 	playerStairDesty -= 8;
-	if (stairDirection == 1)
+	if (stairDirection == 0)
 	{
 		/* stair phải */
 		playerStairDestx -= 8;
@@ -114,7 +114,7 @@ void Player::setIsLastRunStair(bool isLastRunStair)
 
 void Player::setStopStair()
 {
-	/* stop tất cả chuyển động */
+	/* nhưng chuyển động */
 	this->setVx(0);
 	this->setVy(0);
 	this->setDx(0);
@@ -144,9 +144,8 @@ void Player::onUpdate(float dt)
 	/* kiểm tra key bên phải có được giữ */
 	keyRightDown = KEY::getInstance()->isRightDown;
 	keyUpDown = KEY::getInstance()->isUpDown;
-	keyDownDown = KEY::getInstance()->isDownPress;
+	keyDownDown = KEY::getInstance()->isDownDown;
 	isAttack = KEY::getInstance()->isAttackPress;
-	attachDelay.update();
 	/* kiểm tra key jump có được nhấn */
 	keyJumpPress = KEY::getInstance()->isJumpPress;
 
@@ -154,8 +153,15 @@ void Player::onUpdate(float dt)
 	isGoUpStair = KEY::getInstance()->isUpPress;
 	isGoDownStair = KEY::getInstance()->isDownPress;
 
+	attachDelay.update();
+	if (getAnimation() == PLAYER_ACTION_COLORS) {
+		colorDelay.update();
+		if(colorDelay.isTerminated())
+			setAnimation(PLAYER_ACTION_STAND);
+		return;
+		
+	} 
 
-	/* update dựa vào playerState */
 	switch (playerState)
 	{
 	case PLAYER_STATE_NORMAL:
@@ -165,6 +171,7 @@ void Player::onUpdate(float dt)
 		/* nếu vật đứng trên sàn */
 		if (getIsOnGround())
 		{
+		
 			/* nếu giữ key trái */
 			if (keyLeftDown)
 			{
@@ -187,7 +194,6 @@ void Player::onUpdate(float dt)
 			{
 				/* set animation đứng yên */
 				setAnimation(PLAYER_ACTION_STAND);
-				
 				setVx(0);
 			}
 			/* nếu đứng trên sàn mà nhấn key jump thì sẽ cho nhân vật nhảy. còn nếu ở trên không mà nhấn key jump thì nó sẽ
@@ -204,7 +210,6 @@ void Player::onUpdate(float dt)
 				{
 					playerState = PLAYER_STATE_NORMAL;
 				}
-				//simon đang jump và thực hiện hành động đánh
 				
 			}
 			else
@@ -216,14 +221,8 @@ void Player::onUpdate(float dt)
 				
 			}
 
-		/*if (isGoUpStair) {
-				playerState = PLAYER_STATE_ON_STAIR;
-				playerStairState = PLAYER_STAIR_STATE_NORUN;
-				
-			}*/
-
 		}
-		else /* nếu nhân vật không đứng trên sàn (đang lơ lững trên không) */
+		else 
 		{
 			setAnimation(PLAYER_ACTION_JUMP);
 			//simon tan cong trong khi nhay
@@ -234,8 +233,6 @@ void Player::onUpdate(float dt)
 			}
 		}
 
-		/* gọi lại phương thức xử lý onUpdate đã được định nghĩa ở lớp cha control click vào PhysicsObject::onUpdate để biết */
-		/* gọi lại xử lý của lớp cha */
 		PhysicsObject::onUpdate(dt);	
 
 		break;
@@ -293,7 +290,7 @@ void Player::onUpdate(float dt)
 			setDy(GLOBALS_D("player_stair_dy"));
 			break;
 		case PLAYER_STAIR_STATE_GO_DOWN:
-			setDx(getDirection() * GLOBALS_D("player_stair_dx"));
+			setDx(-getDirection() * GLOBALS_D("player_stair_dx"));
 			/* đi xuống */
 			setDy(-GLOBALS_D("player_stair_dy"));
 			break;
@@ -317,9 +314,9 @@ void Player::onUpdate(float dt)
 					/* nếu là lần di chuyển cuối cùng */
 					if (getIsLastRunStair())
 					{
-						setY(getY() + 10);
-						setX(getX() + 10);
-						setStopStair();
+							setY(getY() + 8);
+							setX(getX() + 8);	
+							setStopStair();
 					}
 				}
 			}
@@ -338,6 +335,8 @@ void Player::onUpdate(float dt)
 					/* nếu là lần di chuyển cuối cùng */
 					if (getIsLastRunStair())
 					{
+						setY(getY() + 10);
+						setX(getX() - 10);
 						setStopStair();
 					}
 				}
@@ -397,7 +396,8 @@ Player::Player()
 	/* set State hiện tại là normal */
 	playerState = PLAYER_STATE::PLAYER_STATE_NORMAL;
 	// 1000 ms = 1s
-	attachDelay.init(70);
+	attachDelay.init(180);
+	colorDelay.init(100);
 }
 
 
