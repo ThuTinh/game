@@ -26,7 +26,7 @@ void World::Init(const char * tilesheetPath,
 	const char * spacePath)
 {
 	/* khởi tạo vị trí player */
-	Player::getInstance()->set(52, 350, 16, 30);
+	Player::getInstance()->set(52, 178, 16, 30);
 	Weapon::getInstance()->setWidth(25);
 	Weapon::getInstance()->setHeight(18);
 
@@ -313,7 +313,9 @@ void World::resetLocationInScene()
 	Camera* camera = Camera::getInstance();
 	Player* player = Player::getInstance();
 
-	camera->setLocation(getCurrentScene()->CameraX, getCurrentScene()->CameraY);
+	//camera->setLocation(getCurrentScene()->CameraX, getCurrentScene()->CameraY);
+	//player->setLocation(getCurrentScene()->PlayerX, getCurrentScene()->PlayerY);
+	camera->setLocation(0, 400);
 	player->setLocation(getCurrentScene()->PlayerX, getCurrentScene()->PlayerY);
 }
 
@@ -330,12 +332,7 @@ void World::render()
 			objectInCamera[i]->render(Camera::getInstance());
 	}
 
-			// ve tat ca doi duong
-	//for (size_t i = 0; i < allObjects.Count; i++)
-	//{
-	//	/* vẽ đối tượng */
-	//	allObjects[i]->render(Camera::getInstance());
-	//}
+
 	Player::getInstance()->render(Camera::getInstance());;
 	Weapon::getInstance()->render();
 }
