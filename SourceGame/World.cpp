@@ -26,7 +26,7 @@ void World::Init(const char * tilesheetPath,
 	const char * spacePath)
 {
 	/* khởi tạo vị trí player */
-	Player::getInstance()->set(52, 178, 16, 30);
+	Player::getInstance()->set(52, 300, 16, 30);
 	Weapon::getInstance()->setWidth(25);
 	Weapon::getInstance()->setHeight(18);
 
@@ -93,6 +93,7 @@ void World::Init(const char * tilesheetPath,
 			obj->setSprite(SPR(id));
 		}
 		/* thêm đối tượng vào danh sách */
+	
 		allObjects._Add(obj);
 
 		/* thêm object vào từng loại đối tượng */
@@ -259,6 +260,12 @@ void World::update(float dt)
 		auto item = objectInCamera.at(i);
 		item->update(dt);
 		Collision::CheckCollision(Player::getInstance(), item);
+		if (Player::getInstance()->getCollitionGate())
+		{
+			Player::getInstance()->setCollitionGate(false);
+			return;
+
+		}
 		
 	}
 
@@ -313,10 +320,10 @@ void World::resetLocationInScene()
 	Camera* camera = Camera::getInstance();
 	Player* player = Player::getInstance();
 
-	//camera->setLocation(getCurrentScene()->CameraX, getCurrentScene()->CameraY);
-	//player->setLocation(getCurrentScene()->PlayerX, getCurrentScene()->PlayerY);
-	camera->setLocation(0, 400);
+	camera->setLocation(getCurrentScene()->CameraX, getCurrentScene()->CameraY);
 	player->setLocation(getCurrentScene()->PlayerX, getCurrentScene()->PlayerY);
+	//camera->setLocation(0, 400);
+	//player->setLocation(0, 300);
 }
 
 void World::render()

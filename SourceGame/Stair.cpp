@@ -19,7 +19,7 @@ void Stair::onInitFromFile(ifstream & fs, int mapHeight)
 
 void Stair::setParam(const char * name, bool value)
 {
-	if (strcmp(name, "IsRightStair") == 0)
+	if (strcmp(name, "isRightStair") == 0)
 	{
 		this->isRightStair = value;
 	}
@@ -41,15 +41,19 @@ void Stair::onUpdate(float dt)
 		/* nếu nhấn key lên */
 		if (isUpDown)
 		{
+			/*if (player->getAnimation() == PLAYER_ACTION_STAND || player->getAnimation() == PLAYER_ACTION_RUN)
+				player->setIsOnGround(true);*/
 			if (
 				/* stair hiện tại là stair dưới */
 				!isTop &&
 				/* nếu player ở trên ground */
-				player->getIsOnGround() &&
+				player->getIsOnGround() && 
+				
 				/* trạng thái hiện tại của player là bình thường */
 				player->getPlayerState() == PLAYER_STATE_NORMAL
 				)
 			{
+
 				if (isRightStair)
 				{
 					/* đặt player đúng vị trí ban đầu. Tham khảo đối tượng stair trên world để xem */

@@ -1,5 +1,5 @@
 #include "PhysicsObject.h"
-
+#include"Player.h"
 PhysicsObject::PhysicsObject()
 {
 	setAx(0);
@@ -22,10 +22,11 @@ void PhysicsObject::onUpdate(float dt)
 		setDx(getVx()*dt);
 		setDy(getVy()*dt);
 		
+		
 	}
 
 	/* mặc định là false cho tới khi chạm sàn */
-	setIsOnGround(false);
+		setIsOnGround(false);
 }
 
 PhysicsObject::~PhysicsObject()
@@ -94,6 +95,7 @@ void PhysicsObject::setIsOnGround(bool isOnGround)
 
 void PhysicsObject::onCollision(MovableRect * other, float collisionTime, int nx, int ny)
 {
+	
 	/* va chạm sàn là va chạm có phản xạ theo hướng từ dưới lên. mà chiều từ dưới lên là chiều dương nên ny=1 */
 	if (ny == 1)
 	{

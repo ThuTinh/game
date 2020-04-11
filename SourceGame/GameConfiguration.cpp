@@ -18,7 +18,7 @@ double GameConfiguration::GetConfiguration(const char * key)
 		globalsConfigurationDouble->insert(pair<const char*, double>("window_height", 448));
 
 		/* backbuffer_width, backbuffer_height là kích thước của backbuffer */
-		globalsConfigurationDouble->insert(pair<const char*, double>("backbuffer_width", 256));
+		globalsConfigurationDouble->insert(pair<const char*, double>("backbuffer_width", 250));
 		globalsConfigurationDouble->insert(pair<const char*, double>("backbuffer_height", 224));
 
 		/* fps là frame_per_second càng lớn càng mượt nhưng nó sử dụng nhiều cpu hơn */

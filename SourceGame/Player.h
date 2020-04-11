@@ -52,6 +52,7 @@ class Player :
 
 	int stairDirection;
 	bool isAttack;
+	bool collitionGate;
 
 
 
@@ -92,6 +93,8 @@ public:
 	PLAYER_STAIR_STATE getPlayerStairState();
 	bool getIsAttack();
 	void setIsAttack(bool attack);
+	void setCollitionGate(bool colilition);
+	bool getCollitionGate();
 
 	Player();
 	~Player();

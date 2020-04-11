@@ -8,36 +8,42 @@ void LevelManager::init() {
 	fs >> levelIndex;
 	ignoreLineIfstream(fs, 2);
 	fs >> totalLeavels;
-	world = new World * [totalLeavels];
-	string fileName ;
+	string folderPath;
 	ignoreLineIfstream(fs, 2);
 	for(int i = 0; i<totalLeavels; i++) {
-		fs >> fileName;
-		world[i] = new World();
-		ifstream f(fileName);
-		string folderPath;
-		f >> folderPath;
-		world[i]->Init(folderPath);
-		ignoreLineIfstream(fs, 1);
+		fs >>  folderPath;;
+		listFolderName._Add(folderPath);
+		ignoreLineIfstream(fs, 1);		
 	}
+	changeScene(1);
 }
 World* LevelManager::getCurrentLevel() {
-	return world[levelIndex];
+	return world;
 }
 
 World* LevelManager::nextLevel() {
-	if (levelIndex + 1 <= totalLeavels) {
+	if (levelIndex + 1 < totalLeavels) {
 		++levelIndex;
 	}
 	else
 	{
 		levelIndex = 0;
 	}
-	return world[levelIndex];
-	
+	return 0;
+}
+
+void LevelManager::changeScene(int scene)
+{
+	delete world;
+	if (scene >= totalLeavels || scene<0) {
+		scene = 0;
+	}
+	world = new World();
+	world->Init(listFolderName[scene]);
 }
 
 LevelManager::LevelManager() {
+		
 }
 LevelManager::~LevelManager() {
 

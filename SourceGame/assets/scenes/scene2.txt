@@ -1,1 +1,1 @@
-assets/levels/scene1
+assets/levels/scene2

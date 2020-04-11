@@ -235,6 +235,7 @@ void Player::onUpdate(float dt)
 
 		PhysicsObject::onUpdate(dt);	
 
+
 		break;
 	}
 	case PLAYER_STATE_ATTACK:
@@ -390,11 +391,22 @@ void Player::setIsAttack(bool attack)
 	this->isAttack = attack;
 }
 
+void Player::setCollitionGate(bool colilition)
+{
+	this->collitionGate = colilition;
+}
+
+bool Player::getCollitionGate()
+{
+	return collitionGate;
+}
+
 Player::Player()
 {
 	setSprite(SPR(SPRITE_INFO_SIMON));
 	/* set State hiện tại là normal */
 	playerState = PLAYER_STATE::PLAYER_STATE_NORMAL;
+	collitionGate = false;
 	// 1000 ms = 1s
 	attachDelay.init(180);
 	colorDelay.init(100);
