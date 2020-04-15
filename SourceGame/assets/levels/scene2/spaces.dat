@@ -1,9 +1,9 @@
 SceneCount
-1
+2
 
 space1
 X       Y       Width       Height
-0      0            250      178
+0      0            250      191
 CameraX     CameraY
 0          0
 PlayerX     PlayerY
@@ -11,8 +11,8 @@ PlayerX     PlayerY
 
 space2
 X       Y       Width       Height
-0      -143      768         178
+257      30      499         185
 CameraX     CameraY
-0          0
+519          0
 PlayerX     PlayerY
-29          162
+631          192

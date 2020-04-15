@@ -34,7 +34,11 @@ SpriteManager::SpriteManager()
 	sprites[SPRITE_INFO_ARCHERY]->InitFromFile("assets/sprites/misc/cung/image.png", "assets/sprites/misc/cung/cung.info.dat");
 	sprites[SPRITE_INFO_TYM]->InitFromFile("assets/sprites/misc/tim/image.png", "assets/sprites/misc/tim/tim.info.dat");
 	sprites[SPRITE_INFO_SWORD]->InitFromFile("assets/sprites/misc/kiem/image.png", "assets/sprites/misc/kiem/kiem.info.dat");
+	sprites[SPRINTE_INFO_BLACK_NIGHT]->InitFromFile("assets/sprites/enemy/blacknight/image.png", "assets/sprites/enemy/blacknight/blacknight.info.dat");
+	sprites[SPRINTE_INFO_BAT]->InitFromFile("assets/sprites/enemy/bat/bat.png", "assets/sprites/enemy/bat/bat.info.dat");
 
+	//sprites[SPRITE_INFO_MISC]->InitFromFile("assets/sprites/misc/scorebar/misc.png", "assets/sprites/misc/scorebar/misc.info.txt");
+//	sprites[SPRITE_INFO_MISC]->image->direction = TEXTURE_DIRECTION::TEXTURE_DIRECTION_RIGHT;
 }
 SpriteManager::~SpriteManager()
 {

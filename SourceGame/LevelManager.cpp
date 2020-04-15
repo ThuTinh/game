@@ -10,15 +10,21 @@ void LevelManager::init() {
 	fs >> totalLeavels;
 	string folderPath;
 	ignoreLineIfstream(fs, 2);
+
+	worlds = new World*[totalLeavels];
+
 	for(int i = 0; i<totalLeavels; i++) {
+		worlds[i] = new World();
 		fs >>  folderPath;;
 		listFolderName._Add(folderPath);
 		ignoreLineIfstream(fs, 1);		
+		worlds[i]->Init(folderPath);
 	}
-	changeScene(1);
+
+	changeWorld(2);
 }
 World* LevelManager::getCurrentLevel() {
-	return world;
+	return currentWorld;
 }
 
 World* LevelManager::nextLevel() {
@@ -32,14 +38,11 @@ World* LevelManager::nextLevel() {
 	return 0;
 }
 
-void LevelManager::changeScene(int scene)
+void LevelManager::changeWorld(int index)
 {
-	delete world;
-	if (scene >= totalLeavels || scene<0) {
-		scene = 0;
-	}
-	world = new World();
-	world->Init(listFolderName[scene]);
+	this->currentWorld = worlds[index];
+	currentWorld->setCurrentScene(0);
+	currentWorld->resetLocationInScene();
 }
 
 LevelManager::LevelManager() {

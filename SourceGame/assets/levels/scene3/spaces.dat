@@ -1,0 +1,18 @@
+SceneCount
+2
+
+space1
+X       Y       Width       Height
+0      208           773     180
+CameraX     CameraY
+527          190
+PlayerX     PlayerY
+699          331
+
+space2
+X       Y       Width       Height
+0      -30      770         170
+CameraX     CameraY
+0          -30
+PlayerX     PlayerY
+81         167

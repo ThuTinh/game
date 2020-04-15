@@ -1,0 +1,27 @@
+Sprite Batne
+R	G	B
+255	0	128	0
+Animation Count
+2
+
+
+Name
+BatStand
+Frame Count
+1
+
+FrameX		FrameY		FrameWidth		FrameHeight		AnchorX		AnchorY
+0			0			16				16				0			0
+
+
+Name
+batFly
+Frame Count
+3
+
+FrameX		FrameY		FrameWidth		FrameHeight		AnchorX		AnchorY
+16			0			16				16				0			0
+32			0			16				16				0			0
+48			0			16				16				0			0
+
+

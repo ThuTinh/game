@@ -17,9 +17,14 @@ void Stair::onInitFromFile(ifstream & fs, int mapHeight)
 	setParam(name.c_str(), value);
 }
 
+void Stair::onAABB(MovableRect* other)
+{
+	
+}
+
 void Stair::setParam(const char * name, bool value)
 {
-	if (strcmp(name, "isRightStair") == 0)
+	if (strcmp(name, "IsRightStair") == 0)
 	{
 		this->isRightStair = value;
 	}
@@ -36,19 +41,17 @@ void Stair::onUpdate(float dt)
 	bool isUpDown = key->isUpPress;
 	bool isDownDown = key->isDownPress;
 	/* nếu hiện tại đối tượng đang va chạm với player */
-	if (Collision::AABBCheck(this, player))
+	if (Collision::AABBCheck(Player::getInstance(), this))
 	{
 		/* nếu nhấn key lên */
 		if (isUpDown)
 		{
-			/*if (player->getAnimation() == PLAYER_ACTION_STAND || player->getAnimation() == PLAYER_ACTION_RUN)
-				player->setIsOnGround(true);*/
+
 			if (
 				/* stair hiện tại là stair dưới */
 				!isTop &&
 				/* nếu player ở trên ground */
-				player->getIsOnGround() && 
-				
+				player->getIsOnGround() &&
 				/* trạng thái hiện tại của player là bình thường */
 				player->getPlayerState() == PLAYER_STATE_NORMAL
 				)
@@ -59,7 +62,7 @@ void Stair::onUpdate(float dt)
 					/* đặt player đúng vị trí ban đầu. Tham khảo đối tượng stair trên world để xem */
 					player->setX(getMidX() - player->getWidth());
 					player->setY(getBottom() + player->getHeight());
-					
+
 				}
 				else
 				{
@@ -158,13 +161,12 @@ void Stair::onUpdate(float dt)
 			}
 		}
 	}
+	
 	 BaseObject::onUpdate(dt);
 }
 
-void Stair::update(float dt)
-{
-	onUpdate(dt);
-}
+
+
 
 
 Stair::Stair()

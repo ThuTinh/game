@@ -6,8 +6,16 @@
 #include"Stair.h"
 #include "fire.h"
 #include "Gate1.h"
+#include"Gate2.h"
+#include"Gate3.h"
+#include"Gate4.h"
+#include"Gate5.h"
+#include"Gate6.h"
+#include"Gate7.h"
 #include "Zoombie.h"
 #include "Leopart.h"
+#include"BlackNight.h"
+#include"Bat.h"
 #include"Collision.h"
 #include "Weapon.h"
 #include "Light.h"
@@ -64,6 +72,24 @@ void World::Init(const char * tilesheetPath,
 		case SPRITE_INFO_GATE1:
 			obj = new Gate1();
 			break;
+		case SPRITE_INFO_GATE2:
+			obj = new Gate2();
+			break;
+		case SPRITE_INFO_GATE3:
+			obj = new Gate3();
+			break;
+		case SPRITE_INFO_GATE4:
+			obj = new Gate4();
+			break;
+		case SPRITE_INFO_GATE5:
+			obj = new Gate5();
+			break;
+		case SPRITE_INFO_GATE6:
+			obj = new Gate6();
+			break;
+		case SPRITE_INFO_GATE7:
+			obj = new Gate7();
+			break;
 		case SPRITE_INFO_ZOOMBIE:
 			obj = new Zoombie();
 			break;
@@ -78,6 +104,12 @@ void World::Init(const char * tilesheetPath,
 			break;
 		case SPRITE_INFO_SWORD:
 			obj = new Sword();
+			break;
+		case SPRINTE_INFO_BLACK_NIGHT:
+			obj = new BlackNight();
+			break;
+		case SPRINTE_INFO_BAT:
+			obj = new Bat();
 			break;
 		default:
 			obj = new BaseObject();
@@ -256,17 +288,19 @@ void World::update(float dt)
 	//cap nhap doi tuong co trong khu vuc cua camera
 	for (size_t i = 0; i < objectInCamera.Count; i++)
 	{
-		OutputDebugStringA(("camara : " + std::to_string(objectInCamera.Count)+ "\n").c_str());
-		auto item = objectInCamera.at(i);
-		item->update(dt);
-		Collision::CheckCollision(Player::getInstance(), item);
-		if (Player::getInstance()->getCollitionGate())
-		{
-			Player::getInstance()->setCollitionGate(false);
-			return;
+		bool retflag;
 
-		}
+		if(objectInCamera.at(i)->getCollisionType() == COLLISION_TYPE::COLLISION_TYPE_GROUND)
+		CheckCollisionItem(i, dt, retflag);
 		
+	}
+
+	for (size_t i = 0; i < objectInCamera.Count; i++)
+	{
+		bool retflag;
+
+		if (objectInCamera.at(i)->getCollisionType() != COLLISION_TYPE::COLLISION_TYPE_GROUND)
+			CheckCollisionItem(i, dt, retflag);
 	}
 
 	/* cập nhật đối tượng  trong truong hop chua sd grid*/
@@ -302,6 +336,16 @@ void World::update(float dt)
 
 	Player::getInstance()->update(dt);
 	Camera::getInstance()->update();
+}
+
+void World::CheckCollisionItem(const size_t& i, float dt, bool& retflag)
+{
+	retflag = true;
+	OutputDebugStringA(("camara : " + std::to_string(objectInCamera.Count) + "\n").c_str());
+	auto item = objectInCamera.at(i);
+	item->update(dt);
+	Collision::CheckCollision(Player::getInstance(), item);
+	retflag = false;
 }
 
 void World::setCurrentScene(int sceneIndex)

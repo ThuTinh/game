@@ -64,6 +64,9 @@
     <Filter Include="WindownDirectX">
       <UniqueIdentifier>{7f795d73-bce5-4b14-93f4-885a59e63a94}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Objects\ScoreBar">
+      <UniqueIdentifier>{729ebb64-d36a-4a09-ba1f-1d93a8257068}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Sprite.h">
@@ -195,6 +198,42 @@
     <ClInclude Include="Camera.h">
       <Filter>Camera</Filter>
     </ClInclude>
+    <ClInclude Include="Gate2.h">
+      <Filter>Objects\Gate</Filter>
+    </ClInclude>
+    <ClInclude Include="Gate3.h">
+      <Filter>Objects\Gate</Filter>
+    </ClInclude>
+    <ClInclude Include="BlackNight.h">
+      <Filter>Objects\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Bat.h">
+      <Filter>Objects\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Gate4.h">
+      <Filter>Objects\Gate</Filter>
+    </ClInclude>
+    <ClInclude Include="Gate5.h">
+      <Filter>Objects\Gate</Filter>
+    </ClInclude>
+    <ClInclude Include="Gate6.h">
+      <Filter>Objects\Gate</Filter>
+    </ClInclude>
+    <ClInclude Include="Gate7.h">
+      <Filter>Objects\Gate</Filter>
+    </ClInclude>
+    <ClInclude Include="Sketon.h">
+      <Filter>Objects\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Fleaman.h">
+      <Filter>Objects\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Raven.h">
+      <Filter>Objects\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="ScoreBar.h">
+      <Filter>Objects\ScoreBar</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Sprite.cpp">
@@ -313,6 +352,42 @@
     </ClCompile>
     <ClCompile Include="Camera.cpp">
       <Filter>Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="Gate2.cpp">
+      <Filter>Objects\Gate</Filter>
+    </ClCompile>
+    <ClCompile Include="Gate3.cpp">
+      <Filter>Objects\Gate</Filter>
+    </ClCompile>
+    <ClCompile Include="BlackNight.cpp">
+      <Filter>Objects\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="Bat.cpp">
+      <Filter>Objects\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="Gate4.cpp">
+      <Filter>Objects\Gate</Filter>
+    </ClCompile>
+    <ClCompile Include="Gate5.cpp">
+      <Filter>Objects\Gate</Filter>
+    </ClCompile>
+    <ClCompile Include="gate6.cpp">
+      <Filter>Objects\Gate</Filter>
+    </ClCompile>
+    <ClCompile Include="Gate7.cpp">
+      <Filter>Objects\Gate</Filter>
+    </ClCompile>
+    <ClCompile Include="Sketon.cpp">
+      <Filter>Objects\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="Fleaman.cpp">
+      <Filter>Objects\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="Raven.cpp">
+      <Filter>Objects\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="ScoreBar.cpp">
+      <Filter>Objects\ScoreBar</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

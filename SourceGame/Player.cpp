@@ -203,7 +203,9 @@ void Player::onUpdate(float dt)
 
 				setVy(GLOBALS_D("player_vy_jump"));
 				setAnimation(PLAYER_ACTION_JUMP);
-				
+				/*if (keyLeftDown) {
+ 					setVx(-getDirection()* vx );
+				}*/
 					attachDelay.start();
 
 				if (attachDelay.isTerminated())
@@ -277,7 +279,7 @@ void Player::onUpdate(float dt)
 				setY(playerStairDesty);
 			}
 			if (keyUpDown)
-			{
+			{ 
 				goStairUp();
 			}
 			if (keyDownDown)
@@ -315,8 +317,8 @@ void Player::onUpdate(float dt)
 					/* nếu là lần di chuyển cuối cùng */
 					if (getIsLastRunStair())
 					{
-							setY(getY() + 8);
-							setX(getX() + 8);	
+							setY(getY() + 10);
+							setX(getX() + 10);	
 							setStopStair();
 					}
 				}
@@ -357,12 +359,13 @@ void Player::onUpdate(float dt)
 
 void Player::onCollision(MovableRect * other, float collisionTime, int nx, int ny)
 {
-	if (other->getCollisionType() == COLLISION_TYPE_GROUND)
-	{
-		/* ngăn chặn di chuyển */
-		preventMovementWhenCollision(collisionTime, nx, ny);
-		PhysicsObject::onCollision(other, collisionTime, nx, ny);
-	}
+	
+		if (other->getCollisionType() == COLLISION_TYPE_GROUND)
+		{
+			/* ngăn chặn di chuyển */
+			preventMovementWhenCollision(collisionTime, nx, ny);
+			PhysicsObject::onCollision(other, collisionTime, nx, ny);
+		}
 
 }
 

@@ -88,16 +88,16 @@ bool PhysicsObject::getIsOnGround()
 	return isOnGround;
 }
 
-void PhysicsObject::setIsOnGround(bool isOnGround)
+void PhysicsObject::setIsOnGround(bool value)
 {
-	this->isOnGround = isOnGround;
+	this->isOnGround = value;
 }
 
 void PhysicsObject::onCollision(MovableRect * other, float collisionTime, int nx, int ny)
 {
 	
 	/* va chạm sàn là va chạm có phản xạ theo hướng từ dưới lên. mà chiều từ dưới lên là chiều dương nên ny=1 */
-	if (ny == 1)
+	if (ny == 1 && other->getCollisionType() == COLLISION_TYPE::COLLISION_TYPE_GROUND)
 	{
 		/* isOnGround = true tức vật có đứng trên sàn */
 		setIsOnGround(true);

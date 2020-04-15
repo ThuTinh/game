@@ -141,6 +141,8 @@
     <ClInclude Include="Animation.h" />
     <ClInclude Include="Archery.h" />
     <ClInclude Include="BaseObject.h" />
+    <ClInclude Include="Bat.h" />
+    <ClInclude Include="BlackNight.h" />
     <ClInclude Include="Camera.h" />
     <ClInclude Include="Cell.h" />
     <ClInclude Include="Collision.h" />
@@ -150,6 +152,7 @@
     <ClInclude Include="DelayTime.h" />
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="fire.h" />
+    <ClInclude Include="Fleaman.h" />
     <ClInclude Include="FrameAnimation.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameConfiguration.h" />
@@ -158,6 +161,12 @@
     <ClInclude Include="GameTime.h" />
     <ClInclude Include="GameUtils.h" />
     <ClInclude Include="Gate1.h" />
+    <ClInclude Include="Gate2.h" />
+    <ClInclude Include="Gate3.h" />
+    <ClInclude Include="Gate4.h" />
+    <ClInclude Include="Gate5.h" />
+    <ClInclude Include="Gate6.h" />
+    <ClInclude Include="Gate7.h" />
     <ClInclude Include="Grid.h" />
     <ClInclude Include="Item.h" />
     <ClInclude Include="KEY.h" />
@@ -168,9 +177,12 @@
     <ClInclude Include="MovableRect.h" />
     <ClInclude Include="PhysicsObject.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="Raven.h" />
     <ClInclude Include="Rect.h" />
     <ClInclude Include="LevelManager.h" />
     <ClInclude Include="Scene.h" />
+    <ClInclude Include="ScoreBar.h" />
+    <ClInclude Include="Sketon.h" />
     <ClInclude Include="Sprite.h" />
     <ClInclude Include="SpriteManager.h" />
     <ClInclude Include="Stair.h" />
@@ -186,6 +198,8 @@
     <ClCompile Include="Animation.cpp" />
     <ClCompile Include="Archery.cpp" />
     <ClCompile Include="BaseObject.cpp" />
+    <ClCompile Include="Bat.cpp" />
+    <ClCompile Include="BlackNight.cpp" />
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="Cell.cpp" />
     <ClCompile Include="Collision.cpp" />
@@ -193,6 +207,7 @@
     <ClCompile Include="DelayTime.cpp" />
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="fire.cpp" />
+    <ClCompile Include="Fleaman.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameConfiguration.cpp" />
     <ClCompile Include="GameDirectX.cpp" />
@@ -200,6 +215,12 @@
     <ClCompile Include="GameTime.cpp" />
     <ClCompile Include="GameUtils.cpp" />
     <ClCompile Include="Gate1.cpp" />
+    <ClCompile Include="Gate2.cpp" />
+    <ClCompile Include="Gate3.cpp" />
+    <ClCompile Include="Gate4.cpp" />
+    <ClCompile Include="Gate5.cpp" />
+    <ClCompile Include="gate6.cpp" />
+    <ClCompile Include="Gate7.cpp" />
     <ClCompile Include="Grid.cpp" />
     <ClCompile Include="Item.cpp" />
     <ClCompile Include="KEY.cpp" />
@@ -209,8 +230,11 @@
     <ClCompile Include="MovableRect.cpp" />
     <ClCompile Include="PhysicsObject.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="Raven.cpp" />
     <ClCompile Include="Rect.cpp" />
     <ClCompile Include="LevelManager.cpp" />
+    <ClCompile Include="ScoreBar.cpp" />
+    <ClCompile Include="Sketon.cpp" />
     <ClCompile Include="Sprite.cpp" />
     <ClCompile Include="SpriteManager.cpp" />
     <ClCompile Include="Stair.cpp" />

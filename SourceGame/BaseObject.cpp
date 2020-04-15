@@ -84,9 +84,9 @@ void BaseObject::update(float dt)
 	setIsLastFrameAnimationDone(false);
 
 	/* nếu đối tượng này có hình và không bị pauseAnimation thì ta cập nhật animation cho nó */
-	if (getSprite() != NULL)
-	{
-		if (animationGameTime.atTime() && !pauseAnimation)
+	//if ()
+	//{
+		if (getSprite()!= NULL && animationGameTime.atTime() && !pauseAnimation)
 		{
 			/* cập nhật animation cho đối tượng */
 			sprite->update(animationIndex, frameIndex);
@@ -97,7 +97,7 @@ void BaseObject::update(float dt)
 			}
 		}	
 		onUpdate(dt);
-	}
+	//}
 
 }
 

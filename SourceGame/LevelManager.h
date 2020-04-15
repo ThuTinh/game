@@ -10,12 +10,13 @@ public:
 	World* getCurrentLevel();
 	void init();
 	World* nextLevel();
-	void changeScene(int scene);
+	void changeWorld(int index);
 	LevelManager();
 	~LevelManager();
 
 private:
-	World *world;
+	World **worlds;
+	World* currentWorld;
 	List<string> listFolderName;
 	int totalLeavels;
 	

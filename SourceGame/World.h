@@ -40,6 +40,8 @@ public:
 	/* cập nhật các đối tượng trong game */
 	void update(float dt);
 
+	void CheckCollisionItem(const size_t& i, float dt, bool& retflag);
+
 	/* setCurrentSpace */
 	void setCurrentScene(int sceneIndex);
 

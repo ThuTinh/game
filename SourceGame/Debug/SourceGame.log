@@ -1,2 +1,17 @@
-﻿  Stair.cpp
+﻿  Player.cpp
+H:\HK8\game\G\SourceGame\Player.cpp(10,28): warning C4244:  '=': conversion from 'float' to 'int', possible loss of data
+H:\HK8\game\G\SourceGame\Player.cpp(76,25): warning C4244:  '=': conversion from 'float' to 'int', possible loss of data
+H:\HK8\game\G\SourceGame\Player.cpp(77,25): warning C4244:  '=': conversion from 'float' to 'int', possible loss of data
+H:\HK8\game\G\SourceGame\Player.cpp(169,12): warning C4244:  'initializing': conversion from 'double' to 'float', possible loss of data
+H:\HK8\game\G\SourceGame\Player.cpp(204,11): warning C4244:  'argument': conversion from 'double' to 'float', possible loss of data
+H:\HK8\game\G\SourceGame\Player.cpp(279,10): warning C4244:  'argument': conversion from 'int' to 'float', possible loss of data
+H:\HK8\game\G\SourceGame\Player.cpp(280,10): warning C4244:  'argument': conversion from 'int' to 'float', possible loss of data
+H:\HK8\game\G\SourceGame\Player.cpp(292,26): warning C4244:  'argument': conversion from 'double' to 'float', possible loss of data
+H:\HK8\game\G\SourceGame\Player.cpp(294,10): warning C4244:  'argument': conversion from 'double' to 'float', possible loss of data
+H:\HK8\game\G\SourceGame\Player.cpp(297,26): warning C4244:  'argument': conversion from 'double' to 'float', possible loss of data
+H:\HK8\game\G\SourceGame\Player.cpp(299,10): warning C4244:  'argument': conversion from 'double' to 'float', possible loss of data
+H:\HK8\game\G\SourceGame\Player.cpp(315,11): warning C4244:  'argument': conversion from 'int' to 'float', possible loss of data
+H:\HK8\game\G\SourceGame\Player.cpp(316,11): warning C4244:  'argument': conversion from 'int' to 'float', possible loss of data
+H:\HK8\game\G\SourceGame\Player.cpp(336,11): warning C4244:  'argument': conversion from 'int' to 'float', possible loss of data
+H:\HK8\game\G\SourceGame\Player.cpp(337,11): warning C4244:  'argument': conversion from 'int' to 'float', possible loss of data
   SourceGame.vcxproj -> H:\HK8\game\G\Debug\SourceGame.exe

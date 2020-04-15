@@ -8,8 +8,8 @@ void Gate1::onAABB(MovableRect* other)
 	{
 		/*Game::getInstance()->getLevelManager()->getCurrentLevel()->setCurrentScene(1);
 		Game::getInstance()->getLevelManager()->getCurrentLevel()->resetLocationInScene();*/
-		Game::getInstance()->getLevelManager()->changeScene(1);
+		Game::getInstance()->getLevelManager()->changeWorld(1);
 		Game::getInstance()->getLevelManager()->getCurrentLevel()->resetLocationInScene();
-		Player::getInstance()->setCollitionGate(true);
+		//Player::getInstance()->setCollitionGate(true);
 	}
 }

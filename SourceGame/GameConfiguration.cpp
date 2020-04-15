@@ -30,10 +30,11 @@ double GameConfiguration::GetConfiguration(const char * key)
 		/* trọng lực mặc định của đối tượng 80 (px/s^2) */
 		globalsConfigurationDouble->insert(pair<const char*, double>("object_default_ay", -550));
 
+		globalsConfigurationDouble->insert(pair<const char*, double>("bat_ay", -50));
 
 		/*  PLAYER  */
 		globalsConfigurationDouble->insert(pair<const char*, double>("player_vx", 80)); /* 60 pixel/s */
-		globalsConfigurationDouble->insert(pair<const char*, double>("player_vy_jump", 180)); /* 60 pixel/s */
+		globalsConfigurationDouble->insert(pair<const char*, double>("player_vy_jump", 220)); /* 60 pixel/s */
 		/* vx của player khi lên stair */
 		globalsConfigurationDouble->insert(pair<const char*, double>("player_stair_dx", 1));//1 pixel/ frame */
 		/* vy của player khi lên stair */
@@ -45,8 +46,10 @@ double GameConfiguration::GetConfiguration(const char * key)
 		globalsConfigurationDouble->insert(pair<const char*, double>("leopart_run_vx", 80)); 
 		globalsConfigurationDouble->insert(pair<const char*, double>("zoombie_run_vx", 30));
 		globalsConfigurationDouble->insert(pair<const char*, double>("zoombie_run_dx", 200));
-		globalsConfigurationDouble->insert(pair<const char*, double>("zoombie_run_dx_to_turning", 300));
+		globalsConfigurationDouble->insert(pair<const char*, double>("zoombie_run_dx_to_turning", 400));
 
+		globalsConfigurationDouble->insert(pair<const char*, double>("blacknight_vx", 50));
+		globalsConfigurationDouble->insert(pair<const char*, double>("bat_run_dx", 80));
 		
 		/* TODO tạo thêm các giá trị cấu hình double game tại đây 
 		Ví dụ: globalsConfiguration->insert(pair<const char*, double>("gia_tri_key", 10)); 10 la gia tri cua gia_tri_key

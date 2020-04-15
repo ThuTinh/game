@@ -1,5 +1,6 @@
 #include "Game.h"
 #include"KEY.h"
+//#include"ScoreBar.h"
 
 /* singleton pattern */
 Game * Game::instance = 0;
@@ -37,13 +38,14 @@ void Game::GameUpdate(float dt)
 	//world->update(dt);
 
 	levelManager->getCurrentLevel()->update(dt);
+	//ScoreBar::getInstance()->update();
 }
 /* Các câu lệnh vẽ của game */
 void Game::GameRender()
 {
 	/* vẽ đối tượng trong world */
-	/*world->render();*/
 	levelManager->getCurrentLevel()->render();
+	//ScoreBar::getInstance()->render();
 }
 
 LevelManager* Game::getLevelManager()
