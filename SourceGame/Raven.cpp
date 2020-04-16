@@ -18,7 +18,8 @@ void Raven::onUpdate(float dt)
 
 Raven::Raven()
 {
-
+	setPhysicsEnable(false);
+	setAnimation(RAVEN_ACTION_STAND);
 }
 
 Raven::~Raven()

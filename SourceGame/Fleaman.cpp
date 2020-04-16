@@ -18,7 +18,8 @@ void Fleaman::onUpdate(float dt)
 
 Fleaman::Fleaman()
 {
-
+	setPhysicsEnable(false);
+	setAnimation(FLEAMAN_ACTION_STAND);
 }
 
 Fleaman::~Fleaman()

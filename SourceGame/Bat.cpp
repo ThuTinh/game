@@ -23,7 +23,6 @@ void Bat::onUpdate(float dt)
 Bat::Bat()
 {
 	setPhysicsEnable(false);
-
 	setAnimation(BAT_ACTION_STAND);
 }
 

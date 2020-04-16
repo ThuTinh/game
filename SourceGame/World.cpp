@@ -16,6 +16,9 @@
 #include "Leopart.h"
 #include"BlackNight.h"
 #include"Bat.h"
+#include"Raven.h"
+#include"Fleaman.h"
+#include"Sketon.h"
 #include"Collision.h"
 #include "Weapon.h"
 #include "Light.h"
@@ -110,6 +113,15 @@ void World::Init(const char * tilesheetPath,
 			break;
 		case SPRINTE_INFO_BAT:
 			obj = new Bat();
+			break;
+		case SPRITE_INFO_FLEAMAN:
+			obj = new Fleaman();
+			break;
+		case SPRITE_INFO_SKETON:
+			obj = new Sketon();
+			break;
+		case SPRITE_INFO_RAVEN:
+			obj = new Raven();
 			break;
 		default:
 			obj = new BaseObject();

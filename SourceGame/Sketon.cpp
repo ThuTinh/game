@@ -18,6 +18,9 @@ void Sketon::onUpdate(float dt)
 
 Sketon::Sketon()
 {
+
+	setPhysicsEnable(false);
+	setAnimation(SKETON_ACTION_STAND);
 	
 }
 
