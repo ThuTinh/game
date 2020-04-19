@@ -1,6 +1,8 @@
 #include "Enemy.h"
 #include"Player.h"
 #include"Weapon.h"
+#include"DieEffect.h"
+
 Enemy::Enemy()
 {
 	isContactGround = true;
@@ -16,6 +18,14 @@ void Enemy::onCollision(MovableRect* other, float collisionTime, int nx, int ny)
 		/* ngăn chặn di chuyển */
 		preventMovementWhenCollision(collisionTime, nx, ny);
 		PhysicsObject::onCollision(other, collisionTime, nx, ny);
+	}
+}
+
+void Enemy::update(float dt)
+{
+	if (this->getAlive())
+	{
+		PhysicsObject::update(dt);
 	}
 }
 
@@ -38,8 +48,13 @@ void Enemy::onUpdate(float dt)
 
 void Enemy::onAABB(MovableRect* other)
 {
-	if (other == Weapon::getInstance()) {
+	if (other == Weapon::getInstance() && getAlive()) {
 		setAlive(false);
+		DieEffect* dieEffect = new DieEffect();
+
+		dieEffect->setX(getX());
+		dieEffect->setY(getY());
+		dieEffect->timeDelay.start();
 	}
 }
 

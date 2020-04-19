@@ -15,6 +15,7 @@ class Item :
 public:
 	void onAABB(MovableRect* other) override;
 	void setState(ITEM_STATE itemState);
+	ITEM_STATE getItemState();
 	virtual void onPlayerContact();
 	void onUpdate(float dt) override;
 

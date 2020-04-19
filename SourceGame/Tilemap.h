@@ -1,7 +1,7 @@
 #pragma once
 #include"GameTexture.h"
 
-/* để vẽ tilemap ta cần thêm camera vào */
+/*Cần camara để vẽ title map	 */
 #include"Camera.h"
 
 class Tilemap
@@ -33,8 +33,8 @@ public:
 	/* lấy chiều cao của world dùng để chuyển đổi tọa độ khi init */
 	int getWorldHeight();
 
-		/* tilesheetPath: đường dẫn tilesheet
-		matrixPath : đường dẫn file ma trận
+	/* tilesheetPath: đường dẫn tilesheet
+	matrixPath : đường dẫn file ma trận
 	*/
 	void Init(const char* tilesheetPath, const char* matrixPath);
 	/* folderPath : đường dẫn thư mục chứa ma trận và tilesheet */

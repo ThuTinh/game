@@ -5,6 +5,6 @@ Scene1
 X       Y       Width       Height
 0      0      768         178
 CameraX     CameraY
-0          -50
+0          -25
 PlayerX     PlayerY
-29          0
+30              50

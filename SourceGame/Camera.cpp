@@ -32,14 +32,14 @@ void Camera::convertWorldToView(float xWorld, float yWorld, float & xView, float
 
 }
 
-void Camera::setScene(Scene * scene)
+void Camera::setSpace(Space* space)
 {
-	this->scene = scene;
+	this->space = space;
 }
 
-Scene* Camera::getScene()
+Space* Camera::getSpace()
 {
-	return scene;
+	return space;
 }
 
 void Camera::update()
@@ -62,30 +62,30 @@ void Camera::update()
 	}
 
 	/* nếu camera chạy sang trái và vượt quá góc trái space  */
-	if (getX() + getDx() < scene->X && getDx() < 0)
+	if (getX() + getDx() < space->X && getDx() < 0)
 	{
-		setX(scene->X);
+		setX(space->X);
 		setDx(0);
 	}
 
 	/* nếu camera chạy sang phải và vượt quá góc phải space  */
-	if (getRight() + getDx() > scene->X + scene->Width && getDx() > 0)
+	if (getRight() + getDx() > space->X + space->Width && getDx() > 0)
 	{
-		setX(scene->X + scene->Width - getWidth());
+		setX(space->X + space->Width - getWidth());
 		setDx(0);
 	}
 
 	/* nếu player chạy sang trái và vượt quá góc trái space  */
-	if (player->getX() + player->getDx() < scene->X && player->getDx() < 0)
+	if (player->getX() + player->getDx() < space->X && player->getDx() < 0)
 	{
-		player->setX(scene->X);
+		player->setX(space->X);
 		player->setDx(0);
 	}
 
 	/* nếu player chạy sang phải và vượt quá góc phải space  */
-	if (player->getRight() + player->getDx() > scene->X + scene->Width && player->getDx() > 0)
+	if (player->getRight() + player->getDx() > space->X + space->Width && player->getDx() > 0)
 	{
-		player->setX(scene->X + scene->Width - player->getWidth());
+		player->setX(space->X + space->Width - player->getWidth());
 		player->setDx(0);
 	}
 

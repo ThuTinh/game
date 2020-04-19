@@ -1,19 +1,2 @@
-﻿  Fleaman.cpp
-  Raven.cpp
-  Sketon.cpp
-  World.cpp
-H:\HK8\game\G\SourceGame\World.cpp(59,23): warning C4018:  '<': signed/unsigned mismatch
-H:\HK8\game\G\SourceGame\World.cpp(155,23): warning C4018:  '<': signed/unsigned mismatch
-H:\HK8\game\G\SourceGame\World.cpp(171,23): warning C4018:  '<': signed/unsigned mismatch
-H:\HK8\game\G\SourceGame\World.cpp(301,23): warning C4018:  '<': signed/unsigned mismatch
-H:\HK8\game\G\SourceGame\World.cpp(310,23): warning C4018:  '<': signed/unsigned mismatch
-H:\HK8\game\G\SourceGame\World.cpp(329,23): warning C4018:  '<': signed/unsigned mismatch
-H:\HK8\game\G\SourceGame\World.cpp(339,26): warning C4018:  '<': signed/unsigned mismatch
-H:\HK8\game\G\SourceGame\World.cpp(341,27): warning C4018:  '<': signed/unsigned mismatch
-H:\HK8\game\G\SourceGame\World.cpp(379,67): warning C4244:  'argument': conversion from 'int' to 'float', possible loss of data
-H:\HK8\game\G\SourceGame\World.cpp(379,39): warning C4244:  'argument': conversion from 'int' to 'float', possible loss of data
-H:\HK8\game\G\SourceGame\World.cpp(380,67): warning C4244:  'argument': conversion from 'int' to 'float', possible loss of data
-H:\HK8\game\G\SourceGame\World.cpp(380,39): warning C4244:  'argument': conversion from 'int' to 'float', possible loss of data
-  Generating Code...
-H:\HK8\game\G\SourceGame\World.cpp(390,23): warning C4018:  '<': signed/unsigned mismatch
+﻿  Weapon.cpp
   SourceGame.vcxproj -> H:\HK8\game\G\Debug\SourceGame.exe

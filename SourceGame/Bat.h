@@ -12,8 +12,9 @@ enum BAT_SATE {
 };
 class Bat : public Enemy
 {
-
+	BAT_SATE batState;
 public:
+	void onCollision(MovableRect* other, float collisionTime, int nx, int ny) override;
 	void onUpdate(float dt) override;
 	Bat();
 	~Bat();

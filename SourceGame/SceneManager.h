@@ -3,20 +3,20 @@
 #include"GameUtils.h"
 #include"List.h"
 
-class LevelManager
+class SceneManager
 {
 public:
-	int levelIndex;
-	World* getCurrentLevel();
+	int sceneIndex;
+	World* getCurrentScene();
 	void init();
-	World* nextLevel();
+	World* nextScene();
 	void changeWorld(int index);
-	LevelManager();
-	~LevelManager();
+	SceneManager();
+	~SceneManager();
 
 private:
 	World **worlds;
-	World* currentWorld;
+	World* currentScene;
 	List<string> listFolderName;
 	int totalLeavels;
 	

@@ -12,14 +12,51 @@ void Fleaman::onCollision(MovableRect* other, float collisionTime, int nx, int n
 
 void Fleaman::onUpdate(float dt)
 {
-
+	setDirectionFollowPlayer();
+	setVx(getDirection() * GLOBALS_D("fleaman_vx"));
+	switch (fleamanState)
+	{
+	case FLEAMAN_STATE_JUMP_SHORT:
+		if (getIsOnGround())
+		{
+			if (jumpRemain > 0)
+			{
+				setVy(GLOBALS_D("fleaman_vy_short"));
+				jumpRemain--;
+			}
+			else
+			{
+				fleamanState = FLEAMAN_STATE_JUMP_LONG;
+				jumpRemain = GLOBALS_D("fleaman_jumplong_counter");
+			}
+		}
+		break;
+	case FLEAMAN_STATE_JUMP_LONG:
+		if (getIsOnGround())
+		{
+			if (jumpRemain > 0)
+			{
+				setVy(GLOBALS_D("fleaman_vy_long"));
+				jumpRemain--;
+			}
+			else
+			{
+				fleamanState = FLEAMAN_STATE_JUMP_SHORT;
+				jumpRemain = GLOBALS_D("fleaman_jumpshort_counter");
+			}
+		}
+		break;
+	default:
+		break;
+	}
 	Enemy::onUpdate(dt);
 }
 
 Fleaman::Fleaman()
 {
-	setPhysicsEnable(false);
 	setAnimation(FLEAMAN_ACTION_STAND);
+	fleamanState = FLEAMAN_STATE_JUMP_SHORT;
+	jumpRemain = GLOBALS_D("fleaman_jumpshort_counter");
 }
 
 Fleaman::~Fleaman()

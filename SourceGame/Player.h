@@ -53,8 +53,7 @@ class Player :
 	int stairDirection;
 	bool isAttack;
 	bool collitionGate;
-
-
+	int numberArchery;
 
 	/* 2 thuộc tính này có khi player đang đi lên cầu thang chủ yếu nói về player đi tới đâu rồi dừng lại */
 	int playerStairDestx, playerStairDesty;
@@ -95,7 +94,8 @@ public:
 	void setIsAttack(bool attack);
 	void setCollitionGate(bool colilition);
 	bool getCollitionGate();
-
+	int getNumberArchery();
+	void AddNumberArChery(int number);
 	Player();
 	~Player();
 };

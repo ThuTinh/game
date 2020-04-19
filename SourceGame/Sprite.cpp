@@ -8,7 +8,6 @@ void Sprite::InitFromFile(const char * imagePath, const char * infoPath)
 {
 	image = new GameTexture();
 	ifstream fs(infoPath);
-	/* Trước tiên đọc argb và khởi tạo bức hình trước */
 	/* bỏ 2 line và đọc a r g b */
 	ignoreLineIfstream(fs, 2);
 	int a, r, g, b;

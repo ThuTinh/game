@@ -1,5 +1,5 @@
 #pragma once
-struct Scene
+struct Space
 {
 	int X, Y, Width, Height, CameraX, CameraY, PlayerX, PlayerY;
 };

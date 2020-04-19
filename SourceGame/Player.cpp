@@ -159,9 +159,7 @@ void Player::onUpdate(float dt)
 		if(colorDelay.isTerminated())
 			setAnimation(PLAYER_ACTION_STAND);
 		return;
-		
 	} 
-
 	switch (playerState)
 	{
 	case PLAYER_STATE_NORMAL:
@@ -198,6 +196,16 @@ void Player::onUpdate(float dt)
 			}
 			/* nếu đứng trên sàn mà nhấn key jump thì sẽ cho nhân vật nhảy. còn nếu ở trên không mà nhấn key jump thì nó sẽ
 			không vào chỗ này vì không thỏa mãn isOnGround = true*/
+
+			/*if (keyDownDown) {
+				setAnimation(PLAYER_ACTION_JUMP);
+				if (isAttack)
+				{
+					playerState = PLAYER_STATE_ATTACK_JUMP;
+					attachDelay.start();
+				}
+			
+			}*/
 			if (keyJumpPress)
 			{
 
@@ -404,15 +412,26 @@ bool Player::getCollitionGate()
 	return collitionGate;
 }
 
+int Player::getNumberArchery()
+{
+	return numberArchery;
+}
+
+void Player::AddNumberArChery(int number)
+{
+	this->numberArchery += number;
+}
+
 Player::Player()
 {
 	setSprite(SPR(SPRITE_INFO_SIMON));
 	/* set State hiện tại là normal */
 	playerState = PLAYER_STATE::PLAYER_STATE_NORMAL;
 	collitionGate = false;
+	numberArchery = 0;
 	// 1000 ms = 1s
 	attachDelay.init(180);
-	colorDelay.init(100);
+	colorDelay.init(200);
 }
 
 

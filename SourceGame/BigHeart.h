@@ -3,6 +3,7 @@
 class BigHeart : public Item
 {
 public:
+	void onAABB(MovableRect* other) override;
 	BigHeart();
 	~BigHeart();
 

@@ -46,20 +46,10 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 				deltaTime = timePerFrame;
 			}
 
-			//40, 40 
-
 			/* time : thời gian giữa 2 frame dùng để tính vận tốc đối tượng */
 			float time = deltaTime / 1000.0f;
 
-
-			// player->x += dx, player->y += dy;
-			// tinh dx va dy player co the di : 2, 10; luc nay player-> 
-			// va cham
-			
-
 			Game::getInstance()->GameUpdate(time);
-
-			// 42, 50
 
 			startTime = now;
 			if (PeekMessage(&msg, 0, 0, 0, PM_REMOVE))
@@ -67,7 +57,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 				TranslateMessage(&msg);
 				DispatchMessage(&msg);
 			}
-			// vi tri hinh player 40, 40. 
+
 			GameDirectX::getInstance()->BeginGraphics();//bat dau ve len backbuffer
 
 			Game::getInstance()->GameRender();
@@ -75,7 +65,6 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 			GameDirectX::getInstance()->EndGraphics();// ket thuc ve len backbuffer
 			GameDirectX::getInstance()->PresentBackBuffer();// ve backbuffer len man hinh
 
-			// hinh con player 42, 50
 		}
 
 	}

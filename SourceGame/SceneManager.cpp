@@ -1,11 +1,11 @@
-#include "LevelManager.h"
+#include "SceneManager.h"
 #include<fstream>
 using namespace std;
 
-void LevelManager::init() {
+void SceneManager::init() {
 	ifstream fs("assets/scenes/scenes.txt");
 	ignoreLineIfstream(fs, 1);
-	fs >> levelIndex;
+	fs >> sceneIndex;
 	ignoreLineIfstream(fs, 2);
 	fs >> totalLeavels;
 	string folderPath;
@@ -21,33 +21,33 @@ void LevelManager::init() {
 		worlds[i]->Init(folderPath);
 	}
 
-	changeWorld(2);
+	changeWorld(0);
 }
-World* LevelManager::getCurrentLevel() {
-	return currentWorld;
+World* SceneManager::getCurrentScene() {
+	return currentScene;
 }
 
-World* LevelManager::nextLevel() {
-	if (levelIndex + 1 < totalLeavels) {
-		++levelIndex;
+World* SceneManager::nextScene() {
+	if (sceneIndex + 1 < totalLeavels) {
+		++sceneIndex;
 	}
 	else
 	{
-		levelIndex = 0;
+		sceneIndex = 0;
 	}
 	return 0;
 }
 
-void LevelManager::changeWorld(int index)
+void SceneManager::changeWorld(int index)
 {
-	this->currentWorld = worlds[index];
-	currentWorld->setCurrentScene(0);
-	currentWorld->resetLocationInScene();
+	this->currentScene = worlds[index];
+	currentScene->setCurrentSpace(0);
+	currentScene->resetLocationInSpace();
 }
 
-LevelManager::LevelManager() {
+SceneManager::SceneManager() {
 		
 }
-LevelManager::~LevelManager() {
+SceneManager::~SceneManager() {
 
 }

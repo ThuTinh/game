@@ -7,6 +7,8 @@ public:
 	void onUpdate(float dt) override;
 	void onAABB(MovableRect* other) override;
 	void setDirectionFollowPlayer();
+	void update(float dt) override;
+
 	Enemy();
 	~Enemy();
 protected:

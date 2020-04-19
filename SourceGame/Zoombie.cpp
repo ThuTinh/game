@@ -23,7 +23,7 @@ void Zoombie::onUpdate(float dt)
 		break;
 	case ZOOMBIE_RUN:
 		setVx(-GLOBALS_D("zoombie_run_vx"));
-		if (abs(Camera::getInstance()->getScene()->X - getX()) < 30) {
+		if (abs(Camera::getInstance()->getSpace()->X - getX()) < 30) {
 			zoombieState = ZOOMBIE_RUN_TURNING;
 		}
 		

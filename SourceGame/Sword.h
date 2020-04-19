@@ -3,7 +3,7 @@
 class Sword : public Item
 {
 public:
-
+	void onAABB(MovableRect* other) override;
 	Sword();
 	~Sword();
 

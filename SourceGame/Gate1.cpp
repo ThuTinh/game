@@ -6,10 +6,7 @@ void Gate1::onAABB(MovableRect* other)
 {
 	if (other == Player::getInstance())
 	{
-		/*Game::getInstance()->getLevelManager()->getCurrentLevel()->setCurrentScene(1);
-		Game::getInstance()->getLevelManager()->getCurrentLevel()->resetLocationInScene();*/
-		Game::getInstance()->getLevelManager()->changeWorld(1);
-		Game::getInstance()->getLevelManager()->getCurrentLevel()->resetLocationInScene();
-		//Player::getInstance()->setCollitionGate(true);
+		Game::getInstance()->getSceneManager()->changeWorld(1);
+		Game::getInstance()->getSceneManager()->getCurrentScene()->resetLocationInSpace();
 	}
 }

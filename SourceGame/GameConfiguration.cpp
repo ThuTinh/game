@@ -8,7 +8,6 @@ map<const char*, const char*>* GameConfiguration::globalsConfigurationString = 0
 /* Lấy 1 thống số ra từ 1 key cho trước */
 double GameConfiguration::GetConfiguration(const char * key)
 {
-	/* Hướng dẫn: Đọc singleton pattern để hiểu cách viết này */
 	if (globalsConfigurationDouble == 0)
 	{
 		globalsConfigurationDouble = new map<const char*, double>();
@@ -28,13 +27,13 @@ double GameConfiguration::GetConfiguration(const char * key)
 		globalsConfigurationDouble->insert(pair<const char*, double>("object_animation_time_default",70));
 
 		/* trọng lực mặc định của đối tượng 80 (px/s^2) */
-		globalsConfigurationDouble->insert(pair<const char*, double>("object_default_ay", -550));
+		globalsConfigurationDouble->insert(pair<const char*, double>("object_default_ay", -750));
 
-		globalsConfigurationDouble->insert(pair<const char*, double>("bat_ay", -50));
+		globalsConfigurationDouble->insert(pair<const char*, double>("bat_ay", -100));
 
 		/*  PLAYER  */
 		globalsConfigurationDouble->insert(pair<const char*, double>("player_vx", 80)); /* 60 pixel/s */
-		globalsConfigurationDouble->insert(pair<const char*, double>("player_vy_jump", 220)); /* 60 pixel/s */
+		globalsConfigurationDouble->insert(pair<const char*, double>("player_vy_jump", 300)); /* 60 pixel/s */
 		/* vx của player khi lên stair */
 		globalsConfigurationDouble->insert(pair<const char*, double>("player_stair_dx", 1));//1 pixel/ frame */
 		/* vy của player khi lên stair */
@@ -50,11 +49,14 @@ double GameConfiguration::GetConfiguration(const char * key)
 
 		globalsConfigurationDouble->insert(pair<const char*, double>("blacknight_vx", 50));
 		globalsConfigurationDouble->insert(pair<const char*, double>("bat_run_dx", 80));
-		
-		/* TODO tạo thêm các giá trị cấu hình double game tại đây 
-		Ví dụ: globalsConfiguration->insert(pair<const char*, double>("gia_tri_key", 10)); 10 la gia tri cua gia_tri_key
-		*/
 
+		globalsConfigurationDouble->insert(pair<const char*, double>("fleaman_jumpshort_counter", 2));
+		globalsConfigurationDouble->insert(pair<const char*, double>("fleaman_jumplong_counter", 1));
+		globalsConfigurationDouble->insert(pair<const char*, double>("fleaman_vy_short", 120));
+		globalsConfigurationDouble->insert(pair<const char*, double>("fleaman_vy_long", 220));
+		globalsConfigurationDouble->insert(pair<const char*, double>("fleaman_vx", 30));
+
+		globalsConfigurationDouble->insert(pair<const char*, double>("die_effect_time", 500));
 		
 	}
 	/* trả ra giá trị cấu hình tại key */
@@ -69,12 +71,8 @@ const char * GameConfiguration::GetConfigurationString(const char * key)
 		globalsConfigurationString = new map<const char*, const char*>();
 
 		/* Tiêu đề của cửa sổ */
-		globalsConfigurationString->insert(pair<const char*,const char*>("window_title", "load chos"));
+		globalsConfigurationString->insert(pair<const char*,const char*>("window_title", "Game"));
 		globalsConfigurationString->insert(pair<const char*, const  char*>("window_class", "win_game"));
-
-		/* TODO tạo thêm các giá trị cấu hình string game tại đây
-		Ví dụ: globalsConfiguration->insert(pair<const char*, const char*>("gia_tri_key", "value")); "value" la gia tri cua gia_tri_key
-		*/
 
 	}
 	/* trả ra giá trị cấu hình tại key */

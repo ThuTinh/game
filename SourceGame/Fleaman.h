@@ -3,8 +3,8 @@
 #include"Player.h"
 
 enum FLEAMAN_STATE {
-	FLEAMAN_STATE_STAND,
-	FLEAMAN_STATE_ATTACK
+	FLEAMAN_STATE_JUMP_SHORT,
+	FLEAMAN_STATE_JUMP_LONG
 };
 enum FLEAMAN_ACTION {
 	FLEAMAN_ACTION_STAND,
@@ -13,7 +13,8 @@ enum FLEAMAN_ACTION {
 
 class Fleaman : public Enemy
 {
-
+	FLEAMAN_STATE fleamanState;
+	int jumpRemain;
 public:
 	void onCollision(MovableRect* other, float collisionTime, int nx, int ny) override;
 	void onUpdate(float dt) override;

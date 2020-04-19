@@ -10,9 +10,7 @@ public:
 	/* danh sách animation của đối tượng game */
 	List<Animation*> animations;
 
-	/* imagePath : đường dẫn hình
-		infoPath : đường dẫn file cấu hình danh sách animation
-	*/
+
 	void InitFromFile(const char* imagePath, const char* infoPath);
 
 	/* animationIndex: loại animation cần cập nhật

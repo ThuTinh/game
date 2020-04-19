@@ -15,20 +15,17 @@ void Item::onAABB(MovableRect* other)
 		setWidth(this->getSprite()->image->Width);
 		setHeight(this->getSprite()->image->Height);
 	}
-	if (other == Player::getInstance() && itemState == ITEM_STATE_VISIBLE) {
-		Player::getInstance()->setAnimation(PLAYER_ACTION_COLORS);
-		Player::getInstance()->colorDelay.start();
-
-
-			
-		setState(ITEM_STATE_PLAYER_EATED);
-		this->onPlayerContact();
-	}
+	
 }
 
 void Item::setState(ITEM_STATE itemState)
 {
 	this->itemState = itemState;
+}
+
+ITEM_STATE Item::getItemState()
+{
+	return itemState;
 }
 
 

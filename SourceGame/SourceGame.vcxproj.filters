@@ -67,6 +67,9 @@
     <Filter Include="Objects\ScoreBar">
       <UniqueIdentifier>{729ebb64-d36a-4a09-ba1f-1d93a8257068}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Objects\AdditionalObject">
+      <UniqueIdentifier>{b3044999-378c-4acf-8ca6-c4b488f2786b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Sprite.h">
@@ -183,13 +186,7 @@
     <ClInclude Include="Item.h">
       <Filter>Objects\Item</Filter>
     </ClInclude>
-    <ClInclude Include="LevelManager.h">
-      <Filter>World</Filter>
-    </ClInclude>
     <ClInclude Include="World.h">
-      <Filter>World</Filter>
-    </ClInclude>
-    <ClInclude Include="Scene.h">
       <Filter>World</Filter>
     </ClInclude>
     <ClInclude Include="Stair.h">
@@ -233,6 +230,21 @@
     </ClInclude>
     <ClInclude Include="ScoreBar.h">
       <Filter>Objects\ScoreBar</Filter>
+    </ClInclude>
+    <ClInclude Include="Space.h">
+      <Filter>World</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneManager.h">
+      <Filter>World</Filter>
+    </ClInclude>
+    <ClInclude Include="AdditionalObject.h">
+      <Filter>Objects\AdditionalObject</Filter>
+    </ClInclude>
+    <ClInclude Include="SubWeapon.h">
+      <Filter>Objects\AdditionalObject</Filter>
+    </ClInclude>
+    <ClInclude Include="DieEffect.h">
+      <Filter>Objects\Misc</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -341,9 +353,6 @@
     <ClCompile Include="Item.cpp">
       <Filter>Objects\Item</Filter>
     </ClCompile>
-    <ClCompile Include="LevelManager.cpp">
-      <Filter>World</Filter>
-    </ClCompile>
     <ClCompile Include="World.cpp">
       <Filter>World</Filter>
     </ClCompile>
@@ -388,6 +397,18 @@
     </ClCompile>
     <ClCompile Include="ScoreBar.cpp">
       <Filter>Objects\ScoreBar</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneManager.cpp">
+      <Filter>World</Filter>
+    </ClCompile>
+    <ClCompile Include="AdditionalObject.cpp">
+      <Filter>Objects\AdditionalObject</Filter>
+    </ClCompile>
+    <ClCompile Include="SubWeapon.cpp">
+      <Filter>Objects\AdditionalObject</Filter>
+    </ClCompile>
+    <ClCompile Include="DieEffect.cpp">
+      <Filter>Objects\Misc</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

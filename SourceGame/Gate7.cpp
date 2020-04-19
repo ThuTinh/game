@@ -6,8 +6,8 @@ void Gate7::onAABB(MovableRect* other)
 {
 	if (other == Player::getInstance())
 	{
-		Game::getInstance()->getLevelManager()->changeWorld(3);
-		Game::getInstance()->getLevelManager()->getCurrentLevel()->resetLocationInScene();
+		Game::getInstance()->getSceneManager()->changeWorld(3);
+		Game::getInstance()->getSceneManager()->getCurrentScene()->resetLocationInSpace();
 
 	}
 }

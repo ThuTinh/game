@@ -1,8 +1,7 @@
 #include "Game.h"
 #include"KEY.h"
-//#include"ScoreBar.h"
+#include"ScoreBar.h"
 
-/* singleton pattern */
 Game * Game::instance = 0;
 Game * Game::getInstance()
 {
@@ -14,13 +13,10 @@ Game * Game::getInstance()
 /* Các câu lệnh khởi tạo game */
 void Game::GameInit()
 {
-	/* khởi tạo tilemap */
-	/*world = new Scene();
-	world->Init("assets/levels/level1");*/
 
 	//LevelManager
-	levelManager = new LevelManager();
-	levelManager->init();
+	sceneManager = new SceneManager();
+	sceneManager->init();
 
 	Camera::getInstance()->setSize(
 		/* kích thước của camera bằng với kích thước của backbuffer */
@@ -35,22 +31,20 @@ void Game::GameUpdate(float dt)
 	key->update();
 
 	/* cập nhật đối tượng trong world */
-	//world->update(dt);
-
-	levelManager->getCurrentLevel()->update(dt);
-	//ScoreBar::getInstance()->update();
+	sceneManager->getCurrentScene()->update(dt);
+	ScoreBar::getInstance()->update();
 }
 /* Các câu lệnh vẽ của game */
 void Game::GameRender()
 {
 	/* vẽ đối tượng trong world */
-	levelManager->getCurrentLevel()->render();
-	//ScoreBar::getInstance()->render();
+	sceneManager->getCurrentScene()->render();
+	ScoreBar::getInstance()->render();
 }
 
-LevelManager* Game::getLevelManager()
+SceneManager* Game::getSceneManager()
 {
-	return levelManager;
+	return sceneManager;
 }
 
 Game::Game()

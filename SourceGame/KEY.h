@@ -3,7 +3,7 @@
 class KEY
 {
 public:
-	bool	
+	bool
 		isLeftDown,
 		isRightDown,
 
@@ -14,21 +14,14 @@ public:
 		isDownDown,
 		isPreviousDownDown,
 		isDownPress,
-		/* sẽ bằng true nếu bạn giữ key jump */
+
 		isJumpDown,
 		isPreviousJumpDown,
-		/* sẽ bằng true nếu bạn chỉ nhấn key jump lần đầu. nếu lần sau vẫn giữ key jump thì nó sẽ là false */
 		isJumpPress,
 
 		isAttackDown,
 		isPreviousAttackDown,
-		isAttackPress,
-
-		isSpace1Down,
-		isSpace2Down,
-		isSpace3Down,
-		isSpace4Down,
-		isSpace5Down;
+		isAttackPress;
 
 	static KEY* instance;
 	static KEY* getInstance();
