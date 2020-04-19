@@ -25,12 +25,6 @@
     <Filter Include="Utils">
       <UniqueIdentifier>{9180a3df-9877-455d-8aa5-6a6ab874b12c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="WorldAndCamera">
-      <UniqueIdentifier>{1ead551e-5ecd-4446-9a74-617ae1046c21}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="WindowAndDirectX">
-      <UniqueIdentifier>{7f795d73-bce5-4b14-93f4-885a59e63a94}</UniqueIdentifier>
-    </Filter>
     <Filter Include="debug">
       <UniqueIdentifier>{af0cc1ab-9212-4e46-abda-6afab4f6f7a0}</UniqueIdentifier>
     </Filter>
@@ -55,6 +49,27 @@
     <Filter Include="Grid">
       <UniqueIdentifier>{6da79e65-343d-4548-8d25-e9d30bb6bb24}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Objects\Item">
+      <UniqueIdentifier>{14b27ef0-589e-400f-8ee4-8656ebcc13f5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Stair">
+      <UniqueIdentifier>{b37809c6-63fe-40e4-aa0c-69316d3f42d3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Camera">
+      <UniqueIdentifier>{27c0f73d-6eec-4509-82a2-7d007d32638b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="World">
+      <UniqueIdentifier>{1ead551e-5ecd-4446-9a74-617ae1046c21}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="WindownDirectX">
+      <UniqueIdentifier>{7f795d73-bce5-4b14-93f4-885a59e63a94}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Objects\ScoreBar">
+      <UniqueIdentifier>{729ebb64-d36a-4a09-ba1f-1d93a8257068}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Objects\AdditionalObject">
+      <UniqueIdentifier>{b3044999-378c-4acf-8ca6-c4b488f2786b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Sprite.h">
@@ -70,22 +85,19 @@
       <Filter>Collision</Filter>
     </ClInclude>
     <ClInclude Include="Game.h">
-      <Filter>WindowAndDirectX</Filter>
+      <Filter>WindownDirectX</Filter>
     </ClInclude>
     <ClInclude Include="GameDirectX.h">
-      <Filter>WindowAndDirectX</Filter>
+      <Filter>WindownDirectX</Filter>
     </ClInclude>
     <ClInclude Include="GameTexture.h">
-      <Filter>WindowAndDirectX</Filter>
+      <Filter>WindownDirectX</Filter>
     </ClInclude>
     <ClInclude Include="WindowGame.h">
-      <Filter>WindowAndDirectX</Filter>
-    </ClInclude>
-    <ClInclude Include="Camera.h">
-      <Filter>WorldAndCamera</Filter>
+      <Filter>WindownDirectX</Filter>
     </ClInclude>
     <ClInclude Include="Tilemap.h">
-      <Filter>WorldAndCamera</Filter>
+      <Filter>World</Filter>
     </ClInclude>
     <ClInclude Include="GameConfiguration.h">
       <Filter>Utils</Filter>
@@ -110,18 +122,6 @@
     </ClInclude>
     <ClInclude Include="CollisionTypeCollide.h">
       <Filter>Collision</Filter>
-    </ClInclude>
-    <ClInclude Include="Space.h">
-      <Filter>WorldAndCamera</Filter>
-    </ClInclude>
-    <ClInclude Include="Stair.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Scene.h">
-      <Filter>WorldAndCamera</Filter>
-    </ClInclude>
-    <ClInclude Include="SceneManager.h">
-      <Filter>WorldAndCamera</Filter>
     </ClInclude>
     <ClInclude Include="debug.h">
       <Filter>debug</Filter>
@@ -171,6 +171,81 @@
     <ClInclude Include="Grid.h">
       <Filter>Grid</Filter>
     </ClInclude>
+    <ClInclude Include="Misc.h">
+      <Filter>Objects\Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="Archery.h">
+      <Filter>Objects\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="Sword.h">
+      <Filter>Objects\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="BigHeart.h">
+      <Filter>Objects\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="Item.h">
+      <Filter>Objects\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="World.h">
+      <Filter>World</Filter>
+    </ClInclude>
+    <ClInclude Include="Stair.h">
+      <Filter>Stair</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="Gate2.h">
+      <Filter>Objects\Gate</Filter>
+    </ClInclude>
+    <ClInclude Include="Gate3.h">
+      <Filter>Objects\Gate</Filter>
+    </ClInclude>
+    <ClInclude Include="BlackNight.h">
+      <Filter>Objects\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Bat.h">
+      <Filter>Objects\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Gate4.h">
+      <Filter>Objects\Gate</Filter>
+    </ClInclude>
+    <ClInclude Include="Gate5.h">
+      <Filter>Objects\Gate</Filter>
+    </ClInclude>
+    <ClInclude Include="Gate6.h">
+      <Filter>Objects\Gate</Filter>
+    </ClInclude>
+    <ClInclude Include="Gate7.h">
+      <Filter>Objects\Gate</Filter>
+    </ClInclude>
+    <ClInclude Include="Sketon.h">
+      <Filter>Objects\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Fleaman.h">
+      <Filter>Objects\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Raven.h">
+      <Filter>Objects\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="ScoreBar.h">
+      <Filter>Objects\ScoreBar</Filter>
+    </ClInclude>
+    <ClInclude Include="Space.h">
+      <Filter>World</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneManager.h">
+      <Filter>World</Filter>
+    </ClInclude>
+    <ClInclude Include="AdditionalObject.h">
+      <Filter>Objects\AdditionalObject</Filter>
+    </ClInclude>
+    <ClInclude Include="SubWeapon.h">
+      <Filter>Objects\AdditionalObject</Filter>
+    </ClInclude>
+    <ClInclude Include="DieEffect.h">
+      <Filter>Objects\Misc</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Sprite.cpp">
@@ -180,28 +255,28 @@
       <Filter>AnimationAndSprite</Filter>
     </ClCompile>
     <ClCompile Include="GameDirectX.cpp">
-      <Filter>WindowAndDirectX</Filter>
+      <Filter>WindownDirectX</Filter>
     </ClCompile>
     <ClCompile Include="GameTexture.cpp">
-      <Filter>WindowAndDirectX</Filter>
+      <Filter>WindownDirectX</Filter>
     </ClCompile>
     <ClCompile Include="GameUtils.cpp">
       <Filter>Utils</Filter>
     </ClCompile>
     <ClCompile Include="Tilemap.cpp">
-      <Filter>WorldAndCamera</Filter>
+      <Filter>World</Filter>
     </ClCompile>
     <ClCompile Include="WinMain.cpp">
-      <Filter>WindowAndDirectX</Filter>
+      <Filter>WindownDirectX</Filter>
     </ClCompile>
     <ClCompile Include="WindowGame.cpp">
-      <Filter>WindowAndDirectX</Filter>
+      <Filter>WindownDirectX</Filter>
     </ClCompile>
     <ClCompile Include="KEY.cpp">
       <Filter>Utils</Filter>
     </ClCompile>
     <ClCompile Include="Game.cpp">
-      <Filter>WindowAndDirectX</Filter>
+      <Filter>WindownDirectX</Filter>
     </ClCompile>
     <ClCompile Include="GameTime.cpp">
       <Filter>Utils</Filter>
@@ -214,18 +289,6 @@
     </ClCompile>
     <ClCompile Include="Animation.cpp">
       <Filter>AnimationAndSprite</Filter>
-    </ClCompile>
-    <ClCompile Include="Camera.cpp">
-      <Filter>WorldAndCamera</Filter>
-    </ClCompile>
-    <ClCompile Include="Stair.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Scene.cpp">
-      <Filter>WorldAndCamera</Filter>
-    </ClCompile>
-    <ClCompile Include="SceneManager.cpp">
-      <Filter>WorldAndCamera</Filter>
     </ClCompile>
     <ClCompile Include="debug.cpp">
       <Filter>debug</Filter>
@@ -274,6 +337,78 @@
     </ClCompile>
     <ClCompile Include="Grid.cpp">
       <Filter>Grid</Filter>
+    </ClCompile>
+    <ClCompile Include="Misc.cpp">
+      <Filter>Objects\Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="Archery.cpp">
+      <Filter>Objects\Item</Filter>
+    </ClCompile>
+    <ClCompile Include="Sword.cpp">
+      <Filter>Objects\Item</Filter>
+    </ClCompile>
+    <ClCompile Include="BigHeart.cpp">
+      <Filter>Objects\Item</Filter>
+    </ClCompile>
+    <ClCompile Include="Item.cpp">
+      <Filter>Objects\Item</Filter>
+    </ClCompile>
+    <ClCompile Include="World.cpp">
+      <Filter>World</Filter>
+    </ClCompile>
+    <ClCompile Include="Stair.cpp">
+      <Filter>Stair</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera.cpp">
+      <Filter>Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="Gate2.cpp">
+      <Filter>Objects\Gate</Filter>
+    </ClCompile>
+    <ClCompile Include="Gate3.cpp">
+      <Filter>Objects\Gate</Filter>
+    </ClCompile>
+    <ClCompile Include="BlackNight.cpp">
+      <Filter>Objects\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="Bat.cpp">
+      <Filter>Objects\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="Gate4.cpp">
+      <Filter>Objects\Gate</Filter>
+    </ClCompile>
+    <ClCompile Include="Gate5.cpp">
+      <Filter>Objects\Gate</Filter>
+    </ClCompile>
+    <ClCompile Include="gate6.cpp">
+      <Filter>Objects\Gate</Filter>
+    </ClCompile>
+    <ClCompile Include="Gate7.cpp">
+      <Filter>Objects\Gate</Filter>
+    </ClCompile>
+    <ClCompile Include="Sketon.cpp">
+      <Filter>Objects\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="Fleaman.cpp">
+      <Filter>Objects\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="Raven.cpp">
+      <Filter>Objects\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="ScoreBar.cpp">
+      <Filter>Objects\ScoreBar</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneManager.cpp">
+      <Filter>World</Filter>
+    </ClCompile>
+    <ClCompile Include="AdditionalObject.cpp">
+      <Filter>Objects\AdditionalObject</Filter>
+    </ClCompile>
+    <ClCompile Include="SubWeapon.cpp">
+      <Filter>Objects\AdditionalObject</Filter>
+    </ClCompile>
+    <ClCompile Include="DieEffect.cpp">
+      <Filter>Objects\Misc</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

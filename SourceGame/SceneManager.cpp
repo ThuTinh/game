@@ -7,37 +7,46 @@ void SceneManager::init() {
 	ignoreLineIfstream(fs, 1);
 	fs >> sceneIndex;
 	ignoreLineIfstream(fs, 2);
-	fs >> totalScenes;
-	scene = new Scene * [totalScenes];
-	string fileName ;
+	fs >> totalLeavels;
+	string folderPath;
 	ignoreLineIfstream(fs, 2);
-	for(int i = 0; i<totalScenes; i++) {
-		fs >> fileName;
-		scene[i] = new Scene();
-		ifstream f(fileName);
-		string folderPath;
-		f >> folderPath;
-		scene[i]->Init(folderPath);
-		ignoreLineIfstream(fs, 1);
+
+	worlds = new World*[totalLeavels];
+
+	for(int i = 0; i<totalLeavels; i++) {
+		worlds[i] = new World();
+		fs >>  folderPath;;
+		listFolderName._Add(folderPath);
+		ignoreLineIfstream(fs, 1);		
+		worlds[i]->Init(folderPath);
 	}
+
+	changeWorld(0);
 }
-Scene* SceneManager::getCurrentScene() {
-	return scene[sceneIndex];
+World* SceneManager::getCurrentScene() {
+	return currentScene;
 }
 
-Scene* SceneManager::nextScene() {
-	if (sceneIndex + 1 <= totalScenes) {
+World* SceneManager::nextScene() {
+	if (sceneIndex + 1 < totalLeavels) {
 		++sceneIndex;
 	}
 	else
 	{
 		sceneIndex = 0;
 	}
-	return scene[sceneIndex];
-	
+	return 0;
+}
+
+void SceneManager::changeWorld(int index)
+{
+	this->currentScene = worlds[index];
+	currentScene->setCurrentSpace(0);
+	currentScene->resetLocationInSpace();
 }
 
 SceneManager::SceneManager() {
+		
 }
 SceneManager::~SceneManager() {
 

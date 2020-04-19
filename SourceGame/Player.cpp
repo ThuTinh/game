@@ -8,7 +8,7 @@ Player * Player::instance = 0;
 void Player::goStairUp()
 {
 	playerStairDesty = getY() + 8;
-	if (stairDirection == 1)
+	if (stairDirection == 0)
 	{
 		/* stair phải */
 		playerStairDestx += 8;
@@ -29,7 +29,7 @@ void Player::goStairUp()
 void Player::goStairDown()
 {
 	playerStairDesty -= 8;
-	if (stairDirection == 1)
+	if (stairDirection == 0)
 	{
 		/* stair phải */
 		playerStairDestx -= 8;
@@ -114,7 +114,7 @@ void Player::setIsLastRunStair(bool isLastRunStair)
 
 void Player::setStopStair()
 {
-	/* stop tất cả chuyển động */
+	/* nhưng chuyển động */
 	this->setVx(0);
 	this->setVy(0);
 	this->setDx(0);
@@ -138,19 +138,28 @@ void Player::setStopStair()
 
 void Player::onUpdate(float dt)
 {
-	bool keyLeftDown, keyRightDown, keyUpDown, keyDownDown, keyJumpPress;
+	bool keyLeftDown, keyRightDown, keyUpDown, keyDownDown, keyJumpPress, isGoUpStair, isGoDownStair;
 	/* kiểm tra key bên trái có được giữ */
 	keyLeftDown = KEY::getInstance()->isLeftDown;
 	/* kiểm tra key bên phải có được giữ */
 	keyRightDown = KEY::getInstance()->isRightDown;
 	keyUpDown = KEY::getInstance()->isUpDown;
 	keyDownDown = KEY::getInstance()->isDownDown;
-	isAttack = KEY::getInstance()->isAttackDown;
-	attachDelay.update();
+	isAttack = KEY::getInstance()->isAttackPress;
 	/* kiểm tra key jump có được nhấn */
 	keyJumpPress = KEY::getInstance()->isJumpPress;
 
-	/* update dựa vào playerState */
+	//lên cầu thang
+	isGoUpStair = KEY::getInstance()->isUpPress;
+	isGoDownStair = KEY::getInstance()->isDownPress;
+
+	attachDelay.update();
+	if (getAnimation() == PLAYER_ACTION_COLORS) {
+		colorDelay.update();
+		if(colorDelay.isTerminated())
+			setAnimation(PLAYER_ACTION_STAND);
+		return;
+	} 
 	switch (playerState)
 	{
 	case PLAYER_STATE_NORMAL:
@@ -160,6 +169,7 @@ void Player::onUpdate(float dt)
 		/* nếu vật đứng trên sàn */
 		if (getIsOnGround())
 		{
+		
 			/* nếu giữ key trái */
 			if (keyLeftDown)
 			{
@@ -182,42 +192,77 @@ void Player::onUpdate(float dt)
 			{
 				/* set animation đứng yên */
 				setAnimation(PLAYER_ACTION_STAND);
-				
 				setVx(0);
 			}
 			/* nếu đứng trên sàn mà nhấn key jump thì sẽ cho nhân vật nhảy. còn nếu ở trên không mà nhấn key jump thì nó sẽ
 			không vào chỗ này vì không thỏa mãn isOnGround = true*/
+
+			/*if (keyDownDown) {
+				setAnimation(PLAYER_ACTION_JUMP);
+				if (isAttack)
+				{
+					playerState = PLAYER_STATE_ATTACK_JUMP;
+					attachDelay.start();
+				}
+			
+			}*/
 			if (keyJumpPress)
 			{
+
 				setVy(GLOBALS_D("player_vy_jump"));
 				setAnimation(PLAYER_ACTION_JUMP);
-				attachDelay.start();
+				/*if (keyLeftDown) {
+ 					setVx(-getDirection()* vx );
+				}*/
+					attachDelay.start();
+
 				if (attachDelay.isTerminated())
 				{
 					playerState = PLAYER_STATE_NORMAL;
 				}
-			
+				
 			}
-			if (isAttack) {
-				playerState = PLAYER_STATE_ATTACK;
-				attachDelay.start();
+			else
+			{
+				if (isAttack) {
+					playerState = PLAYER_STATE_ATTACK;
+					attachDelay.start();
+				}		
+				
 			}
+
 		}
-		else /* nếu nhân vật không đứng trên sàn (đang lơ lững trên không) */
+		else 
 		{
 			setAnimation(PLAYER_ACTION_JUMP);
+			//simon tan cong trong khi nhay
+			if (isAttack) {
+				playerState = PLAYER_STATE_ATTACK_JUMP;
+				attachDelay.start();
+
+			}
 		}
 
-		/* gọi lại phương thức xử lý onUpdate đã được định nghĩa ở lớp cha control click vào PhysicsObject::onUpdate để biết */
-		/* gọi lại xử lý của lớp cha */
-		PhysicsObject::onUpdate(dt);
-		
+		PhysicsObject::onUpdate(dt);	
+
 
 		break;
 	}
 	case PLAYER_STATE_ATTACK:
 	{
 		setAnimation(PLAYER_ACTION_STAND_USE_SUB);
+		setVx(0);
+		setDx(0);
+		if (attachDelay.isTerminated())
+		{
+			playerState = PLAYER_STATE_NORMAL;
+		}
+		PhysicsObject::onUpdate(dt);
+		break;
+	}
+	case PLAYER_STATE_ATTACK_JUMP:
+	{
+		setAnimation(PLAYER_ACTION_DUCKING_USE_SUB);
 		setVx(0);
 		setDx(0);
 		if (attachDelay.isTerminated())
@@ -242,7 +287,7 @@ void Player::onUpdate(float dt)
 				setY(playerStairDesty);
 			}
 			if (keyUpDown)
-			{
+			{ 
 				goStairUp();
 			}
 			if (keyDownDown)
@@ -251,12 +296,12 @@ void Player::onUpdate(float dt)
 			}
 			return;
 		case PLAYER_STAIR_STATE_GO_UP:
-			setDx(getDirection() * GLOBALS_D("player_stair_dx"));
+			setDx(-getDirection() * GLOBALS_D("player_stair_dx"));
 			/* đi lên */
 			setDy(GLOBALS_D("player_stair_dy"));
 			break;
 		case PLAYER_STAIR_STATE_GO_DOWN:
-			setDx(getDirection() * GLOBALS_D("player_stair_dx"));
+			setDx(-getDirection() * GLOBALS_D("player_stair_dx"));
 			/* đi xuống */
 			setDy(-GLOBALS_D("player_stair_dy"));
 			break;
@@ -266,7 +311,7 @@ void Player::onUpdate(float dt)
 		/* phương thức xử lý chung khi đi (kiểm tra đến đích chưa để dừng lại) */
 		if (playerStairState == PLAYER_STAIR_STATE_GO_UP || playerStairState == PLAYER_STAIR_STATE_GO_DOWN)
 		{
-			if (getDirection() == TEXTURE_DIRECTION::TEXTURE_DIRECTION_RIGHT)
+			if (-getDirection() == TEXTURE_DIRECTION::TEXTURE_DIRECTION_RIGHT)
 			{
 				/* đang đi về phía bên phải */
 				if (getX() + getDx() > playerStairDestx)
@@ -280,7 +325,9 @@ void Player::onUpdate(float dt)
 					/* nếu là lần di chuyển cuối cùng */
 					if (getIsLastRunStair())
 					{
-						setStopStair();
+							setY(getY() + 10);
+							setX(getX() + 10);	
+							setStopStair();
 					}
 				}
 			}
@@ -299,6 +346,8 @@ void Player::onUpdate(float dt)
 					/* nếu là lần di chuyển cuối cùng */
 					if (getIsLastRunStair())
 					{
+						setY(getY() + 10);
+						setX(getX() - 10);
 						setStopStair();
 					}
 				}
@@ -318,12 +367,13 @@ void Player::onUpdate(float dt)
 
 void Player::onCollision(MovableRect * other, float collisionTime, int nx, int ny)
 {
-	if (other->getCollisionType() == COLLISION_TYPE_GROUND)
-	{
-		/* ngăn chặn di chuyển */
-		preventMovementWhenCollision(collisionTime, nx, ny);
-		PhysicsObject::onCollision(other, collisionTime, nx, ny);
-	}
+	
+		if (other->getCollisionType() == COLLISION_TYPE_GROUND)
+		{
+			/* ngăn chặn di chuyển */
+			preventMovementWhenCollision(collisionTime, nx, ny);
+			PhysicsObject::onCollision(other, collisionTime, nx, ny);
+		}
 
 }
 
@@ -352,13 +402,36 @@ void Player::setIsAttack(bool attack)
 	this->isAttack = attack;
 }
 
+void Player::setCollitionGate(bool colilition)
+{
+	this->collitionGate = colilition;
+}
+
+bool Player::getCollitionGate()
+{
+	return collitionGate;
+}
+
+int Player::getNumberArchery()
+{
+	return numberArchery;
+}
+
+void Player::AddNumberArChery(int number)
+{
+	this->numberArchery += number;
+}
+
 Player::Player()
 {
 	setSprite(SPR(SPRITE_INFO_SIMON));
 	/* set State hiện tại là normal */
 	playerState = PLAYER_STATE::PLAYER_STATE_NORMAL;
+	collitionGate = false;
+	numberArchery = 0;
 	// 1000 ms = 1s
-	attachDelay.init(70);
+	attachDelay.init(180);
+	colorDelay.init(200);
 }
 
 

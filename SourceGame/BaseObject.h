@@ -28,12 +28,17 @@ class BaseObject :
 	/* hướng mặt của đối tượng */
 	TEXTURE_DIRECTION direction;
 
+	bool alive = true;
+	bool isRender = true;
+	Rect* initBox;
 
 
 public:
 	int id;
-
-
+	void setAlive(bool alive);
+	bool getAlive();
+	void setIsRender(bool isRender);
+	bool getisRender();
 
 	void setSprite(Sprite*sprite);
 	Sprite* getSprite();
@@ -54,24 +59,21 @@ public:
 	virtual void onUpdate(float dt);
 	/* hành động cập nhật của đối tượng sau mỗi lần vẽ lại */
 
-	void update(float dt);
+	virtual void update(float dt);
 	/* hành động vẽ của đối tượng 
 		camera dùng để biến đổi tọa độ của object từ world sang view
 	*/
 	virtual void render(Camera* camera);
-
+	virtual void restoreLocation();
 	int getAnimation();
 	void setAnimation(int animation);
 
 	int getFrameAnimation();
 	void setFrameAnimation(int frameAnimation);
+	int getFrameIndex();
 
 	TEXTURE_DIRECTION getDirection();
 	void setDirection(int direction);
-
-
-
-
 
 	BaseObject();
 	~BaseObject();

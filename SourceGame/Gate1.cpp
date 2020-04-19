@@ -6,7 +6,7 @@ void Gate1::onAABB(MovableRect* other)
 {
 	if (other == Player::getInstance())
 	{
-		Game::getInstance()->getSceneManager()->getCurrentScene()->setCurrentSpace(1);
+		Game::getInstance()->getSceneManager()->changeWorld(1);
 		Game::getInstance()->getSceneManager()->getCurrentScene()->resetLocationInSpace();
 	}
 }

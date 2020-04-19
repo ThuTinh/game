@@ -1,0 +1,16 @@
+Sprite cung1
+R	G	B
+255	0	128	0
+Animation Count
+1
+
+
+Name
+Animation
+Frame Count
+1
+
+FrameX		FrameY		FrameWidth		FrameHeight		AnchorX		AnchorY
+0			0			20				20				0			0
+
+

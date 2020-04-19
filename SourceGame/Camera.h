@@ -18,7 +18,7 @@ public:
 	void convertWorldToView(float xWorld, float yWorld, float& xView, float& yView);
 
 	void setSpace(Space* space);
-
+	Space* getSpace();
 	/* cập nhật camera */
 	void update();
 

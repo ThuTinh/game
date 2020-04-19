@@ -8,9 +8,11 @@ class Stair :
 public:
 	/* override lại phương thức này để đọc các tham số trong file */
 	void onInitFromFile(ifstream& fs, int mapHeight) override;
+	 void onAABB(MovableRect* other)  override;
 	void setParam(const char* name, bool value);
 	/* override lại phương thức onUpdate của baseobject */
 	void onUpdate(float dt) override;
+	//void update(float dt) override;
 	Stair();
 	~Stair();
 };

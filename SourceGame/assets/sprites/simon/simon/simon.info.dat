@@ -1,4 +1,4 @@
-Sprite demo
+Sprite a
 R	G	B
 255	0	128	0
 Animation Count
@@ -20,9 +20,9 @@ Frame Count
 3
 
 FrameX		FrameY		FrameWidth		FrameHeight		AnchorX		AnchorY
-16			0			16				32				0			0
-32			0			16				32				0			0
-48			0			16				32				0			0
+16			0			16				32				3			0
+32			0			16				32				3			0
+48			0			16				32				5			0
 
 
 Name
@@ -64,17 +64,17 @@ FrameX		FrameY		FrameWidth		FrameHeight		AnchorX		AnchorY
 
 
 Name
-Death
+Dead
 Frame Count
 2
 
 FrameX		FrameY		FrameWidth		FrameHeight		AnchorX		AnchorY
-128			0			16				32				0			2
-144			16			32				16				0			4
+128			0			16				32				5			2
+144			16			32				16				7			3
 
 
 Name
-Intro
+intro
 Frame Count
 1
 
@@ -85,23 +85,23 @@ FrameX		FrameY		FrameWidth		FrameHeight		AnchorX		AnchorY
 Name
 StandingHaveUseSubWeapon
 Frame Count
-6
+5
 
 FrameX		FrameY		FrameWidth		FrameHeight		AnchorX		AnchorY
-192			0			24				32				0			0
-216			0			16				32				0			0
+192			0			16				32				0			0
+208			0			24				32				0			0
 232			0			24				32				0			0
 256			0			24				32				0			0
 280			0			24				32				0			0
-304			0			24				32				0			0
 
 
 Name
 DuckingHaveUseSubWeapon
 Frame Count
-5
+6
 
 FrameX		FrameY		FrameWidth		FrameHeight		AnchorX		AnchorY
+304			0			24				32				0			0
 328			0			16				32				0			0
 344			0			24				32				0			0
 368			0			24				32				0			0
@@ -126,14 +126,15 @@ FrameX		FrameY		FrameWidth		FrameHeight		AnchorX		AnchorY
 Name
 DescendingStairsHaveUseSubweapon
 Frame Count
-5
+6
 
 FrameX		FrameY		FrameWidth		FrameHeight		AnchorX		AnchorY
-576			0			16				32				0			0
-592			0			24				32				0			0
+576			0			24				32				0			0
+600			0			16				32				0			0
 616			0			24				32				0			0
 640			0			24				32				0			0
 664			0			24				32				0			0
+688			0			24				32				0			0
 
 
 Name
@@ -142,10 +143,10 @@ Frame Count
 5
 
 FrameX		FrameY		FrameWidth		FrameHeight		AnchorX		AnchorY
-688			0			16				32				0			0
-704			0			16				32				0			0
-720			0			16				32				0			0
-736			0			16				32				0			0
-752			0			16				32				0			0
+712			0			16				32				0			0
+728			0			16				32				0			0
+744			0			16				32				0			0
+760			0			16				32				0			0
+776			0			16				32				0			0
 
 

@@ -1,35 +1,36 @@
-Sprite a
+Sprite panther
 R	G	B
-255	0	128	0
+255	255	255	255
 Animation Count
 3
 
 
 Name
-LeoLie
+Nam
 Frame Count
 1
 
 FrameX		FrameY		FrameWidth		FrameHeight		AnchorX		AnchorY
-0			0			24				16				0			0
+0			1			24				15				0			0
 
 
 Name
-LeoJumb
+Chay
+Frame Count
+3
+
+FrameX		FrameY		FrameWidth		FrameHeight		AnchorX		AnchorY
+24			3			32				13				5			0
+56			0			30				16				5			0
+86			0			28				16				0			0
+
+
+Name
+Animation
 Frame Count
 1
 
 FrameX		FrameY		FrameWidth		FrameHeight		AnchorX		AnchorY
-24			0			32				16				0			0
-
-
-Name
-LeoRun
-Frame Count
-2
-
-FrameX		FrameY		FrameWidth		FrameHeight		AnchorX		AnchorY
-56			0			32				16				0			0
-88			0			32				16				0			0
+24			3			32				13				0			0
 
 

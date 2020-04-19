@@ -1,19 +1,23 @@
 #pragma once
-#include "Scene.h"
+#include "World.h"
 #include"GameUtils.h"
+#include"List.h"
 
 class SceneManager
 {
 public:
 	int sceneIndex;
-	Scene* getCurrentScene();
+	World* getCurrentScene();
 	void init();
-	Scene* nextScene();
+	World* nextScene();
+	void changeWorld(int index);
 	SceneManager();
 	~SceneManager();
 
 private:
-	Scene** scene;
-	int totalScenes;
+	World **worlds;
+	World* currentScene;
+	List<string> listFolderName;
+	int totalLeavels;
 	
 };

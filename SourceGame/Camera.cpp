@@ -32,9 +32,14 @@ void Camera::convertWorldToView(float xWorld, float yWorld, float & xView, float
 
 }
 
-void Camera::setSpace(Space * space)
+void Camera::setSpace(Space* space)
 {
 	this->space = space;
+}
+
+Space* Camera::getSpace()
+{
+	return space;
 }
 
 void Camera::update()

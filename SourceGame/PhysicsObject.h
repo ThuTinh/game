@@ -11,6 +11,8 @@ class PhysicsObject :
 	bool physicsEnable;
 	/* vật có đứng trên mặt sàn hay không */
 	bool isOnGround;
+
+
 public:
 	float getAx();
 	float getAy();

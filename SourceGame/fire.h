@@ -1,14 +1,15 @@
 ﻿#pragma once
-#include "PhysicsObject.h"
+#include "Misc.h"
 /* lớp Zoombie để hiện thực lớp BaseObject */
 class Fire :
-	public PhysicsObject
+	public Misc
 {
 
 public:
-	void onCollision(MovableRect* other, float collisionTime, int nx, int ny) override;
-	void onUpdate(float dt) override;
+	//void onCollision(MovableRect* other, float collisionTime, int nx, int ny) override;
+
 	Fire();
 	~Fire();
 };
+
 

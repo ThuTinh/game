@@ -1,7 +1,7 @@
 #include "Game.h"
 #include"KEY.h"
+#include"ScoreBar.h"
 
-/* singleton pattern */
 Game * Game::instance = 0;
 Game * Game::getInstance()
 {
@@ -13,11 +13,8 @@ Game * Game::getInstance()
 /* Các câu lệnh khởi tạo game */
 void Game::GameInit()
 {
-	/* khởi tạo tilemap */
-	/*world = new Scene();
-	world->Init("assets/levels/level1");*/
 
-	//scenemanager
+	//LevelManager
 	sceneManager = new SceneManager();
 	sceneManager->init();
 
@@ -34,16 +31,15 @@ void Game::GameUpdate(float dt)
 	key->update();
 
 	/* cập nhật đối tượng trong world */
-	//world->update(dt);
-
 	sceneManager->getCurrentScene()->update(dt);
+	ScoreBar::getInstance()->update();
 }
 /* Các câu lệnh vẽ của game */
 void Game::GameRender()
 {
 	/* vẽ đối tượng trong world */
-	/*world->render();*/
 	sceneManager->getCurrentScene()->render();
+	ScoreBar::getInstance()->render();
 }
 
 SceneManager* Game::getSceneManager()

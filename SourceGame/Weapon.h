@@ -19,11 +19,13 @@ enum LIST_WEAPON {
 	W43,
 };
 
-class Weapon : public PhysicsObject
+class Weapon : public BaseObject
 {
 public:
 	void render();
 	static Weapon* getInstance();
+	void onCollision(MovableRect* other, float collisionTime, int nx, int ny) override;
+	void onUpdate(float dt) override;
 
 	Weapon();
 	~Weapon();

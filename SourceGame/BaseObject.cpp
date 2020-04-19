@@ -2,6 +2,26 @@
 #include "Player.h"
 #include "Weapon.h"
 
+void BaseObject::setAlive(bool alive)
+{
+	this->alive  = alive;
+}
+
+bool BaseObject::getAlive()
+{
+	return alive;
+}
+
+void BaseObject::setIsRender(bool isRender)
+{
+	this->isRender = isRender;
+}
+
+bool BaseObject::getisRender()
+{
+	return isRender;
+}
+
 void BaseObject::setSprite(Sprite * sprite)
 {
 	this->sprite = sprite;
@@ -44,6 +64,10 @@ void BaseObject::onInitFromFile(ifstream& fs, int mapHeight)
 	set(x, y, width, height);
 	/* khởi tạo collisionType */
 
+	initBox = new Rect();
+
+	initBox->set(x, y, width, height);
+
 	setCollisionType((COLLISION_TYPE)collisionType);
 }
 
@@ -60,9 +84,9 @@ void BaseObject::update(float dt)
 	setIsLastFrameAnimationDone(false);
 
 	/* nếu đối tượng này có hình và không bị pauseAnimation thì ta cập nhật animation cho nó */
-	if (!pauseAnimation && getSprite() != NULL)
-	{
-		if (animationGameTime.atTime())
+	//if ()
+	//{
+		if (getSprite()!= NULL && animationGameTime.atTime() && !pauseAnimation)
 		{
 			/* cập nhật animation cho đối tượng */
 			sprite->update(animationIndex, frameIndex);
@@ -71,14 +95,10 @@ void BaseObject::update(float dt)
 				/* nếu frame cuối đã chạy thì sau khi cập nhật frameIndex sẽ là 0 */
 				setIsLastFrameAnimationDone(true);
 			}
-		}
+		}	
+		onUpdate(dt);
+	//}
 
-		if (getIsLastFrameAnimationDone() || frameIndex >= (sprite->animations.at(animationIndex)->frames.size() - 1)) {
-			onUpdate(dt);
-		}
-	}
-	
-	
 }
 
 void BaseObject::onUpdate(float dt)
@@ -89,6 +109,10 @@ void BaseObject::onUpdate(float dt)
 
 void BaseObject::render(Camera* camera)
 {
+	if (!getAlive())
+		return;
+	if (!getisRender())
+		return;
 	if (getSprite() == 0)
 		return;
 	float xView, yView;
@@ -126,6 +150,12 @@ void BaseObject::render(Camera* camera)
 	}
 }
 
+void BaseObject::restoreLocation()
+{
+	set(initBox->getX(), initBox->getY(), initBox->getWidth(), initBox->getHeight());
+	setAlive(true);
+}
+
 int BaseObject::getAnimation()
 {
 	return animationIndex;
@@ -149,6 +179,11 @@ int BaseObject::getFrameAnimation()
 void BaseObject::setFrameAnimation(int frameAnimation)
 {
 	this->frameIndex = frameAnimation;
+}
+
+int BaseObject::getFrameIndex()
+{
+	return frameIndex;
 }
 
 TEXTURE_DIRECTION BaseObject::getDirection()

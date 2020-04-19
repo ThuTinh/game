@@ -5,14 +5,13 @@
 #include"FrameAnimation.h"
 #include"Animation.h"
 #include"Sprite.h"
-#include"Scene.h"
+#include"World.h"
 #include "SceneManager.h"
 class Game
 {
-	/* singleton pattern */
 	static Game* instance;
 
-	/*Scene* world;*/
+	/*Scene*/
 	SceneManager* sceneManager;
 
 public:

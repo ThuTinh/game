@@ -1,0 +1,26 @@
+Sprite BossBat
+R	G	B
+255	0	128	0
+Animation Count
+2
+
+
+Name
+BossStand
+Frame Count
+1
+
+FrameX		FrameY		FrameWidth		FrameHeight		AnchorX		AnchorY
+0			16			16				16				0			0
+
+
+Name
+Fly
+Frame Count
+2
+
+FrameX		FrameY		FrameWidth		FrameHeight		AnchorX		AnchorY
+16			0			48				32				9			5
+64			0			32				32				5			9
+
+

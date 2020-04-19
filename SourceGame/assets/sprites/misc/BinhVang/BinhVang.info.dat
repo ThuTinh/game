@@ -1,0 +1,16 @@
+Sprite BinhVang
+R	G	B
+255	0	128	0
+Animation Count
+1
+
+
+Name
+BinhVang
+Frame Count
+1
+
+FrameX		FrameY		FrameWidth		FrameHeight		AnchorX		AnchorY
+0			0			16				16				0			0
+
+

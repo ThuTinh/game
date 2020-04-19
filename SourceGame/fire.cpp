@@ -1,29 +1,20 @@
-﻿#include "Fire.h"
-
+﻿
+#include "fire.h"
+#include"Weapon.h"
+//void Fire::onCollision(MovableRect* other, float collisionTime, int nx, int ny)
+//{
+//	
+//	/* ngăn chặn di chuyển */
+//	preventMovementWhenCollision(collisionTime, nx, ny);
+//	PhysicsObject::onCollision(other, collisionTime, nx, ny);
+//}
 
 
 Fire::Fire()
 {
-	setPhysicsEnable(false);
-	/*setDirection(TEXTURE_DIRECTION::TEXTURE_DIRECTION_RIGHT);*/
+	setAnimation(0);
+	setDirection(TEXTURE_DIRECTION::TEXTURE_DIRECTION_LEFT);
 }
-
-void Fire::onCollision(MovableRect* other, float collisionTime, int nx, int ny)
-{
-	/*if (ny != 0)
-	{
-		setDirection(getDirection() * -1);
-	}*/
-	/* ngăn chặn di chuyển */
-	preventMovementWhenCollision(collisionTime, nx, ny);
-	PhysicsObject::onCollision(other, collisionTime, nx, ny);
-}
-
-void Fire::onUpdate(float dt)
-{
-	PhysicsObject::onUpdate(dt);
-}
-
 
 Fire::~Fire()
 {

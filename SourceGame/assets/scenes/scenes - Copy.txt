@@ -1,0 +1,6 @@
+#start scence
+0
+#total scene
+4
+#sence list
+assets/levels/scene1

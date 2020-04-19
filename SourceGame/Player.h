@@ -30,6 +30,7 @@ enum PLAYER_STATE
 	PLAYER_STATE_NORMAL,
 	PLAYER_STATE_ON_STAIR,
 	PLAYER_STATE_ATTACK,
+	PLAYER_STATE_ATTACK_JUMP,
 	PLAYER_STATE_DIE
 };
 
@@ -51,8 +52,8 @@ class Player :
 
 	int stairDirection;
 	bool isAttack;
-
-
+	bool collitionGate;
+	int numberArchery;
 
 	/* 2 thuộc tính này có khi player đang đi lên cầu thang chủ yếu nói về player đi tới đâu rồi dừng lại */
 	int playerStairDestx, playerStairDesty;
@@ -65,6 +66,7 @@ class Player :
 public:
 
 	DelayTime attachDelay;
+	DelayTime colorDelay;
 
 	PLAYER_STATE getPlayerState();
 	void setPlayerState(PLAYER_STATE playerState);
@@ -90,7 +92,10 @@ public:
 	PLAYER_STAIR_STATE getPlayerStairState();
 	bool getIsAttack();
 	void setIsAttack(bool attack);
-
+	void setCollitionGate(bool colilition);
+	bool getCollitionGate();
+	int getNumberArchery();
+	void AddNumberArChery(int number);
 	Player();
 	~Player();
 };
