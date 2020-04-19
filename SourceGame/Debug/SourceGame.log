@@ -1,2 +1,8 @@
-﻿  Weapon.cpp
+﻿  Item1000PTS.h
+  Item400PTS.cpp
+  Item700PTS.cpp
+  Axe.cpp
+  SmallHeart.cpp
+  Generating Code...
+Debug\Item1000PTS.obj : warning LNK4042: object specified more than once; extras ignored
   SourceGame.vcxproj -> H:\HK8\game\G\Debug\SourceGame.exe

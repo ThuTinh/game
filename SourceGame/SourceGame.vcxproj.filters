@@ -246,6 +246,33 @@
     <ClInclude Include="DieEffect.h">
       <Filter>Objects\Misc</Filter>
     </ClInclude>
+    <ClInclude Include="GoldPotion.h">
+      <Filter>Objects\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="Axe.h">
+      <Filter>Objects\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="HaiXanh.h">
+      <Filter>Objects\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="BoomeRang.h">
+      <Filter>Objects\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="Crown.h">
+      <Filter>Objects\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="HaiDo.h">
+      <Filter>Objects\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="SmallHeart.h">
+      <Filter>Objects\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="Item700PTS.h">
+      <Filter>Objects\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="Item400PTS.h">
+      <Filter>Objects\Item</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Sprite.cpp">
@@ -409,6 +436,39 @@
     </ClCompile>
     <ClCompile Include="DieEffect.cpp">
       <Filter>Objects\Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="GoldPotion.cpp">
+      <Filter>Objects\Item</Filter>
+    </ClCompile>
+    <ClCompile Include="Axe.cpp">
+      <Filter>Objects\Item</Filter>
+    </ClCompile>
+    <ClCompile Include="HaiXanh.cpp">
+      <Filter>Objects\Item</Filter>
+    </ClCompile>
+    <ClCompile Include="BoomeRang.cpp">
+      <Filter>Objects\Item</Filter>
+    </ClCompile>
+    <ClCompile Include="Crown.cpp">
+      <Filter>Objects\Item</Filter>
+    </ClCompile>
+    <ClCompile Include="HaiDo.cpp">
+      <Filter>Objects\Item</Filter>
+    </ClCompile>
+    <ClCompile Include="SmallHeart.cpp">
+      <Filter>Objects\Item</Filter>
+    </ClCompile>
+    <ClCompile Include="Item1000PTS.cpp">
+      <Filter>Objects\Item</Filter>
+    </ClCompile>
+    <ClCompile Include="Item1000PTS.h">
+      <Filter>Objects\Item</Filter>
+    </ClCompile>
+    <ClCompile Include="Item700PTS.cpp">
+      <Filter>Objects\Item</Filter>
+    </ClCompile>
+    <ClCompile Include="Item400PTS.cpp">
+      <Filter>Objects\Item</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
