@@ -29,7 +29,7 @@ SpriteManager::SpriteManager()
 	sprites[SPRITE_INFO_SWORD]->InitFromFile("assets/sprites/misc/kiem/image.png", "assets/sprites/misc/kiem/kiem.info.dat");
 	sprites[SPRITE_INFO_ITEM_HEARTSMALL]->InitFromFile("assets/sprites/misc/HeartSmall/image.png", "assets/sprites/misc/HeartSmall/HeartSmall.info.dat");
 	sprites[SPRITE_INFO_ITEM_1000PTS]->InitFromFile("assets/sprites/misc/TienDo/image.png", "assets/sprites/misc/TienDo/TienDo.info.dat");
-	sprites[SPRITE_INFO_ITEM_BINHTHUOCVANG]->InitFromFile("assets/sprites/misc/BinhVang/image.png", "assets/sprites/misc/BinhVang/BinhVang.info.dat");
+	sprites[SPRITE_INFO_ITEM_BLUEPATION]->InitFromFile("assets/sprites/misc/BinhVang/image.png", "assets/sprites/misc/BinhVang/BinhVang.info.dat");
 	sprites[SPRITE_INFO_ITEM_AXE]->InitFromFile("assets/sprites/misc/Axe/image.png", "assets/sprites/misc/Axe/Axe.info.dat");
 	sprites[SPRITE_INFO_ITEM_HAIXANH]->InitFromFile("assets/sprites/misc/HaiXanh/image.png", "assets/sprites/misc/HaiXanh/HaiXanh.info.dat");
 	sprites[SPRITE_INFO_VUONMIEN]->InitFromFile("assets/sprites/misc/VuonNiem/image.png", "assets/sprites/misc/VuonNiem/VuonNiem.info.dat");
@@ -57,6 +57,10 @@ SpriteManager::SpriteManager()
 	sprites[SPRITE_INFO_FLEAMAN]->InitFromFile("assets/sprites/enemy/fleaman/image.png", "assets/sprites/enemy/fleaman/fleaman.info.dat");
 	sprites[SPRITE_INFO_RAVEN]->InitFromFile("assets/sprites/enemy/raven/image.png", "assets/sprites/enemy/raven/raven.info.dat");
 
+	//Boss
+	sprites[SPRITE_INFO_BOSSBAT]->InitFromFile("assets/sprites/enemy/BossBat/image.png", "assets/sprites/enemy/BossBat/BossBat.info.dat");
+	
+	//scorebar
 	sprites[SPRITE_INFO_MISC]->InitFromFile("assets/sprites/misc/scorebar/misc.png", "assets/sprites/misc/scorebar/misc.info.txt");
 	sprites[SPRITE_INFO_MISC]->image->direction = TEXTURE_DIRECTION::TEXTURE_DIRECTION_RIGHT;
 }

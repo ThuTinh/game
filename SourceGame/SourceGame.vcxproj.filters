@@ -273,6 +273,12 @@
     <ClInclude Include="Item400PTS.h">
       <Filter>Objects\Item</Filter>
     </ClInclude>
+    <ClInclude Include="BluePotion.h">
+      <Filter>Objects\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="BossBat.h">
+      <Filter>Objects\Enemy</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Sprite.cpp">
@@ -469,6 +475,12 @@
     </ClCompile>
     <ClCompile Include="Item400PTS.cpp">
       <Filter>Objects\Item</Filter>
+    </ClCompile>
+    <ClCompile Include="BluePotion.cpp">
+      <Filter>Objects\Item</Filter>
+    </ClCompile>
+    <ClCompile Include="BossBat.cpp">
+      <Filter>Objects\Enemy</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

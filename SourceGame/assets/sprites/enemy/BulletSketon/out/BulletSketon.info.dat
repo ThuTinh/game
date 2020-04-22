@@ -1,0 +1,18 @@
+Sprite BulletSketon
+R	G	B
+255	0	128	0
+Animation Count
+1
+
+
+Name
+Dánketon
+Frame Count
+3
+
+FrameX		FrameY		FrameWidth		FrameHeight		AnchorX		AnchorY
+0			0			8				16				0			0
+8			0			16				16				0			0
+24			0			16				16				0			0
+
+

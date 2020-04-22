@@ -22,9 +22,23 @@
 #include"Collision.h"
 #include "Weapon.h"
 #include "Light.h"
+#include"SmallHeart.h"
+#include"Item1000PTS.h"
+#include"Item700PTS.h"
+#include"Item400PTS.h"
+#include"Axe.h"
+#include"BoomeRang.h"
+#include"HaiDo.h"
+#include"HaiXanh.h"
+#include"Crown.h"
+#include"Fleaman.h"
 #include"Archery.h"
 #include"Sword.h"
+#include"BluePotion.h"
+#include"BoomeRang.h"
+#include"GoldPotion.h"
 #include "BigHeart.h"
+#include "BossBat.h"
 #include <typeinfo>
 #include<Windows.h>
 #include <string>
@@ -122,6 +136,39 @@ void World::Init(const char * tilesheetPath,
 			break;
 		case SPRITE_INFO_RAVEN:
 			obj = new Raven();
+			break;
+		case SPRITE_INFO_ITEM_AXE:
+			obj = new Axe();
+			break;
+		case SPRITE_INFO_ITEM_HEARTSMALL:
+			obj = new SmallHeart();
+			break;
+		case SPRITE_INFO_ITEM_1000PTS:
+			obj = new Item1000PTS();
+			break;
+		case SPRITE_INFO_ITEM_700PTS:
+			obj = new Item700PTS();
+			break;
+		case SPRITE_INFO_ITEM_400PTS:
+			obj = new Item400PTS();
+			break;
+		case SPRITE_INFO_VUONMIEN:
+			obj = new Crown();
+			break;
+		case SPRITE_INFO_ITEM_HAIDO:
+			obj = new HaiDo();
+			break;
+		case SPRITE_INFO_ITEM_HAIXANH:
+			obj = new HaiXanh();
+			break;
+		case SPRITE_INFO_ITEM_GOLDPOTION:
+			obj = new GoldPotion();
+			break;
+		case SPRITE_INFO_ITEM_BLUEPATION:
+			obj = new BluePotion();
+			break;
+		case SPRITE_INFO_BOSSBAT:
+			obj = new BossBat();
 			break;
 		default:
 			obj = new BaseObject();

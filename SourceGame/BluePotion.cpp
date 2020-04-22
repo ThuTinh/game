@@ -1,9 +1,10 @@
-#include"Item1000PTS.h"
+#include"BluePotion.h"
 #include"Weapon.h"
 #include"Player.h"
 
 
-void Item1000PTS::onAABB(MovableRect* other)
+
+void BluePotion::onAABB(MovableRect* other)
 {
 	Item::onAABB(other);
 	if (other == Player::getInstance() && getItemState() == ITEM_STATE_VISIBLE) {
@@ -13,14 +14,14 @@ void Item1000PTS::onAABB(MovableRect* other)
 	}
 }
 
-Item1000PTS::Item1000PTS()
+BluePotion::BluePotion()
 {
 }
 
-Item1000PTS ::~Item1000PTS()
+BluePotion ::~BluePotion()
 {
 }
 
-void Item1000PTS::onPlayerContact()
+void BluePotion::onPlayerContact()
 {
 }

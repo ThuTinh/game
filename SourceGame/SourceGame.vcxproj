@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -138,6 +138,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="BluePotion.h" />
+    <ClInclude Include="BossBat.h" />
+    <ClInclude Include="IBoss.h" />
     <ClInclude Include="Item400PTS.h" />
     <ClInclude Include="Item700PTS.h" />
     <ClInclude Include="AdditionalObject.h" />
@@ -207,6 +210,8 @@
     <ClInclude Include="Zoombie.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="BluePotion.cpp" />
+    <ClCompile Include="BossBat.cpp" />
     <ClCompile Include="Item1000PTS.cpp" />
     <ClCompile Include="Item1000PTS.h" />
     <ClCompile Include="Item400PTS.cpp" />

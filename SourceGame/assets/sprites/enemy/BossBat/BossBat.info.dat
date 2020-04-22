@@ -20,7 +20,7 @@ Frame Count
 2
 
 FrameX		FrameY		FrameWidth		FrameHeight		AnchorX		AnchorY
-16			0			48				32				9			5
-64			0			32				32				5			9
+16			0			48				32				23			0
+64			0			32				32				15			1
 
 

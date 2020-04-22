@@ -27,13 +27,13 @@ double GameConfiguration::GetConfiguration(const char * key)
 		globalsConfigurationDouble->insert(pair<const char*, double>("object_animation_time_default",70));
 
 		/* trọng lực mặc định của đối tượng 80 (px/s^2) */
-		globalsConfigurationDouble->insert(pair<const char*, double>("object_default_ay", -750));
+		globalsConfigurationDouble->insert(pair<const char*, double>("object_default_ay", -550));
 
 		globalsConfigurationDouble->insert(pair<const char*, double>("bat_ay", -100));
 
 		/*  PLAYER  */
 		globalsConfigurationDouble->insert(pair<const char*, double>("player_vx", 80)); /* 60 pixel/s */
-		globalsConfigurationDouble->insert(pair<const char*, double>("player_vy_jump", 300)); /* 60 pixel/s */
+		globalsConfigurationDouble->insert(pair<const char*, double>("player_vy_jump", 250)); /* 60 pixel/s */
 		/* vx của player khi lên stair */
 		globalsConfigurationDouble->insert(pair<const char*, double>("player_stair_dx", 1));//1 pixel/ frame */
 		/* vy của player khi lên stair */
@@ -52,12 +52,23 @@ double GameConfiguration::GetConfiguration(const char * key)
 
 		globalsConfigurationDouble->insert(pair<const char*, double>("fleaman_jumpshort_counter", 2));
 		globalsConfigurationDouble->insert(pair<const char*, double>("fleaman_jumplong_counter", 1));
-		globalsConfigurationDouble->insert(pair<const char*, double>("fleaman_vy_short", 120));
-		globalsConfigurationDouble->insert(pair<const char*, double>("fleaman_vy_long", 220));
-		globalsConfigurationDouble->insert(pair<const char*, double>("fleaman_vx", 30));
+		globalsConfigurationDouble->insert(pair<const char*, double>("fleaman_vy_short", 150));
+		globalsConfigurationDouble->insert(pair<const char*, double>("fleaman_vy_long", 200));
+		globalsConfigurationDouble->insert(pair<const char*, double>("fleaman_vx", 60));
+		globalsConfigurationDouble->insert(pair<const char*, double>("fleaman_distance_to_jumb", 80));
 
 		globalsConfigurationDouble->insert(pair<const char*, double>("die_effect_time", 500));
 		
+		globalsConfigurationDouble->insert(pair<const char*, double>("boss_wait_time", 1000));
+		globalsConfigurationDouble->insert(pair<const char*, double>("boss_ay", 100));
+		globalsConfigurationDouble->insert(pair<const char*, double>("boss_move_slow_time_min", 1000));
+		globalsConfigurationDouble->insert(pair<const char*, double>("vampire_bat_fast_momen", 150));
+		globalsConfigurationDouble->insert(pair<const char*, double>("vampire_bat_slow_momen", 90));
+		globalsConfigurationDouble->insert(pair<const char*, double>("boss_move_fast_time_min", 1000));
+		globalsConfigurationDouble->insert(pair<const char*, double>("boss_distance_activ", 50));
+		globalsConfigurationDouble->insert(pair<const char*, double>("boss_move_fast_time_max", 2000));
+		globalsConfigurationDouble->insert(pair<const char*, double>("boss_move_slow_time_max", 2000));
+	
 	}
 	/* trả ra giá trị cấu hình tại key */
 	return globalsConfigurationDouble->at(key);
