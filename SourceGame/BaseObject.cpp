@@ -130,7 +130,7 @@ void BaseObject::render(Camera* camera)
 	if (imageDirection != currentDirection)
 	{
 		int currentFrameWidth = getSprite()->animations[getAnimation()]->frames[getFrameAnimation()]->right -
-			getSprite()->animations[getAnimation()]->frames[getFrameAnimation()]->left;
+		getSprite()->animations[getAnimation()]->frames[getFrameAnimation()]->left;
 		D3DXMATRIX flipMatrix;
 		D3DXMatrixIdentity(&flipMatrix);
 		flipMatrix._11 = -1;

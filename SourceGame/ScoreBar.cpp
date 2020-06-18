@@ -126,6 +126,7 @@ void ScoreBar::render()
 	renderNumber(time, timeLocation.X, timeLocation.Y, timeLocation.MaxLength);
 	renderHealth();
 	renderBossHealth();
+
 	//renderSubWeapon();
 }
 

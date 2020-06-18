@@ -21,7 +21,7 @@ void SceneManager::init() {
 		worlds[i]->Init(folderPath);
 	}
 
-	changeWorld(3);
+	changeWorld(0);
 }
 World* SceneManager::getCurrentScene() {
 	return currentScene;

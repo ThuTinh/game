@@ -95,15 +95,12 @@ enum MISC_SPRITE_ID
 
 class SpriteManager
 {
-	/* ta lưu tất cả sprite ở đây */
 	List<Sprite*> sprites;
 
-	/* singleton pattern */
 	static SpriteManager* instance;
 public:
 	static SpriteManager* getInstance();
 
-	/* dùng để lấy sprite từ spriteManager */
 	static Sprite* getSprite(int spriteInfo);
 
 	SpriteManager();

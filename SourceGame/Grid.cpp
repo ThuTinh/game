@@ -58,7 +58,6 @@ void Grid::Init(string gridPath)
 		}
 		CellList->_Add(cell);
 		ignoreLineIfstream(fs, 1);
-		
 	}
 
 }

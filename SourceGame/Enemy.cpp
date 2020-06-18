@@ -51,7 +51,6 @@ void Enemy::onAABB(MovableRect* other)
 	if (other == Weapon::getInstance() && getAlive()) {
 		setAlive(false);
 		DieEffect* dieEffect = new DieEffect();
-
 		dieEffect->setX(getX());
 		dieEffect->setY(getY());
 		dieEffect->timeDelay.start();

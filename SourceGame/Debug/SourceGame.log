@@ -1,2 +1,6 @@
-﻿  GameConfiguration.cpp
+﻿  Grid.cpp
+H:\HK8\game\G\SourceGame\Grid.cpp(45,14): warning C4244:  'argument': conversion from 'int' to 'float', possible loss of data
+H:\HK8\game\G\SourceGame\Grid.cpp(46,24): warning C4244:  'argument': conversion from 'int' to 'float', possible loss of data
+H:\HK8\game\G\SourceGame\Grid.cpp(47,19): warning C4244:  'argument': conversion from 'int' to 'float', possible loss of data
+H:\HK8\game\G\SourceGame\Grid.cpp(48,18): warning C4244:  'argument': conversion from 'int' to 'float', possible loss of data
   SourceGame.vcxproj -> H:\HK8\game\G\Debug\SourceGame.exe
